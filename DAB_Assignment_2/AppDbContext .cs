@@ -10,7 +10,7 @@ using DAB_Assignment_2.RelationshipClasses;
 
 namespace DAB_Assignment_2
 {
-    class AppDbContext : DbContext
+    public class AppDbContext : DbContext
     {
         public DbSet<Restaurant> Restaurants { get; set; }
         public DbSet<Person> Persons { get; set; }
