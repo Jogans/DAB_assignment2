@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using DAB_Assignment_2.Models;
 using Microsoft.EntityFrameworkCore;
+using Restuarant.Models;
 
 namespace DAB_Assignment_2.DAL
 {
@@ -12,7 +12,6 @@ namespace DAB_Assignment_2.DAL
         public IEnumerable<Restaurant> MethodA(string type)
         {
             AppDbContext context = new AppDbContext();
-            RestaurantRepository restaurantRepository = new RestaurantRepository(context);
             //context.Restaurants.Find
             //context.Restaurants.Where(p => p.Type.StartsWith(type)).ToList();
             var restaurants = context.Restaurants

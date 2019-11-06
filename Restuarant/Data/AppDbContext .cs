@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using System.Text;
 //using System.Data.EntityClient;
 //using System.Data.Entity;
-using DAB_Assignment_2.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
-using DAB_Assignment_2.RelationshipClasses;
+using Restuarant.Models;
 
 namespace DAB_Assignment_2
 {
     public class AppDbContext : DbContext
     {
+        //public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+        //{
+        //}
         public DbSet<Restaurant> Restaurants { get; set; }
         public DbSet<Person> Persons { get; set; }
         public DbSet<Waiter> Waiters { get; set; }
@@ -28,6 +30,14 @@ namespace DAB_Assignment_2
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Restaurant>().ToTable("Restaurant");
+            modelBuilder.Entity<Person>().ToTable("Person");
+            modelBuilder.Entity<Waiter>().ToTable("Waiter");
+            modelBuilder.Entity<Guest>().ToTable("Guest");
+            modelBuilder.Entity<Table>().ToTable("Table");
+            modelBuilder.Entity<Dish>().ToTable("Dish");
+            modelBuilder.Entity<Review>().ToTable("Review");
+
             // Restaurant
             modelBuilder.Entity<Restaurant>()
                 .HasKey(a => a.RestaurantId);
