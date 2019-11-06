@@ -48,6 +48,7 @@ namespace Restaurant.Data
             PersonList[2].Name = "";
             PersonList[2].Name = "";
             PersonList[2].Name = "";
+            PersonList[2].Name = "";
 
 
 
