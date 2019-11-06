@@ -13,7 +13,6 @@ namespace Restuarant.Models
         public string RestaurantAddress { get; set; }
         public string ReviewerName { get; set; }
         public DateTime DateOfVisit { get; set; }
-        public string DishName { get; set; }
         public int Stars { get; set; }
         public string Text { get; set; }
         public int RestaurantId { get; set; }
