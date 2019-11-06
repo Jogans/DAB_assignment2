@@ -12,7 +12,6 @@ namespace DAB_Assignment_2.DAL
         public IEnumerable<Restaurant> MethodA(string type)
         {
             AppDbContext context = new AppDbContext();
-            RestaurantRepository restaurantRepository = new RestaurantRepository(context);
             //context.Restaurants.Find
             //context.Restaurants.Where(p => p.Type.StartsWith(type)).ToList();
             var restaurants = context.Restaurants
@@ -38,15 +37,27 @@ namespace DAB_Assignment_2.DAL
             return restaurant;
         }
 
-        public IEnumerable<Restaurant> MethodC(string address)
+        public void MethodC(string address)
         {
             AppDbContext context = new AppDbContext();
-            var restaurants = context.Restaurants
-                .Where(r => r.Name.StartsWith(address))
-                .Include(r => r.Tables
-                    .Select(t => t.TableId))
-                .ToList();
-            return restaurants;
+            foreach (var rest in context.Restaurants.Where(r => r.Name.StartsWith(address)))
+            {
+                foreach (var table in context.Tables)
+                {
+                    if (table.RestaurantId == rest.RestaurantId)
+                    {
+                        Console.WriteLine($"Bord nr. {table.TableId}: ");
+                        foreach (var review in context.Reviews)
+                        {
+                            if (review.TableId == table.TableId)
+                            {
+                                Console.WriteLine($"{review.DishName}, {review.Stars} \n {review.Text}");
+                            }
+                        }
+                    }
+
+                }
+            }
         }
 
         //public IEnumerable<Restaurant> MethodD(string address)

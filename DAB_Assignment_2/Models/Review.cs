@@ -20,7 +20,8 @@ namespace DAB_Assignment_2.Models
         public int RestaurantId { get; set; }
         public int GuestId { get; set; }
         public int DishId { get; set; }
-
+        public int TableId { get; set; }
+        public virtual Table Table { get; set; }
         public virtual Restaurant Restaurant { get; set; }
         public virtual List<ReviewGuest> ReviewGuests { get; set; }
         public virtual List<ReviewDish> ReviewDishes { get; set; }
