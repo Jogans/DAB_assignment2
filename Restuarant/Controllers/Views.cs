@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
-using Restuarant.Models;
 using Restuarant.Data;
+using Restuarant.Models;
 
 namespace Restaurant.Models
 {
@@ -12,7 +12,8 @@ namespace Restaurant.Models
     {
         public IEnumerable<RestaurantClass> MethodA(string type)
         {
-            AppDbContext context = new AppDbContext();
+            DbContextOptions<AppDbContext> dbContext = new DbContextOptions<AppDbContext>();
+            AppDbContext context = new AppDbContext(dbContext);
             //context.Restaurants.Find
             //context.Restaurants.Where(p => p.Type.StartsWith(type)).ToList();
             var restaurants = context.Restaurants
@@ -27,7 +28,8 @@ namespace Restaurant.Models
 
         public IEnumerable<RestaurantClass> MethodB(string address)
         {
-            AppDbContext context = new AppDbContext();
+            DbContextOptions<AppDbContext> dbContext = new DbContextOptions<AppDbContext>();
+            AppDbContext context = new AppDbContext(dbContext);
             var restaurant = context.Restaurants
                 .Where(r => r.Address.StartsWith(address))
                 .Include(r => r.RestaurantDishes
@@ -40,7 +42,8 @@ namespace Restaurant.Models
 
         public IEnumerable<RestaurantClass> MethodC(string address)
         {
-            AppDbContext context = new AppDbContext();
+            DbContextOptions<AppDbContext> dbContext = new DbContextOptions<AppDbContext>();
+            AppDbContext context = new AppDbContext(dbContext);
             var restaurants = context.Restaurants
                 .Where(r => r.Name.StartsWith(address))
                 .Include(r => r.Tables

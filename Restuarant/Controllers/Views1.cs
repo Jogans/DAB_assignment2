@@ -12,7 +12,8 @@ namespace Restuarant.Controllers
     {
         public IEnumerable<RestaurantClass> MethodA(string type)
         {
-            AppDbContext context = new AppDbContext();
+            DbContextOptions<AppDbContext> dbContext = new DbContextOptions<AppDbContext>();
+            AppDbContext context = new AppDbContext(dbContext);
             //context.Restaurants.Find
             //context.Restaurants.Where(p => p.Type.StartsWith(type)).ToList();
             var restaurants = context.Restaurants
@@ -27,7 +28,8 @@ namespace Restuarant.Controllers
 
         public IEnumerable<RestaurantClass> MethodB(string address)
         {
-            AppDbContext context = new AppDbContext();
+            DbContextOptions<AppDbContext> dbContext = new DbContextOptions<AppDbContext>();
+            AppDbContext context = new AppDbContext(dbContext);
             var restaurant = context.Restaurants
                 .Where(r => r.Address.StartsWith(address))
                 .Include(r => r.RestaurantDishes
@@ -40,7 +42,8 @@ namespace Restuarant.Controllers
 
         public IEnumerable<RestaurantClass> MethodC(string address)
         {
-            AppDbContext context = new AppDbContext();
+            DbContextOptions<AppDbContext> dbContext = new DbContextOptions<AppDbContext>();
+            AppDbContext context = new AppDbContext(dbContext);
             var restaurants = context.Restaurants
                 .Where(r => r.Name.StartsWith(address))
                 .Include(r => r.Tables

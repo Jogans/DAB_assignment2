@@ -7,9 +7,9 @@ namespace Restuarant.Data
 {
     public class AppDbContext : DbContext
     {
-        //public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
-        //{
-        //}
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+        {
+        }
         public DbSet<RestaurantClass> Restaurants { get; set; }
         public DbSet<Person> Persons { get; set; }
         public DbSet<Waiter> Waiters { get; set; }
