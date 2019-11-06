@@ -4,9 +4,8 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
-using DAB_Assignment_2.RelationshipClasses;
 
-namespace DAB_Assignment_2.Models
+namespace Restuarant.Models
 {
     public class Dish
     {

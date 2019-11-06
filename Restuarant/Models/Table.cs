@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Text;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
-namespace DAB_Assignment_2.Models
+namespace Restuarant.Models
 {
     public class Table
     {

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace DAB_Assignment_2.Models
+namespace Restuarant.Models
 {
     public class Person
     {

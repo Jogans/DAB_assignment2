@@ -1,9 +1,8 @@
-﻿using DAB_Assignment_2.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DAB_Assignment_2.RelationshipClasses
+namespace Restuarant.Models
 {
     public class GuestDish
     {
