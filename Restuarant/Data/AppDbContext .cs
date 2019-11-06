@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-//using System.Data.EntityClient;
+﻿//using System.Data.EntityClient;
 //using System.Data.Entity;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
 using Restuarant.Models;
 
-namespace DAB_Assignment_2
+namespace Restuarant.Data
 {
     public class AppDbContext : DbContext
     {
