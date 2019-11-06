@@ -22,7 +22,11 @@ namespace DAB_Assignment_2.DAL
                 .Include(p => p.Reviews.
                     Select(r => r.Text).Take(5))
                 .ToList();
-            return restaurants;
+
+            foreach (var r in context.Restaurants)
+            {
+                
+            }
         }
 
         public IEnumerable<Restaurant> MethodB(string address)
