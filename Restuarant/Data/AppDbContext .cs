@@ -3,7 +3,7 @@
 using Microsoft.EntityFrameworkCore;
 using Restuarant.Models;
 
-namespace Restuarant.Data
+namespace Restaurant.Data
 {
     public class AppDbContext : DbContext
     {

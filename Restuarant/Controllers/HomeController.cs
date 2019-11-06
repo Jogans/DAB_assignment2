@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Restuarant.Models;
 
-namespace Restuarant.Controllers
+namespace Restaurant.Controllers
 {
     public class HomeController : Controller
     {

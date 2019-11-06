@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
 using Restuarant.Models;
-using Restuarant.Data;
+using Restaurant.Data;
 
-namespace Restuarant.Controllers
+namespace Restaurant.Controllers
 {
     public class Views
     {
