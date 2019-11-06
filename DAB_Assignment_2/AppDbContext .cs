@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Data.EntityClient;
-using System.Data.Entity;
 using DAB_Assignment_2.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
@@ -139,6 +137,11 @@ namespace DAB_Assignment_2
                 .HasOne(gd => gd.Review)
                 .WithMany(g => g.ReviewGuests)
                 .HasForeignKey(gd => gd.ReviewId);
+
+            modelBuilder.Entity<Review>()
+                .HasOne(re => re.Table)
+                .WithMany(t => t.Reviews)
+                .HasForeignKey(re => re.TableId);
         }
     }
 }
