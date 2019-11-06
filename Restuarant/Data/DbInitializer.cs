@@ -16,6 +16,7 @@ namespace Restaurant.Data
             
             context.SaveChanges();
 
+
             // Eksempel på indsættelse
             //var courses = new Course[]
             //{
