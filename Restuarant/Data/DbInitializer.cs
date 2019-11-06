@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Restuarant.Data;
+using Restuarant.Models;
 
 namespace Restaurant.Data
 {
@@ -17,20 +18,45 @@ namespace Restaurant.Data
             context.SaveChanges();
 
             // Eksempel på indsættelse
-            //var courses = new Course[]
+
+            List<Person> PersonList = new List<Person>();
+            for (int i = 0; i < 27; i++)
+            {
+                PersonList.Add(new Person());
+            }
+
+            PersonList[0].Name = "Jens Jensen";
+            PersonList[1].Name = "Anders Andersen";
+            PersonList[2].Name = "Hanne Hansen";
+            PersonList[3].Name = "Christiane Christiansen";
+            PersonList[4].Name = "Trine Triger";
+            PersonList[5].Name = "Charlotte Charlottenborg";
+            PersonList[6].Name = "Rasmus Rasmussen";
+            PersonList[7].Name = "Nicolai Nicolajsen";
+            PersonList[8].Name = "Frederik Frederico";
+            PersonList[9].Name = "Jesper Jespersen";
+            PersonList[10].Name = "Mette Metz";
+            PersonList[11].Name = "Anna Antonsen";
+            PersonList[2].Name = "A. Nelprober";
+            PersonList[2].Name = "A.S. Muncher";
+            PersonList[2].Name = "";
+            PersonList[2].Name = "";
+            PersonList[2].Name = "";
+            PersonList[2].Name = "";
+            PersonList[2].Name = "";
+            PersonList[2].Name = "";
+            PersonList[2].Name = "";
+            PersonList[2].Name = "";
+            PersonList[2].Name = "";
+
+
+
+            //var person = new Person[]
             //{
-            //new Course{CourseID=1050,Title="Chemistry",Credits=3},
-            //new Course{CourseID=4022,Title="Microeconomics",Credits=3},
-            //new Course{CourseID=4041,Title="Macroeconomics",Credits=3},
-            //new Course{CourseID=1045,Title="Calculus",Credits=4},
-            //new Course{CourseID=3141,Title="Trigonometry",Credits=4},
-            //new Course{CourseID=2021,Title="Composition",Credits=3},
-            //new Course{CourseID=2042,Title="Literature",Credits=4}
+            //    new Person{}
             //};
-            //foreach (Course c in courses)
-            //{
-            //    context.Courses.Add(c);
-            //}
+
+
 
             //Tilføj ting her
 
