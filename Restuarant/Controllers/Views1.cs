@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
-using Restuarant.Data;
 using Restuarant.Models;
+using Restuarant.Data;
 
-namespace Restaurant.Models
+namespace Restuarant.Controllers
 {
     public class Views
     {
