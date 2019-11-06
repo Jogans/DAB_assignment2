@@ -18,6 +18,6 @@ namespace Restuarant.Models
 
         public virtual List<Guest> Guests { get; set; }
         public virtual Waiter Waiter { get; set; }
-        public virtual Restaurant Restaurant { get; set; }
+        public virtual RestaurantClass Restaurant { get; set; }
     }
 }

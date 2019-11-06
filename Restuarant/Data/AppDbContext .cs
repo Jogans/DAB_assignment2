@@ -14,7 +14,7 @@ namespace DAB_Assignment_2
         //public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         //{
         //}
-        public DbSet<Restaurant> Restaurants { get; set; }
+        public DbSet<RestaurantClass> Restaurants { get; set; }
         public DbSet<Person> Persons { get; set; }
         public DbSet<Waiter> Waiters { get; set; }
         public DbSet<Guest> Guests { get; set; }
@@ -24,13 +24,13 @@ namespace DAB_Assignment_2
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source=restaurant.db");
+            //optionsBuilder.UseSqlite("Data Source=restaurant.db");
             //optionsBuilder.UseSqlServer(@"Data Source=(localdb)\ProjectsV13;Initial Catalog=StoreDB;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Restaurant>().ToTable("Restaurant");
+            modelBuilder.Entity<RestaurantClass>().ToTable("Restaurant");
             modelBuilder.Entity<Person>().ToTable("Person");
             modelBuilder.Entity<Waiter>().ToTable("Waiter");
             modelBuilder.Entity<Guest>().ToTable("Guest");
@@ -39,7 +39,7 @@ namespace DAB_Assignment_2
             modelBuilder.Entity<Review>().ToTable("Review");
 
             // Restaurant
-            modelBuilder.Entity<Restaurant>()
+            modelBuilder.Entity<RestaurantClass>()
                 .HasKey(a => a.RestaurantId);
 
             // Persons

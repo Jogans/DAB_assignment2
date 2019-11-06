@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using DAB_Assignment_2;
 using Microsoft.EntityFrameworkCore;
 using Restuarant.Models;
 
-namespace DAB_Assignment_2.DAL
+namespace Restaurant.Models
 {
     public class Views
     {
-        public IEnumerable<Restaurant> MethodA(string type)
+        public IEnumerable<RestaurantClass> MethodA(string type)
         {
             AppDbContext context = new AppDbContext();
             //context.Restaurants.Find
@@ -24,7 +25,7 @@ namespace DAB_Assignment_2.DAL
             return restaurants;
         }
 
-        public IEnumerable<Restaurant> MethodB(string address)
+        public IEnumerable<RestaurantClass> MethodB(string address)
         {
             AppDbContext context = new AppDbContext();
             var restaurant = context.Restaurants
@@ -37,7 +38,7 @@ namespace DAB_Assignment_2.DAL
             return restaurant;
         }
 
-        public IEnumerable<Restaurant> MethodC(string address)
+        public IEnumerable<RestaurantClass> MethodC(string address)
         {
             AppDbContext context = new AppDbContext();
             var restaurants = context.Restaurants

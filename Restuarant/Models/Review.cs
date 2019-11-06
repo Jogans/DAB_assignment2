@@ -20,7 +20,7 @@ namespace Restuarant.Models
         public int GuestId { get; set; }
         public int DishId { get; set; }
 
-        public virtual Restaurant Restaurant { get; set; }
+        public virtual RestaurantClass Restaurant { get; set; }
         public virtual List<ReviewGuest> ReviewGuests { get; set; }
         public virtual List<ReviewDish> ReviewDishes { get; set; }
     }

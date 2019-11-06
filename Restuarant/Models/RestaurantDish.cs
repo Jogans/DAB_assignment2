@@ -6,7 +6,7 @@ namespace Restuarant.Models
 {
     public class RestaurantDish
     {
-        public Restaurant Restaurant { get; set; }
+        public RestaurantClass Restaurant { get; set; }
         public Dish Dish { get; set; }
         public int RestaurantId { get; set; }
         public int DishId { get; set; }
