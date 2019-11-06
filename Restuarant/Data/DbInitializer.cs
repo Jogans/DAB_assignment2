@@ -228,8 +228,41 @@ namespace Restaurant.Data
                 },
 
             };
+            foreach (RestaurantDish rd in restaurantDishes)
+            {
+                context.RestaurantDishes.Add(rd);
+            }
+            context.SaveChanges();
 
-            
+            var reviews = new Review[]
+            {
+                new Review{Text = "Genial Mad oplevelse", Stars = 5}, 
+                new Review{Text = "Jeg fortrød lidt at jeg gik herhen", Stars = 2}, 
+                new Review{Text = "AD!!!!", Stars = 1}, 
+                new Review{Text = "God betjening og en behagelig oplevelse", Stars = 4}, 
+                new Review{Text = "Okay til pengene", Stars = 3}, 
+                new Review{Text = "Uhmmm det kan godt anbefales. Lækkert mad", Stars = 4}, 
+                new Review{Text = "Hundeæde!!!", Stars = 1}, 
+                new Review{Text = "The sprinkling of gold flakes lent a top note of bullshit. And that was the good part. The skin had an off-putting tang and a rancid flavor, which seeped into the dried-out meat and left a greasy feeling on the roof of my mouth that, like the demonic clown from It, could not be destroyed", Stars = 2}, 
+                new Review{Text = "Slowly, gradually, with great mental resistance but still inexorably, it dawned on me that I had paid $98 for a duck with almost no flavor. It was dry, too", Stars = 1}, 
+                new Review{Text = "When executed poorly (a gummy mass of vermicelli and shellfish that is presumably a riff on the Korean noodle dish japchae), his dishes just sing out of key", Stars = 2}, 
+                new Review{Text = "You’d better have something in the fridge at home, because the likelihood of your joining the Clean Plate Club here is as good as Omarosa Manigault Newman getting invited to a Christmas party at the White House", Stars = 5}, 
+                new Review{Text = "While there are many words I could use to describe Louie Louie, I’m going to say only this: Louie Louie is a bad restaurant", Stars = 1}, 
+                new Review{Text = "The initial flavor was bland, quickly followed by a fetid, ammonia-like tang. It was an aroma that recalled room-temperature hamburger meat from a grocer that lost power. I felt my eyes water up as I chewed. I tried to swallow. I felt my entire GI tract prepare to purge", Stars = 2}, 
+                new Review{Text = "Did it have ‘a simple flavor with a touch of sweetness’? It was hard to say after half of it had been simmered in soy sauce to a bony mush, the other half grilled in salt until chewy and served with its head still on, propped up with a wooden stake like a Big Mouth Billy Bass about to sing", Stars = 5}, 
+                new Review{Text = "When compared to similar restaurants, “Empire is their hollow echo, parroting back a faded, carbon-copied version that takes no risks and contributes little to Detroit’s dining scene dialogue", Stars = 3}, 
+                new Review{Text = "There’s V for Vegan. There’s GF for Gluten Free. There’s DF for Dairy Free. I think they’re missing a few. There should be TF for Taste Free and JF for Joy Free and AAHYWEH for Abandon All Hope, Ye Who Enter Here", Stars = 1},
+                new Review{Text = "Nobody told the recipe developer that Americans don’t much like small, stale peas in their pasta", Stars = 1},
+                new Review{Text = "Nobody should pay this much money to be sad", Stars = 2},
+                new Review{Text = "McDonald’s does a better job for one-third of the price", Stars = 1},
+                new Review{Text = "I’m not so batty from Trump Derangement Syndrome that I can’t objectively identify what a poor value the food is at Terrace 16. The only thing Chicagoans on the ground are missing is the spectacular view from occupied territory", Stars = 3},
+                new Review{Text = "To put it mildly, licking Plexiglas is more rewarding than some of the duds on the set menu", Stars = 2},
+            };
+            foreach (Review rw in reviews)
+            {
+                context.Reviews.Add(rw);
+            }
+            context.SaveChanges();
 
             var persons = new Person[]
             {
