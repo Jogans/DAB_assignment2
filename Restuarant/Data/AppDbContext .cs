@@ -17,6 +17,9 @@ namespace Restaurant.Data
         public DbSet<Table> Tables { get; set; }
         public DbSet<Dish> Dishes { get; set; }
         public DbSet<Review> Reviews { get; set; }
+        public DbSet<GuestDish> GuestDishes { get; set; }
+        public DbSet<RestaurantDish> RestaurantDishes { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
