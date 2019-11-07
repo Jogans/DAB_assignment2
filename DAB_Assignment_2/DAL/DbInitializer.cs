@@ -54,7 +54,6 @@ namespace DAB_Assignment_2.DAL
                 new Dish{DishName = "Pain au Chocolat", Price = 8, Type = "Appetizer"},
                 new Dish{DishName = "Ice Cream", Price = 12, Type = "Dessert"},
                 new Dish{DishName = "Coffee", Price = 15, Type = "Dessert"},
-
             };
             foreach (Dish d in dishes)
             {
@@ -591,6 +590,7 @@ namespace DAB_Assignment_2.DAL
                     TableId = tabels.Single(t => t.TableId == 4).TableId,
                 },
             };
+
             foreach (Review rw in reviews)
             {
                 context.Reviews.Add(rw);
