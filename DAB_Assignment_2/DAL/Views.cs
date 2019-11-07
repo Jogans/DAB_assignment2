@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using DAB_Assignment_2.Models;
+using DAB_Assignment_2.RelationshipClasses;
 using Microsoft.EntityFrameworkCore;
 
 namespace DAB_Assignment_2.DAL
 {
     public class Views
     {
-        public IEnumerable<Restaurant> MethodA(string type)
+        public void MethodA(string type)
         {
             AppDbContext context = new AppDbContext();
             //context.Restaurants.Find
@@ -24,11 +25,11 @@ namespace DAB_Assignment_2.DAL
 
             foreach (var r in context.Restaurants)
             {
-                
+                Console.WriteLine($"Restaurants:\t {restaurants}");
             }
         }
 
-        public IEnumerable<Restaurant> MethodB(string address)
+        public void MethodB(string address)
         {
             AppDbContext context = new AppDbContext();
             var restaurant = context.Restaurants
@@ -38,7 +39,12 @@ namespace DAB_Assignment_2.DAL
                     .Select(d => new {d.DishName, d.Price}))
                 .Include(r => r.AverageRating)
                 .ToList();
-            return restaurant;
+
+            Console.WriteLine($"Menu:\t");
+            foreach (var dish in context.Dishes)
+            {
+                Console.WriteLine($"{restaurant}");
+            }
         }
 
         public void MethodC(string address)
