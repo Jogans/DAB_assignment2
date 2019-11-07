@@ -597,40 +597,95 @@ namespace DAB_Assignment_2.DAL
             }
             context.SaveChanges();
 
-            var persons = new Person[]
+
+            var guests = new Guest[]
             {
-                new Person{Name = "Jens Jensen"},
-                new Person{Name = "Anders Andersen"},
-                new Person{Name = "Hanne Hansen"},
-                new Person{Name = "Christiane Christiansen"},
-                new Person{Name = "Trine Triger"},
-                new Person{Name = "Charlotte Charlottenborg"},
-                new Person{Name = "Rasmus Rasmussen"},
-                new Person{Name = "Nicolai Nicolajsen"},
-                new Person{Name = "Frederik Frederico"},
-                new Person{Name = "Jesper Jespersen"},
-                new Person{Name = "Mette Metz"},
-                new Person{Name = "Anna Antonsen"},
-                new Person{Name = "A. Nelprober"},
-                new Person{Name = "A.S. Muncher"},
-                new Person{Name = "Anita Dick"},
-                new Person{Name = "Ben Derhover"},
-                new Person{Name = "Dick Long"},
-                new Person{Name = "Dixon B. Tweenerlegs"},
-                new Person{Name = "Dixon Butts"},
-                new Person{Name = "Harry Nutt"},
-                new Person{Name = "Hugh Janus"},
-                new Person{Name = "Ivana Fuccu"},
-                new Person{Name = "Ivanna B. Spanked"},
-                new Person{Name = "Mike Hunt"},
-                new Person{Name = "Moe Lester"},
-                new Person{Name = "Phil McAvity"},
-                new Person{Name = "Wilma Dickfit"},
-                new Person{Name = "Ho Lee Fuk"},
+                new Guest
+                {
+                    Name = "Anders Andersen",
+                },
+                new Guest
+                {
+                    Name = "Hanne Hansen",
+                },
+                new Guest
+                {
+                    Name = "Christiane Christiansen",
+                },
+                new Guest
+                {
+                    Name = "Charlotte Charlottenborg",
+                },
+                new Guest
+                {
+                    Name = "Rasmus Rasmussen",
+                },
+                new Guest
+                {
+                    Name = "Nicolai Nicolajsen",
+                },
+                new Guest
+                {
+                    Name = "Jesper Jespersen",
+                },
+                new Guest
+                {
+                    Name = "Mette Metz",
+                },
+                new Guest
+                {
+                    Name = "Anna Antonsen",
+                },
+                new Guest
+                {
+                    Name = "A.S. Muncher",
+                },
+                new Guest
+                {
+                    Name = "Anita Dick",
+                },
+                new Guest
+                {
+                    Name = "Ben Derhover",
+                },
+                new Guest
+                {
+                    Name = "Dixon B. Tweenerlegs",
+                },
+                new Guest
+                {
+                    Name = "Dixon Butts",
+                },
+                new Guest
+                {
+                    Name = "Harry Nutt",
+                },
+                new Guest
+                {
+                    Name = "Ivana Fuccu",
+                },
+                new Guest
+                {
+                    Name = "Ivanna B. Spanked",
+                },
+                new Guest
+                {
+                    Name = "Mike Hunt",
+                },
+                new Guest
+                {
+                    Name = "Phil McAvity",
+                },
+                new Guest
+                {
+                    Name = "Wilma Dickfit",
+                },
+
             };
-            foreach (Person p in persons)
+
+            foreach (Guest w in guests)
             {
-                context.Persons.Add(p);
+                context.Guests.Add(w);
             }
             context.SaveChanges();
 
@@ -638,58 +693,50 @@ namespace DAB_Assignment_2.DAL
             {
                 new Waiter
                 {
-                    PersonId = persons.Single(p => p.Name == "Jens Jensen").PersonId,
-                    WaiterName = persons.Single(n => n.Name == "Jens Jensen").Name,
+                    Name = "Jens Jensen",
                     Salary = 110,
 
                 },
                 new Waiter
                 {
-                    PersonId = persons.Single(p => p.Name == "Trine Triger").PersonId,
-                    WaiterName = persons.Single(n => n.Name == "Trine Triger").Name,
+                    Name = "Trine Triger",
                     Salary = 110,
 
 
                 },
                 new Waiter
                 {
-                    PersonId = persons.Single(p => p.Name == "Frederik Frederico").PersonId,
-                    WaiterName = persons.Single(n => n.Name == "Frederik Frederico").Name,
+                    Name = "Frederik Frederico",
                     Salary = 110,
 
                 },
                 new Waiter
                 {
-                    PersonId = persons.Single(p => p.Name == "A. Nelprober").PersonId,
-                    WaiterName = persons.Single(n => n.Name == "A. Nelprober").Name,
+                    Name = "A. Nelprober",
                     Salary = 110,
 
                 },
                 new Waiter
                 {
-                    PersonId = persons.Single(p => p.Name == "Dick Long").PersonId,
-                    WaiterName = persons.Single(n => n.Name == "Dick Long").Name,
+                    Name = "Dick Long",
                     Salary = 110,
 
                 },
                 new Waiter
                 {
-                    PersonId = persons.Single(p => p.Name == "Hugh Janus").PersonId,
-                    WaiterName = persons.Single(n => n.Name == "Hugh Janus").Name,
+                    Name = "Hugh Janus",
                     Salary = 110,
 
                 },
                 new Waiter
                 {
-                    PersonId = persons.Single(p => p.Name == "Moe Lester").PersonId,
-                    WaiterName = persons.Single(n => n.Name == "Moe Lester").Name,
+                    Name = "Moe Lester",
                     Salary = 110,
 
                 },
                 new Waiter
                 {
-                    PersonId = persons.Single(p => p.Name == "Ho Lee Fuk").PersonId,
-                    WaiterName = persons.Single(n => n.Name == "Ho Lee Fuk").Name,
+                    Name = "Ho Lee Fuk",
                     Salary = 110,
 
                 },
