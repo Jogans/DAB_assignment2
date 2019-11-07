@@ -128,17 +128,12 @@ namespace DAB_Assignment_2.Migrations
                     b.Property<int>("Stars")
                         .HasColumnType("int");
 
-                    b.Property<int>("TableId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Text")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ReviewId");
 
                     b.HasIndex("RestaurantId");
-
-                    b.HasIndex("TableId");
 
                     b.ToTable("Reviews");
                 });
@@ -270,13 +265,7 @@ namespace DAB_Assignment_2.Migrations
                     b.HasOne("DAB_Assignment_2.Models.Restaurant", "Restaurant")
                         .WithMany("Reviews")
                         .HasForeignKey("RestaurantId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("DAB_Assignment_2.Models.Table", "Table")
-                        .WithMany("Reviews")
-                        .HasForeignKey("TableId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });
 
@@ -285,13 +274,13 @@ namespace DAB_Assignment_2.Migrations
                     b.HasOne("DAB_Assignment_2.Models.Restaurant", "Restaurant")
                         .WithMany("Tables")
                         .HasForeignKey("RestaurantId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("DAB_Assignment_2.Models.Waiter", "Waiter")
                         .WithMany("Tables")
                         .HasForeignKey("WaiterId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });
 
@@ -315,13 +304,13 @@ namespace DAB_Assignment_2.Migrations
                     b.HasOne("DAB_Assignment_2.Models.Dish", "Dish")
                         .WithMany("RestaurantDishes")
                         .HasForeignKey("DishId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("DAB_Assignment_2.Models.Restaurant", "Restaurant")
                         .WithMany("RestaurantDishes")
                         .HasForeignKey("RestaurantId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });
 
@@ -330,13 +319,13 @@ namespace DAB_Assignment_2.Migrations
                     b.HasOne("DAB_Assignment_2.Models.Dish", "Dish")
                         .WithMany("ReviewDishes")
                         .HasForeignKey("DishId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("DAB_Assignment_2.Models.Review", "Review")
                         .WithMany("ReviewDishes")
                         .HasForeignKey("ReviewId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });
 
@@ -345,13 +334,13 @@ namespace DAB_Assignment_2.Migrations
                     b.HasOne("DAB_Assignment_2.Models.Guest", "Guest")
                         .WithMany("ReviewGuests")
                         .HasForeignKey("GuestId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("DAB_Assignment_2.Models.Review", "Review")
                         .WithMany("ReviewGuests")
                         .HasForeignKey("ReviewId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });
 
@@ -360,7 +349,7 @@ namespace DAB_Assignment_2.Migrations
                     b.HasOne("DAB_Assignment_2.Models.Table", "Table")
                         .WithMany("Guests")
                         .HasForeignKey("TableId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });
 #pragma warning restore 612, 618

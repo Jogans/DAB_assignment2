@@ -59,7 +59,7 @@ namespace DAB_Assignment_2.DAL
                             Console.WriteLine($"Bord nr. {table.TableId}: ");
                             foreach (var review in context.Reviews)
                             {
-                                if (review.TableId == table.TableId)
+                                //if (review.TableId == table.TableId)
                                 {
                                     Console.WriteLine($"{review.DishName}, {review.Stars} \n {review.Text}");
                                 }

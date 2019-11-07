@@ -447,7 +447,7 @@ namespace DAB_Assignment_2.DAL
                     Text = "Genial Mad oplevelse", 
                     Stars = 5 , DishId = dishes.Single(d => d.DishName == "Cheese Burger").DishId, 
                     RestaurantId = restaurants.Single(r => r.Name=="The Golden Seagull").RestaurantId,
-                    TableId = tabels.Single(t => t.TableId == 6).TableId,
+                    //TableId = tabels.Single(t => t.TableId == 6).TableId,
                     ReviewId = 1,
                 }, 
                 new Review
@@ -455,7 +455,7 @@ namespace DAB_Assignment_2.DAL
                     Text = "Jeg fortrød lidt at jeg gik herhen", 
                     Stars = 2, DishId = dishes.Single(d => d.DishName == "Bananasplit").DishId, 
                     RestaurantId = restaurants.Single(r => r.Name=="Jelle's Icecream Bar").RestaurantId,
-                    TableId = tabels.Single(t => t.TableId == 11).TableId,
+                    //TableId = tabels.Single(t => t.TableId == 11).TableId,
                     ReviewId = 2,
                 }, 
                 new Review
@@ -463,7 +463,7 @@ namespace DAB_Assignment_2.DAL
                     Text = "AD!!!!", 
                     Stars = 1, DishId = dishes.Single(d => d.DishName == "Breadsticks").DishId, 
                     RestaurantId = restaurants.Single(r => r.Name=="Frederico's Breakfast").RestaurantId,
-                    TableId = tabels.Single(t => t.TableId == 26).TableId,
+                    //TableId = tabels.Single(t => t.TableId == 26).TableId,
                     ReviewId = 3
                 }, 
                 new Review
@@ -471,7 +471,7 @@ namespace DAB_Assignment_2.DAL
                     Text = "God betjening og en behagelig oplevelse", 
                     Stars = 4, DishId = dishes.Single(d => d.DishName == "T-Bone").DishId,
                     RestaurantId = restaurants.Single(r => r.Name=="Jogan's Fine Dining").RestaurantId,
-                    TableId = tabels.Single(t => t.TableId == 21).TableId,
+                    //TableId = tabels.Single(t => t.TableId == 21).TableId,
                     ReviewId = 4,
                 }, 
                 new Review
@@ -479,7 +479,7 @@ namespace DAB_Assignment_2.DAL
                     Text = "Okay til pengene",
                     Stars = 3, DishId = dishes.Single(d => d.DishName == "Sirloin Steak").DishId, 
                     RestaurantId = restaurants.Single(r => r.Name=="Jogan's Fine Dining").RestaurantId,
-                    TableId = tabels.Single(t => t.TableId == 21).TableId,
+                    //TableId = tabels.Single(t => t.TableId == 21).TableId,
                     ReviewId = 5,
                 }, 
                 new Review
@@ -487,7 +487,7 @@ namespace DAB_Assignment_2.DAL
                     Text = "Uhmmm det kan godt anbefales. Lækkert mad",
                     Stars = 4, DishId = dishes.Single(d => d.DishName == "Muffin").DishId,
                     RestaurantId = restaurants.Single(r => r.Name=="Jelle's Icecream Bar").RestaurantId,
-                    TableId = tabels.Single(t => t.TableId == 12).TableId,
+                    //TableId = tabels.Single(t => t.TableId == 12).TableId,
                     ReviewId = 6
                 }, 
                 new Review
@@ -495,7 +495,7 @@ namespace DAB_Assignment_2.DAL
                     Text = "Hundeæde!!!",
                     Stars = 1, DishId = dishes.Single(d => d.DishName == "King Crabs").DishId,
                     RestaurantId = restaurants.Single(r => r.Name=="Jogan's Fine Dining").RestaurantId,
-                    TableId = tabels.Single(t => t.TableId == 22).TableId,
+                    //TableId = tabels.Single(t => t.TableId == 22).TableId,
                     ReviewId = 7
                 }, 
                 new Review
@@ -503,7 +503,7 @@ namespace DAB_Assignment_2.DAL
                     Text = "The sprinkling of gold flakes lent a top note of bullshit. And that was the good part. The skin had an off-putting tang and a rancid flavor, which seeped into the dried-out meat and left a greasy feeling on the roof of my mouth that, like the demonic clown from It, could not be destroyed",
                     Stars = 2, DishId = dishes.Single(d => d.DishName == "Hamburger").DishId,
                     RestaurantId = restaurants.Single(r => r.Name=="Pregante's Sanwitch").RestaurantId,
-                    TableId = tabels.Single(t => t.TableId == 31).TableId,
+                    //TableId = tabels.Single(t => t.TableId == 31).TableId,
                     ReviewId = 8
                 }, 
                 new Review
@@ -511,7 +511,7 @@ namespace DAB_Assignment_2.DAL
                     Text = "Slowly, gradually, with great mental resistance but still inexorably, it dawned on me that I had paid $98 for a duck with almost no flavor. It was dry, too", 
                     Stars = 1, DishId = dishes.Single(d => d.DishName == "Bacon Orionrings").DishId,
                     RestaurantId = restaurants.Single(r => r.Name=="The Golden Seagull").RestaurantId,
-                    TableId = tabels.Single(t => t.TableId == 7).TableId,
+                    //TableId = tabels.Single(t => t.TableId == 7).TableId,
                     ReviewId = 9
                 }, 
                 new Review
@@ -519,7 +519,7 @@ namespace DAB_Assignment_2.DAL
                     Text = "When executed poorly (a gummy mass of vermicelli and shellfish that is presumably a riff on the Korean noodle dish japchae), his dishes just sing out of key",
                     Stars = 2, DishId = dishes.Single(d => d.DishName == "Hashbrowns").DishId,
                     RestaurantId = restaurants.Single(r => r.Name=="Frederico's Breakfast").RestaurantId,
-                    TableId = tabels.Single(t => t.TableId == 27).TableId,
+                    //TableId = tabels.Single(t => t.TableId == 27).TableId,
                     ReviewId = 10
                 }, 
                 new Review
@@ -527,7 +527,7 @@ namespace DAB_Assignment_2.DAL
                     Text = "You’d better have something in the fridge at home, because the likelihood of your joining the Clean Plate Club here is as good as Omarosa Manigault Newman getting invited to a Christmas party at the White House",
                     Stars = 5, DishId = dishes.Single(d => d.DishName == "Milkshake").DishId, 
                     RestaurantId = restaurants.Single(r => r.Name=="Nicolo's Pizza").RestaurantId,
-                    TableId = tabels.Single(t => t.TableId == 18).TableId,
+                    //TableId = tabels.Single(t => t.TableId == 18).TableId,
                     ReviewId = 11,
                 }, 
                 new Review
@@ -535,7 +535,7 @@ namespace DAB_Assignment_2.DAL
                     Text = "While there are many words I could use to describe Nicolo's Pizza, I’m going to say only this: Nicolo's Pizza is a bad restaurant", 
                     Stars = 1, DishId = dishes.Single(d => d.DishName == "Pizza Slice").DishId, 
                     RestaurantId = restaurants.Single(r => r.Name=="Nicolo's Pizza").RestaurantId,
-                    TableId = tabels.Single(t => t.TableId == 19).TableId,
+                    //TableId = tabels.Single(t => t.TableId == 19).TableId,
                     ReviewId = 12,
                 }, 
                 new Review
@@ -543,7 +543,7 @@ namespace DAB_Assignment_2.DAL
                     Text = "The initial flavor was bland, quickly followed by a fetid, ammonia-like tang. It was an aroma that recalled room-temperature hamburger meat from a grocer that lost power. I felt my eyes water up as I chewed. I tried to swallow. I felt my entire GI tract prepare to purge", 
                     Stars = 2, DishId = dishes.Single(d => d.DishName == "Dates with Bacon").DishId, 
                     RestaurantId = restaurants.Single(r => r.Name=="Jogan's Fine Dining").RestaurantId,
-                    TableId = tabels.Single(t => t.TableId == 23).TableId,
+                    //TableId = tabels.Single(t => t.TableId == 23).TableId,
                     ReviewId = 13,
                 }, 
                 new Review
@@ -551,7 +551,7 @@ namespace DAB_Assignment_2.DAL
                     Text = "Did it have ‘a simple flavor with a touch of sweetness’? It was hard to say after half of it had been simmered in soy sauce to a bony mush, the other half grilled in salt until chewy and served with its head still on, propped up with a wooden stake like a Big Mouth Billy Bass about to sing",
                     Stars = 5, DishId = dishes.Single(d => d.DishName == "Chilli Chesse Tops").DishId,
                     RestaurantId = restaurants.Single(r => r.Name=="The Golden Seagull").RestaurantId,
-                    TableId = tabels.Single(t => t.TableId == 8).TableId,
+                    //TableId = tabels.Single(t => t.TableId == 8).TableId,
                     ReviewId = 14,
                 }, 
                 new Review
@@ -559,7 +559,7 @@ namespace DAB_Assignment_2.DAL
                     Text = "When compared to similar restaurants, “Empire is their hollow echo, parroting back a faded, carbon-copied version that takes no risks and contributes little to Detroit’s dining scene dialogue", 
                     Stars = 3, DishId = dishes.Single(d => d.DishName == "Pain au Chocolat").DishId, 
                     RestaurantId = restaurants.Single(r => r.Name=="Bob's Place").RestaurantId,
-                    TableId = tabels.Single(t => t.TableId == 5).TableId,
+                    //TableId = tabels.Single(t => t.TableId == 5).TableId,
                     ReviewId = 15,
                 }, 
                 new Review
@@ -567,7 +567,7 @@ namespace DAB_Assignment_2.DAL
                     Text = "There’s V for Vegan. There’s GF for Gluten Free. There’s DF for Dairy Free. I think they’re missing a few. There should be TF for Taste Free and JF for Joy Free and AAHYWEH for Abandon All Hope, Ye Who Enter Here", 
                     Stars = 1, DishId = dishes.Single(d => d.DishName == "Ice Cream").DishId, 
                     RestaurantId = restaurants.Single(r => r.Name=="Jelle's Icecream Bar").RestaurantId,
-                    TableId = tabels.Single(t => t.TableId == 13).TableId,
+                    //TableId = tabels.Single(t => t.TableId == 13).TableId,
                     ReviewId = 16,
                 },
                 new Review
@@ -575,7 +575,7 @@ namespace DAB_Assignment_2.DAL
                     Text = "Nobody told the recipe developer that Americans don’t much like small, stale peas in their pasta", 
                     Stars = 1, DishId = dishes.Single(d => d.DishName == "Coffee").DishId, 
                     RestaurantId = restaurants.Single(r => r.Name=="Only Coffee").RestaurantId,
-                    TableId = tabels.Single(t => t.TableId == 38).TableId,
+                    //TableId = tabels.Single(t => t.TableId == 38).TableId,
                     ReviewId = 17,
                 },
                 new Review
@@ -583,7 +583,7 @@ namespace DAB_Assignment_2.DAL
                     Text = "Nobody should pay this much money to be sad", 
                     Stars = 2, DishId = dishes.Single(d => d.DishName == "Sirloin Steak").DishId, 
                     RestaurantId = restaurants.Single(r => r.Name=="Jogan's Fine Dining").RestaurantId,
-                    TableId = tabels.Single(t => t.TableId == 24).TableId,
+                    //TableId = tabels.Single(t => t.TableId == 24).TableId,
                     ReviewId = 18,
                 },
                 new Review
@@ -591,7 +591,7 @@ namespace DAB_Assignment_2.DAL
                     Text = "McDonald’s does a better job for one-third of the price", 
                     Stars = 1, DishId = dishes.Single(d => d.DishName == "Bananasplit").DishId, 
                     RestaurantId = restaurants.Single(r => r.Name=="Jelle's Icecream Bar").RestaurantId,
-                    TableId = tabels.Single(t => t.TableId == 14).TableId,
+                    //TableId = tabels.Single(t => t.TableId == 14).TableId,
                     ReviewId = 19,
                 },
                 new Review
@@ -599,7 +599,7 @@ namespace DAB_Assignment_2.DAL
                     Text = "I’m not so batty from Trump Derangement Syndrome that I can’t objectively identify what a poor value the food is at Nicolo's Pizza. The only thing Chicagoans on the ground are missing is the spectacular view from occupied territory", 
                     Stars = 3, DishId = dishes.Single(d => d.DishName == "Breadsticks").DishId, 
                     RestaurantId = restaurants.Single(r => r.Name=="Nicolo's Pizza").RestaurantId,
-                    TableId = tabels.Single(t => t.TableId == 18).TableId,
+                    //TableId = tabels.Single(t => t.TableId == 18).TableId,
                     ReviewId = 20,
                 },
                 new Review
@@ -607,7 +607,7 @@ namespace DAB_Assignment_2.DAL
                     Text = "To put it mildly, licking Plexiglas is more rewarding than some of the duds on the set menu", 
                     Stars = 2, DishId = dishes.Single(d => d.DishName == "Breadsticks").DishId, 
                     RestaurantId = restaurants.Single(r => r.Name=="Bob's Place").RestaurantId,
-                    TableId = tabels.Single(t => t.TableId == 4).TableId,
+                    //TableId = tabels.Single(t => t.TableId == 4).TableId,
                     ReviewId = 21,
                 },
             };

@@ -22,8 +22,8 @@ namespace DAB_Assignment_2
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source=restaurant.db");
-            //optionsBuilder.UseSqlServer(@"Data Source=Restaurant.db;");
+            //optionsBuilder.UseSqlite("Data Source=restaurant.db");
+            optionsBuilder.UseSqlServer("Integrated Security = SSPI; Persist Security Info = False; Initial Catalog = restaurant; Data Source = localhost");
             //optionsBuilder.UseSqlServer("Data Source=127.0.0.1,1433;Database=Restaurant;User ID=SA;Password=12345678Aa#;");
         }
 
@@ -44,7 +44,8 @@ namespace DAB_Assignment_2
             modelBuilder.Entity<Guest>()
                 .HasOne(g => g.Table)
                 .WithMany(t => t.Guests)
-                .HasForeignKey(g => g.TableId);
+                .HasForeignKey(g => g.TableId)
+                .OnDelete(DeleteBehavior.Restrict);
 
             // Tables
             modelBuilder.Entity<Table>()
@@ -53,12 +54,14 @@ namespace DAB_Assignment_2
             modelBuilder.Entity<Table>()
                 .HasOne(t => t.Waiter)
                 .WithMany(w => w.Tables)
-                .HasForeignKey(t => t.WaiterId);
+                .HasForeignKey(t => t.WaiterId)
+                .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Table>()
                 .HasOne(r => r.Restaurant)
                 .WithMany(w => w.Tables)
-                .HasForeignKey(r => r.RestaurantId);
+                .HasForeignKey(r => r.RestaurantId)
+                .OnDelete(DeleteBehavior.Restrict);
 
             // Dishes
             modelBuilder.Entity<Dish>()
@@ -84,12 +87,14 @@ namespace DAB_Assignment_2
             modelBuilder.Entity<RestaurantDish>()
                 .HasOne(gd => gd.Dish)
                 .WithMany(d => d.RestaurantDishes)
-                .HasForeignKey(gd => gd.DishId);
+                .HasForeignKey(gd => gd.DishId)
+                .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<RestaurantDish>()
                 .HasOne(gd => gd.Restaurant)
                 .WithMany(g => g.RestaurantDishes)
-                .HasForeignKey(gd => gd.RestaurantId);
+                .HasForeignKey(gd => gd.RestaurantId)
+                .OnDelete(DeleteBehavior.Restrict);
 
 
             modelBuilder.Entity<ReviewDish>()
@@ -98,12 +103,14 @@ namespace DAB_Assignment_2
             modelBuilder.Entity<ReviewDish>()
                 .HasOne(gd => gd.Dish)
                 .WithMany(d => d.ReviewDishes)
-                .HasForeignKey(gd => gd.DishId);
+                .HasForeignKey(gd => gd.DishId)
+                .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<ReviewDish>()
                 .HasOne(gd => gd.Review)
                 .WithMany(g => g.ReviewDishes)
-                .HasForeignKey(gd => gd.ReviewId);
+                .HasForeignKey(gd => gd.ReviewId)
+                .OnDelete(DeleteBehavior.Restrict);
 
             // Reviews
             modelBuilder.Entity<Review>()
@@ -112,7 +119,8 @@ namespace DAB_Assignment_2
             modelBuilder.Entity<Review>()
                 .HasOne(r => r.Restaurant)
                 .WithMany(r => r.Reviews)
-                .HasForeignKey(r => r.RestaurantId);
+                .HasForeignKey(r => r.RestaurantId)
+                .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<ReviewGuest>()
                 .HasKey(g => new { g.GuestId, g.ReviewId });
@@ -120,17 +128,20 @@ namespace DAB_Assignment_2
             modelBuilder.Entity<ReviewGuest>()
                 .HasOne(gd => gd.Guest)
                 .WithMany(d => d.ReviewGuests)
-                .HasForeignKey(gd => gd.GuestId);
+                .HasForeignKey(gd => gd.GuestId)
+                .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<ReviewGuest>()
                 .HasOne(gd => gd.Review)
                 .WithMany(g => g.ReviewGuests)
-                .HasForeignKey(gd => gd.ReviewId);
+                .HasForeignKey(gd => gd.ReviewId)
+                .OnDelete(DeleteBehavior.Restrict);
 
-            modelBuilder.Entity<Review>()
-                .HasOne(re => re.Table)
-                .WithMany(t => t.Reviews)
-                .HasForeignKey(re => re.TableId);
+            //modelBuilder.Entity<Review>()
+            //    .HasOne(re => re.Table)
+            //    .WithMany(t => t.Reviews)
+            //    .HasForeignKey(re => re.TableId)
+            //    .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

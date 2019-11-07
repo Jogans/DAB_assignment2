@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DAB_Assignment_2.Migrations
 {
-    public partial class FrederikInitial : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -56,13 +56,65 @@ namespace DAB_Assignment_2.Migrations
                         column: x => x.DishId,
                         principalTable: "Dishes",
                         principalColumn: "DishId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_RestaurantDishes_Restaurants_RestaurantId",
                         column: x => x.RestaurantId,
                         principalTable: "Restaurants",
                         principalColumn: "RestaurantId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Reviews",
+                columns: table => new
+                {
+                    ReviewId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    RestaurantName = table.Column<string>(nullable: true),
+                    RestaurantAddress = table.Column<string>(nullable: true),
+                    ReviewerName = table.Column<string>(nullable: true),
+                    DateOfVisit = table.Column<DateTime>(nullable: false),
+                    DishName = table.Column<string>(nullable: true),
+                    Stars = table.Column<int>(nullable: false),
+                    Text = table.Column<string>(nullable: true),
+                    RestaurantId = table.Column<int>(nullable: false),
+                    GuestId = table.Column<int>(nullable: false),
+                    DishId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Reviews", x => x.ReviewId);
+                    table.ForeignKey(
+                        name: "FK_Reviews_Restaurants_RestaurantId",
+                        column: x => x.RestaurantId,
+                        principalTable: "Restaurants",
+                        principalColumn: "RestaurantId",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ReviewDish",
+                columns: table => new
+                {
+                    ReviewId = table.Column<int>(nullable: false),
+                    DishId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ReviewDish", x => new { x.DishId, x.ReviewId });
+                    table.ForeignKey(
+                        name: "FK_ReviewDish_Dishes_DishId",
+                        column: x => x.DishId,
+                        principalTable: "Dishes",
+                        principalColumn: "DishId",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_ReviewDish_Reviews_ReviewId",
+                        column: x => x.ReviewId,
+                        principalTable: "Reviews",
+                        principalColumn: "ReviewId",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -84,24 +136,6 @@ namespace DAB_Assignment_2.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ReviewDish",
-                columns: table => new
-                {
-                    ReviewId = table.Column<int>(nullable: false),
-                    DishId = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ReviewDish", x => new { x.DishId, x.ReviewId });
-                    table.ForeignKey(
-                        name: "FK_ReviewDish_Dishes_DishId",
-                        column: x => x.DishId,
-                        principalTable: "Dishes",
-                        principalColumn: "DishId",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "ReviewGuests",
                 columns: table => new
                 {
@@ -111,6 +145,12 @@ namespace DAB_Assignment_2.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ReviewGuests", x => new { x.GuestId, x.ReviewId });
+                    table.ForeignKey(
+                        name: "FK_ReviewGuests_Reviews_ReviewId",
+                        column: x => x.ReviewId,
+                        principalTable: "Reviews",
+                        principalColumn: "ReviewId",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -133,7 +173,7 @@ namespace DAB_Assignment_2.Migrations
                         column: x => x.RestaurantId,
                         principalTable: "Restaurants",
                         principalColumn: "RestaurantId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -158,42 +198,7 @@ namespace DAB_Assignment_2.Migrations
                         column: x => x.TableId,
                         principalTable: "Tables",
                         principalColumn: "TableId",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Reviews",
-                columns: table => new
-                {
-                    ReviewId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    RestaurantName = table.Column<string>(nullable: true),
-                    RestaurantAddress = table.Column<string>(nullable: true),
-                    ReviewerName = table.Column<string>(nullable: true),
-                    DateOfVisit = table.Column<DateTime>(nullable: false),
-                    DishName = table.Column<string>(nullable: true),
-                    Stars = table.Column<int>(nullable: false),
-                    Text = table.Column<string>(nullable: true),
-                    RestaurantId = table.Column<int>(nullable: false),
-                    GuestId = table.Column<int>(nullable: false),
-                    DishId = table.Column<int>(nullable: false),
-                    TableId = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Reviews", x => x.ReviewId);
-                    table.ForeignKey(
-                        name: "FK_Reviews_Restaurants_RestaurantId",
-                        column: x => x.RestaurantId,
-                        principalTable: "Restaurants",
-                        principalColumn: "RestaurantId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Reviews_Tables_TableId",
-                        column: x => x.TableId,
-                        principalTable: "Tables",
-                        principalColumn: "TableId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
@@ -227,11 +232,6 @@ namespace DAB_Assignment_2.Migrations
                 column: "RestaurantId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Reviews_TableId",
-                table: "Reviews",
-                column: "TableId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Tables_RestaurantId",
                 table: "Tables",
                 column: "RestaurantId");
@@ -250,28 +250,12 @@ namespace DAB_Assignment_2.Migrations
                 onDelete: ReferentialAction.Cascade);
 
             migrationBuilder.AddForeignKey(
-                name: "FK_ReviewDish_Reviews_ReviewId",
-                table: "ReviewDish",
-                column: "ReviewId",
-                principalTable: "Reviews",
-                principalColumn: "ReviewId",
-                onDelete: ReferentialAction.Cascade);
-
-            migrationBuilder.AddForeignKey(
                 name: "FK_ReviewGuests_Persons_GuestId",
                 table: "ReviewGuests",
                 column: "GuestId",
                 principalTable: "Persons",
                 principalColumn: "PersonId",
-                onDelete: ReferentialAction.Cascade);
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_ReviewGuests_Reviews_ReviewId",
-                table: "ReviewGuests",
-                column: "ReviewId",
-                principalTable: "Reviews",
-                principalColumn: "ReviewId",
-                onDelete: ReferentialAction.Cascade);
+                onDelete: ReferentialAction.Restrict);
 
             migrationBuilder.AddForeignKey(
                 name: "FK_Tables_Persons_WaiterId",
@@ -279,7 +263,7 @@ namespace DAB_Assignment_2.Migrations
                 column: "WaiterId",
                 principalTable: "Persons",
                 principalColumn: "PersonId",
-                onDelete: ReferentialAction.Cascade);
+                onDelete: ReferentialAction.Restrict);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
