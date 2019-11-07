@@ -22,7 +22,8 @@ namespace DAB_Assignment_2
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlite("Data Source=restaurant.db");
-            //optionsBuilder.UseSqlServer(@"Data Source=(localdb)\ProjectsV13;Initial Catalog=StoreDB;");
+            //optionsBuilder.UseSqlServer(@"Data Source=Restaurant.db;");
+            //optionsBuilder.UseSqlServer("Data Source=127.0.0.1,1433;Database=Restaurant;User ID=SA;Password=12345678Aa#;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -36,22 +37,8 @@ namespace DAB_Assignment_2
                 .HasKey(p => p.PersonId);
 
             // Waiters
-            modelBuilder.Entity<Waiter>()
-                .HasKey(t => t.WaiterId);
-
-            modelBuilder.Entity<Person>()
-                .HasOne(p => p.Waiter)
-                .WithOne(w => w.Person)
-                .HasForeignKey<Waiter>();
 
             // Guests
-            modelBuilder.Entity<Guest>()
-                .HasKey(a => a.GuestId);
-
-            modelBuilder.Entity<Person>()
-                .HasOne(p => p.Guest)
-                .WithOne(g => g.Person)
-                .HasForeignKey<Guest>();
 
             modelBuilder.Entity<Guest>()
                 .HasOne(g => g.Table)

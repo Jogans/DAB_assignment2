@@ -39,7 +39,6 @@ namespace DAB_Assignment_2.DAL
                     .Select(d => new {d.DishName, d.Price}))
                 .Include(r => r.AverageRating)
                 .ToList();
-
             Console.WriteLine($"Menu:\t");
             foreach (var dish in context.Dishes)
             {
@@ -49,23 +48,25 @@ namespace DAB_Assignment_2.DAL
 
         public void MethodC(string address)
         {
-            AppDbContext context = new AppDbContext();
-            foreach (var rest in context.Restaurants.Where(r => r.Name.StartsWith(address)))
+            using (AppDbContext context = new AppDbContext())
             {
-                foreach (var table in context.Tables)
+                foreach (var rest in context.Restaurants.Where(r => r.Name.StartsWith(address)))
                 {
-                    if (table.RestaurantId == rest.RestaurantId)
+                    foreach (var table in context.Tables)
                     {
-                        Console.WriteLine($"Bord nr. {table.TableId}: ");
-                        foreach (var review in context.Reviews)
+                        if (table.RestaurantId == rest.RestaurantId)
                         {
-                            if (review.TableId == table.TableId)
+                            Console.WriteLine($"Bord nr. {table.TableId}: ");
+                            foreach (var review in context.Reviews)
                             {
-                                Console.WriteLine($"{review.DishName}, {review.Stars} \n {review.Text}");
+                                if (review.TableId == table.TableId)
+                                {
+                                    Console.WriteLine($"{review.DishName}, {review.Stars} \n {review.Text}");
+                                }
                             }
                         }
-                    }
 
+                    }
                 }
             }
         }

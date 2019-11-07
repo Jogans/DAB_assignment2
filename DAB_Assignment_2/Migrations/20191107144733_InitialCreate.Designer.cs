@@ -3,109 +3,93 @@ using System;
 using DAB_Assignment_2;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DAB_Assignment_2.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20191102144043_InitialCreate")]
+    [Migration("20191107144733_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.0.0");
+                .HasAnnotation("ProductVersion", "3.0.0")
+                .HasAnnotation("Relational:MaxIdentifierLength", 128)
+                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("DAB_Assignment_2.Models.Dish", b =>
                 {
                     b.Property<int>("DishId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("DishName")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Price")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
 
                     b.Property<string>("RestaurantAddress")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("RestaurantId")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
 
                     b.Property<string>("RestaurantName")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Type")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("DishId");
 
                     b.ToTable("Dishes");
                 });
 
-            modelBuilder.Entity("DAB_Assignment_2.Models.Guest", b =>
-                {
-                    b.Property<int>("GuestId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<DateTime>("DateOfVisit")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("GuestName")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("PersonId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("TableId")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("GuestId");
-
-                    b.HasIndex("PersonId")
-                        .IsUnique();
-
-                    b.HasIndex("TableId");
-
-                    b.ToTable("Guests");
-                });
-
             modelBuilder.Entity("DAB_Assignment_2.Models.Person", b =>
                 {
                     b.Property<int>("PersonId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("PersonId");
 
                     b.ToTable("Persons");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("Person");
                 });
 
             modelBuilder.Entity("DAB_Assignment_2.Models.Restaurant", b =>
                 {
                     b.Property<int>("RestaurantId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Address")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("AverageRating")
-                        .HasColumnType("REAL");
+                        .HasColumnType("float");
 
                     b.Property<string>("Name")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Type")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("RestaurantId");
 
@@ -116,41 +100,47 @@ namespace DAB_Assignment_2.Migrations
                 {
                     b.Property<int>("ReviewId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<DateTime>("DateOfVisit")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("DishId")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
 
                     b.Property<string>("DishName")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("GuestId")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
 
                     b.Property<string>("RestaurantAddress")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("RestaurantId")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
 
                     b.Property<string>("RestaurantName")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ReviewerName")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Stars")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
+
+                    b.Property<int>("TableId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Text")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ReviewId");
 
                     b.HasIndex("RestaurantId");
+
+                    b.HasIndex("TableId");
 
                     b.ToTable("Reviews");
                 });
@@ -159,22 +149,23 @@ namespace DAB_Assignment_2.Migrations
                 {
                     b.Property<int>("TableId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("RestaurantAddress")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("RestaurantId")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
 
                     b.Property<string>("RestaurantName")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("WaiterId")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
 
                     b.Property<string>("WaiterName")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("TableId");
 
@@ -185,36 +176,13 @@ namespace DAB_Assignment_2.Migrations
                     b.ToTable("Tables");
                 });
 
-            modelBuilder.Entity("DAB_Assignment_2.Models.Waiter", b =>
-                {
-                    b.Property<int>("WaiterId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("PersonId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Salary")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("WaiterName")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("WaiterId");
-
-                    b.HasIndex("PersonId")
-                        .IsUnique();
-
-                    b.ToTable("Waiters");
-                });
-
             modelBuilder.Entity("DAB_Assignment_2.RelationshipClasses.GuestDish", b =>
                 {
                     b.Property<int>("DishId")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
 
                     b.Property<int>("GuestId")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
 
                     b.HasKey("DishId", "GuestId");
 
@@ -226,25 +194,25 @@ namespace DAB_Assignment_2.Migrations
             modelBuilder.Entity("DAB_Assignment_2.RelationshipClasses.RestaurantDish", b =>
                 {
                     b.Property<int>("DishId")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
 
                     b.Property<int>("RestaurantId")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
 
                     b.HasKey("DishId", "RestaurantId");
 
                     b.HasIndex("RestaurantId");
 
-                    b.ToTable("RestaurantDish");
+                    b.ToTable("RestaurantDishes");
                 });
 
             modelBuilder.Entity("DAB_Assignment_2.RelationshipClasses.ReviewDish", b =>
                 {
                     b.Property<int>("DishId")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
 
                     b.Property<int>("ReviewId")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
 
                     b.HasKey("DishId", "ReviewId");
 
@@ -256,10 +224,10 @@ namespace DAB_Assignment_2.Migrations
             modelBuilder.Entity("DAB_Assignment_2.RelationshipClasses.ReviewGuest", b =>
                 {
                     b.Property<int>("GuestId")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
 
                     b.Property<int>("ReviewId")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
 
                     b.HasKey("GuestId", "ReviewId");
 
@@ -270,17 +238,33 @@ namespace DAB_Assignment_2.Migrations
 
             modelBuilder.Entity("DAB_Assignment_2.Models.Guest", b =>
                 {
-                    b.HasOne("DAB_Assignment_2.Models.Person", "Person")
-                        .WithOne("Guest")
-                        .HasForeignKey("DAB_Assignment_2.Models.Guest", "PersonId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.HasBaseType("DAB_Assignment_2.Models.Person");
 
-                    b.HasOne("DAB_Assignment_2.Models.Table", "Table")
-                        .WithMany("Guests")
-                        .HasForeignKey("TableId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Property<DateTime>("DateOfVisit")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("GuestId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TableId")
+                        .HasColumnType("int");
+
+                    b.HasIndex("TableId");
+
+                    b.HasDiscriminator().HasValue("Guest");
+                });
+
+            modelBuilder.Entity("DAB_Assignment_2.Models.Waiter", b =>
+                {
+                    b.HasBaseType("DAB_Assignment_2.Models.Person");
+
+                    b.Property<int>("Salary")
+                        .HasColumnType("int");
+
+                    b.Property<int>("WaiterId")
+                        .HasColumnType("int");
+
+                    b.HasDiscriminator().HasValue("Waiter");
                 });
 
             modelBuilder.Entity("DAB_Assignment_2.Models.Review", b =>
@@ -288,6 +272,12 @@ namespace DAB_Assignment_2.Migrations
                     b.HasOne("DAB_Assignment_2.Models.Restaurant", "Restaurant")
                         .WithMany("Reviews")
                         .HasForeignKey("RestaurantId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DAB_Assignment_2.Models.Table", "Table")
+                        .WithMany("Reviews")
+                        .HasForeignKey("TableId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -307,15 +297,6 @@ namespace DAB_Assignment_2.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("DAB_Assignment_2.Models.Waiter", b =>
-                {
-                    b.HasOne("DAB_Assignment_2.Models.Person", "Person")
-                        .WithOne("Waiter")
-                        .HasForeignKey("DAB_Assignment_2.Models.Waiter", "PersonId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("DAB_Assignment_2.RelationshipClasses.GuestDish", b =>
                 {
                     b.HasOne("DAB_Assignment_2.Models.Dish", "Dish")
@@ -372,6 +353,15 @@ namespace DAB_Assignment_2.Migrations
                     b.HasOne("DAB_Assignment_2.Models.Review", "Review")
                         .WithMany("ReviewGuests")
                         .HasForeignKey("ReviewId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("DAB_Assignment_2.Models.Guest", b =>
+                {
+                    b.HasOne("DAB_Assignment_2.Models.Table", "Table")
+                        .WithMany("Guests")
+                        .HasForeignKey("TableId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
