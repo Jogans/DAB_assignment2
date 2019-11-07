@@ -18,6 +18,7 @@ namespace DAB_Assignment_2
         public DbSet<Dish> Dishes { get; set; }
         public DbSet<Review> Reviews { get; set; }
         public DbSet<RestaurantDish> RestaurantDishes { get; set; }
+        public DbSet<ReviewGuest> ReviewGuests { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

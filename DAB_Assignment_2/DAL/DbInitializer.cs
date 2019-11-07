@@ -448,6 +448,7 @@ namespace DAB_Assignment_2.DAL
                     Stars = 5 , DishId = dishes.Single(d => d.DishName == "Cheese Burger").DishId, 
                     RestaurantId = restaurants.Single(r => r.Name=="The Golden Seagull").RestaurantId,
                     TableId = tabels.Single(t => t.TableId == 6).TableId,
+                    ReviewId = 1,
                 }, 
                 new Review
                 {
@@ -455,6 +456,7 @@ namespace DAB_Assignment_2.DAL
                     Stars = 2, DishId = dishes.Single(d => d.DishName == "Bananasplit").DishId, 
                     RestaurantId = restaurants.Single(r => r.Name=="Jelle's Icecream Bar").RestaurantId,
                     TableId = tabels.Single(t => t.TableId == 11).TableId,
+                    ReviewId = 2,
                 }, 
                 new Review
                 {
@@ -462,6 +464,7 @@ namespace DAB_Assignment_2.DAL
                     Stars = 1, DishId = dishes.Single(d => d.DishName == "Breadsticks").DishId, 
                     RestaurantId = restaurants.Single(r => r.Name=="Frederico's Breakfast").RestaurantId,
                     TableId = tabels.Single(t => t.TableId == 26).TableId,
+                    ReviewId = 3
                 }, 
                 new Review
                 {
@@ -469,6 +472,7 @@ namespace DAB_Assignment_2.DAL
                     Stars = 4, DishId = dishes.Single(d => d.DishName == "T-Bone").DishId,
                     RestaurantId = restaurants.Single(r => r.Name=="Jogan's Fine Dining").RestaurantId,
                     TableId = tabels.Single(t => t.TableId == 21).TableId,
+                    ReviewId = 4,
                 }, 
                 new Review
                 {
@@ -476,6 +480,7 @@ namespace DAB_Assignment_2.DAL
                     Stars = 3, DishId = dishes.Single(d => d.DishName == "Sirloin Steak").DishId, 
                     RestaurantId = restaurants.Single(r => r.Name=="Jogan's Fine Dining").RestaurantId,
                     TableId = tabels.Single(t => t.TableId == 21).TableId,
+                    ReviewId = 5,
                 }, 
                 new Review
                 {
@@ -483,6 +488,7 @@ namespace DAB_Assignment_2.DAL
                     Stars = 4, DishId = dishes.Single(d => d.DishName == "Muffin").DishId,
                     RestaurantId = restaurants.Single(r => r.Name=="Jelle's Icecream Bar").RestaurantId,
                     TableId = tabels.Single(t => t.TableId == 12).TableId,
+                    ReviewId = 6
                 }, 
                 new Review
                 {
@@ -490,6 +496,7 @@ namespace DAB_Assignment_2.DAL
                     Stars = 1, DishId = dishes.Single(d => d.DishName == "King Crabs").DishId,
                     RestaurantId = restaurants.Single(r => r.Name=="Jogan's Fine Dining").RestaurantId,
                     TableId = tabels.Single(t => t.TableId == 22).TableId,
+                    ReviewId = 7
                 }, 
                 new Review
                 {
@@ -497,6 +504,7 @@ namespace DAB_Assignment_2.DAL
                     Stars = 2, DishId = dishes.Single(d => d.DishName == "Hamburger").DishId,
                     RestaurantId = restaurants.Single(r => r.Name=="Pregante's Sanwitch").RestaurantId,
                     TableId = tabels.Single(t => t.TableId == 31).TableId,
+                    ReviewId = 8
                 }, 
                 new Review
                 {
@@ -504,6 +512,7 @@ namespace DAB_Assignment_2.DAL
                     Stars = 1, DishId = dishes.Single(d => d.DishName == "Bacon Orionrings").DishId,
                     RestaurantId = restaurants.Single(r => r.Name=="The Golden Seagull").RestaurantId,
                     TableId = tabels.Single(t => t.TableId == 7).TableId,
+                    ReviewId = 9
                 }, 
                 new Review
                 {
@@ -511,6 +520,7 @@ namespace DAB_Assignment_2.DAL
                     Stars = 2, DishId = dishes.Single(d => d.DishName == "Hashbrowns").DishId,
                     RestaurantId = restaurants.Single(r => r.Name=="Frederico's Breakfast").RestaurantId,
                     TableId = tabels.Single(t => t.TableId == 27).TableId,
+                    ReviewId = 10
                 }, 
                 new Review
                 {
@@ -518,6 +528,7 @@ namespace DAB_Assignment_2.DAL
                     Stars = 5, DishId = dishes.Single(d => d.DishName == "Milkshake").DishId, 
                     RestaurantId = restaurants.Single(r => r.Name=="Nicolo's Pizza").RestaurantId,
                     TableId = tabels.Single(t => t.TableId == 18).TableId,
+                    ReviewId = 11,
                 }, 
                 new Review
                 {
@@ -525,6 +536,7 @@ namespace DAB_Assignment_2.DAL
                     Stars = 1, DishId = dishes.Single(d => d.DishName == "Pizza Slice").DishId, 
                     RestaurantId = restaurants.Single(r => r.Name=="Nicolo's Pizza").RestaurantId,
                     TableId = tabels.Single(t => t.TableId == 19).TableId,
+                    ReviewId = 12,
                 }, 
                 new Review
                 {
@@ -532,6 +544,7 @@ namespace DAB_Assignment_2.DAL
                     Stars = 2, DishId = dishes.Single(d => d.DishName == "Dates with Bacon").DishId, 
                     RestaurantId = restaurants.Single(r => r.Name=="Jogan's Fine Dining").RestaurantId,
                     TableId = tabels.Single(t => t.TableId == 23).TableId,
+                    ReviewId = 13,
                 }, 
                 new Review
                 {
@@ -539,6 +552,7 @@ namespace DAB_Assignment_2.DAL
                     Stars = 5, DishId = dishes.Single(d => d.DishName == "Chilli Chesse Tops").DishId,
                     RestaurantId = restaurants.Single(r => r.Name=="The Golden Seagull").RestaurantId,
                     TableId = tabels.Single(t => t.TableId == 8).TableId,
+                    ReviewId = 14,
                 }, 
                 new Review
                 {
@@ -546,6 +560,7 @@ namespace DAB_Assignment_2.DAL
                     Stars = 3, DishId = dishes.Single(d => d.DishName == "Pain au Chocolat").DishId, 
                     RestaurantId = restaurants.Single(r => r.Name=="Bob's Place").RestaurantId,
                     TableId = tabels.Single(t => t.TableId == 5).TableId,
+                    ReviewId = 15,
                 }, 
                 new Review
                 {
@@ -553,6 +568,7 @@ namespace DAB_Assignment_2.DAL
                     Stars = 1, DishId = dishes.Single(d => d.DishName == "Ice Cream").DishId, 
                     RestaurantId = restaurants.Single(r => r.Name=="Jelle's Icecream Bar").RestaurantId,
                     TableId = tabels.Single(t => t.TableId == 13).TableId,
+                    ReviewId = 16,
                 },
                 new Review
                 {
@@ -560,6 +576,7 @@ namespace DAB_Assignment_2.DAL
                     Stars = 1, DishId = dishes.Single(d => d.DishName == "Coffee").DishId, 
                     RestaurantId = restaurants.Single(r => r.Name=="Only Coffee").RestaurantId,
                     TableId = tabels.Single(t => t.TableId == 38).TableId,
+                    ReviewId = 17,
                 },
                 new Review
                 {
@@ -567,6 +584,7 @@ namespace DAB_Assignment_2.DAL
                     Stars = 2, DishId = dishes.Single(d => d.DishName == "Sirloin Steak").DishId, 
                     RestaurantId = restaurants.Single(r => r.Name=="Jogan's Fine Dining").RestaurantId,
                     TableId = tabels.Single(t => t.TableId == 24).TableId,
+                    ReviewId = 18,
                 },
                 new Review
                 {
@@ -574,6 +592,7 @@ namespace DAB_Assignment_2.DAL
                     Stars = 1, DishId = dishes.Single(d => d.DishName == "Bananasplit").DishId, 
                     RestaurantId = restaurants.Single(r => r.Name=="Jelle's Icecream Bar").RestaurantId,
                     TableId = tabels.Single(t => t.TableId == 14).TableId,
+                    ReviewId = 19,
                 },
                 new Review
                 {
@@ -581,6 +600,7 @@ namespace DAB_Assignment_2.DAL
                     Stars = 3, DishId = dishes.Single(d => d.DishName == "Breadsticks").DishId, 
                     RestaurantId = restaurants.Single(r => r.Name=="Nicolo's Pizza").RestaurantId,
                     TableId = tabels.Single(t => t.TableId == 18).TableId,
+                    ReviewId = 20,
                 },
                 new Review
                 {
@@ -588,104 +608,263 @@ namespace DAB_Assignment_2.DAL
                     Stars = 2, DishId = dishes.Single(d => d.DishName == "Breadsticks").DishId, 
                     RestaurantId = restaurants.Single(r => r.Name=="Bob's Place").RestaurantId,
                     TableId = tabels.Single(t => t.TableId == 4).TableId,
+                    ReviewId = 21,
                 },
             };
-
             foreach (Review rw in reviews)
             {
                 context.Reviews.Add(rw);
             }
             context.SaveChanges();
 
-
             var guests = new Guest[]
             {
                 new Guest
                 {
                     Name = "Anders Andersen",
+                    DateOfVisit = new DateTime(2019, 10, 12),
+                    TableId = tabels.Single(t => t.TableId == 6).TableId,
+
                 },
                 new Guest
                 {
                     Name = "Hanne Hansen",
+                    DateOfVisit = new DateTime(2019, 10, 13),
+                    TableId = tabels.Single(t => t.TableId == 11).TableId,
                 },
                 new Guest
                 {
                     Name = "Christiane Christiansen",
+                    DateOfVisit = new DateTime(2019, 10, 15),
+                    TableId = tabels.Single(t => t.TableId == 26).TableId,
                 },
                 new Guest
                 {
                     Name = "Charlotte Charlottenborg",
+                    DateOfVisit = new DateTime(2019, 10, 8),
+                    TableId = tabels.Single(t => t.TableId == 21).TableId,
                 },
                 new Guest
                 {
                     Name = "Rasmus Rasmussen",
+                    DateOfVisit = new DateTime(2019, 10, 26),
+                    TableId = tabels.Single(t => t.TableId == 21).TableId,
                 },
                 new Guest
                 {
                     Name = "Nicolai Nicolajsen",
+                    DateOfVisit = new DateTime(2019, 10, 5),
+                    TableId = tabels.Single(t => t.TableId == 12).TableId,
                 },
                 new Guest
                 {
                     Name = "Jesper Jespersen",
+                    DateOfVisit = new DateTime(2019, 9, 4),
+                    TableId = tabels.Single(t => t.TableId == 22).TableId,
                 },
                 new Guest
                 {
                     Name = "Mette Metz",
+                    DateOfVisit = new DateTime(2019, 11, 7),
+                    TableId = tabels.Single(t => t.TableId == 31).TableId,
                 },
                 new Guest
                 {
                     Name = "Anna Antonsen",
+                    DateOfVisit = new DateTime(2019, 11, 5),
+                    TableId = tabels.Single(t => t.TableId == 7).TableId,
                 },
                 new Guest
                 {
                     Name = "A.S. Muncher",
+                    DateOfVisit = new DateTime(2019, 11, 3),
+                    TableId = tabels.Single(t => t.TableId == 27).TableId,
                 },
                 new Guest
                 {
                     Name = "Anita Dick",
+                    DateOfVisit = new DateTime(2019, 11, 1),
+                    TableId = tabels.Single(t => t.TableId == 18).TableId,
                 },
                 new Guest
                 {
                     Name = "Ben Derhover",
+                    DateOfVisit = new DateTime(2019, 9, 12),
+                    TableId = tabels.Single(t => t.TableId == 19).TableId,
                 },
                 new Guest
                 {
                     Name = "Dixon B. Tweenerlegs",
+                    DateOfVisit = new DateTime(2019, 10, 22),
+                    TableId = tabels.Single(t => t.TableId == 23).TableId,
                 },
                 new Guest
                 {
                     Name = "Dixon Butts",
+                    DateOfVisit = new DateTime(2019, 10, 29),
+                    TableId = tabels.Single(t => t.TableId == 8).TableId,
                 },
                 new Guest
                 {
                     Name = "Harry Nutt",
+                    DateOfVisit = new DateTime(2019, 10, 17),
+                    TableId = tabels.Single(t => t.TableId == 5).TableId,
                 },
                 new Guest
                 {
                     Name = "Ivana Fuccu",
+                    DateOfVisit = new DateTime(2019, 10, 19),
+                    TableId = tabels.Single(t => t.TableId == 13).TableId,
                 },
                 new Guest
                 {
                     Name = "Ivanna B. Spanked",
+                    DateOfVisit = new DateTime(2019, 10, 19),
+                    TableId = tabels.Single(t => t.TableId == 38).TableId,
                 },
                 new Guest
                 {
                     Name = "Mike Hunt",
+                    DateOfVisit = new DateTime(2019, 10, 19),
+                    TableId = tabels.Single(t => t.TableId == 24).TableId,
                 },
                 new Guest
                 {
                     Name = "Phil McAvity",
+                    DateOfVisit = new DateTime(2019, 10, 19),
+                    TableId = tabels.Single(t => t.TableId == 14).TableId,
                 },
                 new Guest
                 {
                     Name = "Wilma Dickfit",
+                    DateOfVisit = new DateTime(2019, 10, 9),
+                    TableId = tabels.Single(t => t.TableId == 18).TableId,
+                },
+                new Guest
+                {
+                    Name = "Don Al Trum",
+                    DateOfVisit = new DateTime(2019, 10, 27),
+                    TableId = tabels.Single(t => t.TableId == 4).TableId,
                 },
 
             };
-
             foreach (Guest w in guests)
             {
                 context.Guests.Add(w);
+            }
+            context.SaveChanges();
+
+            var reviewGuests = new ReviewGuest[]
+            {
+                new ReviewGuest
+                {
+                    GuestId = guests.Single(g => g.Name == "Anders Andersen").GuestId,
+                    ReviewId = reviews.Single(r => r.ReviewId == 1).ReviewId,
+                },
+                new ReviewGuest
+                {
+                    GuestId = guests.Single(g => g.Name == "Hanne Hansen").GuestId,
+                    ReviewId = reviews.Single(r => r.ReviewId == 2).ReviewId,
+                },
+                new ReviewGuest
+                {
+                    GuestId = guests.Single(g => g.Name == "Christiane Christiansen").GuestId,
+                    ReviewId = reviews.Single(r => r.ReviewId == 3).ReviewId,
+                },
+                new ReviewGuest
+                {
+                    GuestId = guests.Single(g => g.Name == "Charlotte Charlottenborg").GuestId,
+                    ReviewId = reviews.Single(r => r.ReviewId == 4).ReviewId,
+                },
+                new ReviewGuest
+                {
+                    GuestId = guests.Single(g => g.Name == "Rasmus Rasmussen").GuestId,
+                    ReviewId = reviews.Single(r => r.ReviewId == 5).ReviewId,
+                },
+                new ReviewGuest
+                {
+                    GuestId = guests.Single(g => g.Name == "Nicolai Nicolajsen").GuestId,
+                    ReviewId = reviews.Single(r => r.ReviewId == 6).ReviewId,
+                },
+                new ReviewGuest
+                {
+                    GuestId = guests.Single(g => g.Name == "Jesper Jespersen").GuestId,
+                    ReviewId = reviews.Single(r => r.ReviewId == 7).ReviewId,
+                },
+                new ReviewGuest
+                {
+                    GuestId = guests.Single(g => g.Name == "Mette Metz").GuestId,
+                    ReviewId = reviews.Single(r => r.ReviewId == 8).ReviewId,
+                },
+                new ReviewGuest
+                {
+                    GuestId = guests.Single(g => g.Name == "Anna Antonsen").GuestId,
+                    ReviewId = reviews.Single(r => r.ReviewId == 9).ReviewId,
+                },
+                new ReviewGuest
+                {
+                    GuestId = guests.Single(g => g.Name == "A.S. Muncher").GuestId,
+                    ReviewId = reviews.Single(r => r.ReviewId == 10).ReviewId,
+                },
+                new ReviewGuest
+                {
+                    GuestId = guests.Single(g => g.Name == "Anita Dick").GuestId,
+                    ReviewId = reviews.Single(r => r.ReviewId == 11).ReviewId,
+                },
+                new ReviewGuest
+                {
+                    GuestId = guests.Single(g => g.Name == "Ben Derhover").GuestId,
+                    ReviewId = reviews.Single(r => r.ReviewId == 12).ReviewId,
+                },
+                new ReviewGuest
+                {
+                    GuestId = guests.Single(g => g.Name == "Dixon B. Tweenerlegs").GuestId,
+                    ReviewId = reviews.Single(r => r.ReviewId == 13).ReviewId,
+                },
+                new ReviewGuest
+                {
+                    GuestId = guests.Single(g => g.Name == "Dixon Butts").GuestId,
+                    ReviewId = reviews.Single(r => r.ReviewId == 14).ReviewId,
+                },
+                new ReviewGuest
+                {
+                    GuestId = guests.Single(g => g.Name == "Harry Nutt").GuestId,
+                    ReviewId = reviews.Single(r => r.ReviewId == 15).ReviewId,
+                },
+                new ReviewGuest
+                {
+                    GuestId = guests.Single(g => g.Name == "Ivana Fuccu").GuestId,
+                    ReviewId = reviews.Single(r => r.ReviewId == 16).ReviewId,
+                },
+                new ReviewGuest
+                {
+                    GuestId = guests.Single(g => g.Name == "Ivanna B. Spanked").GuestId,
+                    ReviewId = reviews.Single(r => r.ReviewId == 17).ReviewId,
+                },
+                new ReviewGuest
+                {
+                    GuestId = guests.Single(g => g.Name == "Mike Hunt").GuestId,
+                    ReviewId = reviews.Single(r => r.ReviewId == 18).ReviewId,
+                },
+                new ReviewGuest
+                {
+                    GuestId = guests.Single(g => g.Name == "Phil McAvity").GuestId,
+                    ReviewId = reviews.Single(r => r.ReviewId == 19).ReviewId,
+                },
+                new ReviewGuest
+                {
+                    GuestId = guests.Single(g => g.Name == "Wilma Dickfit").GuestId,
+                    ReviewId = reviews.Single(r => r.ReviewId == 20).ReviewId,
+                },
+                new ReviewGuest
+                {
+                    GuestId = guests.Single(g => g.Name == "Don Al Trum").GuestId,
+                    ReviewId = reviews.Single(r => r.ReviewId == 21).ReviewId,
+                },
+            };
+            foreach (ReviewGuest rg in reviewGuests)
+            {
+                context.ReviewGuests.Add(rg);
             }
             context.SaveChanges();
 
