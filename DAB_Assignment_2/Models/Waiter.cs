@@ -6,14 +6,10 @@ using System.Text;
 
 namespace DAB_Assignment_2.Models
 {
-    public class Waiter
+    public class Waiter : Person
     {
         public int WaiterId { get; set; }
-        public string WaiterName { get; set; }
         public int Salary { get; set; }
-        public int PersonId { get; set; }
-
-        public virtual Person Person { get; set; }
         public virtual List<Table> Tables { get; set; }
     }
 }
