@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DAB_Assignment_2.Migrations
 {
-    public partial class init : Migration
+    public partial class ini67 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -69,8 +69,7 @@ namespace DAB_Assignment_2.Migrations
                 name: "Reviews",
                 columns: table => new
                 {
-                    ReviewId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ReviewId = table.Column<int>(nullable: false),
                     RestaurantName = table.Column<string>(nullable: true),
                     RestaurantAddress = table.Column<string>(nullable: true),
                     ReviewerName = table.Column<string>(nullable: true),
@@ -157,11 +156,7 @@ namespace DAB_Assignment_2.Migrations
                 name: "Tables",
                 columns: table => new
                 {
-                    TableId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    WaiterName = table.Column<string>(nullable: true),
-                    RestaurantName = table.Column<string>(nullable: true),
-                    RestaurantAddress = table.Column<string>(nullable: true),
+                    TableId = table.Column<int>(nullable: false),
                     WaiterId = table.Column<int>(nullable: false),
                     RestaurantId = table.Column<int>(nullable: false)
                 },

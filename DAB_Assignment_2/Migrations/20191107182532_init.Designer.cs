@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DAB_Assignment_2.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20191107160516_init")]
+    [Migration("20191107182532_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -99,9 +99,7 @@ namespace DAB_Assignment_2.Migrations
             modelBuilder.Entity("DAB_Assignment_2.Models.Review", b =>
                 {
                     b.Property<int>("ReviewId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("DateOfVisit")
                         .HasColumnType("datetime2");
@@ -143,24 +141,13 @@ namespace DAB_Assignment_2.Migrations
             modelBuilder.Entity("DAB_Assignment_2.Models.Table", b =>
                 {
                     b.Property<int>("TableId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("RestaurantAddress")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("int");
 
                     b.Property<int>("RestaurantId")
                         .HasColumnType("int");
 
-                    b.Property<string>("RestaurantName")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("WaiterId")
                         .HasColumnType("int");
-
-                    b.Property<string>("WaiterName")
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("TableId");
 

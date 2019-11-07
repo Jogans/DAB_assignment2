@@ -4,11 +4,13 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 using DAB_Assignment_2.RelationshipClasses;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DAB_Assignment_2.Models
 {
     public class Review
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ReviewId { get; set; }
         public string RestaurantName { get; set; }
         public string RestaurantAddress { get; set; }
