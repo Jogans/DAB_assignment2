@@ -21,9 +21,9 @@ namespace DAB_Assignment_2
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //optionsBuilder.UseSqlite("Data Source=restaurant.db");
-            //optionsBuilder.UseSqlServer(@"Data Source=Restaurant.db;Initial Catalog=StoreDB;");
-            optionsBuilder.UseSqlServer("Data Source=127.0.0.1,1433;Database=Restaurant;User ID=SA;Password=12345678Aa#;");
+            optionsBuilder.UseSqlite("Data Source=restaurant.db");
+            //optionsBuilder.UseSqlServer(@"Data Source=Restaurant.db;");
+            //optionsBuilder.UseSqlServer("Data Source=127.0.0.1,1433;Database=Restaurant;User ID=SA;Password=12345678Aa#;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
