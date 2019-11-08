@@ -55,36 +55,21 @@ namespace DAB_Assignment_2.DAL
 
         public void MethodB(string address, AppDbContext context)
         {
-            foreach (var ting in context.Restaurants.Where(r => r.Address.Contains(address)))
-            {
-                Console.Write("Restaurant Name: {0}\n", ting.Name);
-
-                Console.Write("The Menu consists of:");
-                
-                for (int i = 0; i < ting.RestaurantDishes.Count; i++)
+            var restaurantQuery =
+                from restaurant in context.Restaurants
+                from dish in context.Dishes
+                where restaurant.Address == address
+                select new
                 {
-                    var streng = context.Reviews.Where(r => r.DishId == ting.RestaurantDishes[i].DishId).Select(r => r.Text).Take(5).AsNoTracking().ToList();
+                    restaurant.RestaurantId, dish.DishId
+                };
 
-                    Console.Write("{$}", ting.RestaurantDishes[i].Dish.DishName);
-                    
-                    var rating =
-                        from relevantRestaurant in context.Reviews 
-                        group relevantRestaurant by relevantRestaurant.DishId into g
-                        select new
-                        {
-                            g.Key,
-                            arvgStar = g.Average(p => p.Stars)
-                        };
-                    foreach (var rat in rating)
-                    {
-                        if (ting.RestaurantDishes[i].DishId == rat.Key)
-                        {
-                            Console.Write("Average rating: {0}\n", rat.arvgStar);
-                        }
-                    }
-                }
-               
+            foreach (var restaurant in restaurantQuery)
+            {
+                Console.Write("{0}",restaurant.DishId);
             }
+
+            
         }
 
         public void MethodC(string address, AppDbContext context)
