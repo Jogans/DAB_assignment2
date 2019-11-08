@@ -26,8 +26,6 @@ namespace DAB_Assignment_2.DAL
                 new Restaurant{Name = "Frederico's Breakfast", Address = "Early Bird 75", AverageRating = 3.5, Type = "Breakfast"},
                 new Restaurant{Name = "Pregante's Sanwitch", Address = "Strange Green 2", AverageRating = 1, Type = "Lunch"},
                 new Restaurant{Name = "Only Coffee", Address = "Sleepy Road 14", AverageRating = 5, Type = "Breakfast"},
-
-
             };
             foreach (Restaurant c in restaurants)
             {
