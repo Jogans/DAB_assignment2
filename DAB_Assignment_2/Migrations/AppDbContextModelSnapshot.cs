@@ -97,9 +97,7 @@ namespace DAB_Assignment_2.Migrations
             modelBuilder.Entity("DAB_Assignment_2.Models.Review", b =>
                 {
                     b.Property<int>("ReviewId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("DateOfVisit")
                         .HasColumnType("datetime2");
@@ -128,9 +126,6 @@ namespace DAB_Assignment_2.Migrations
                     b.Property<int>("Stars")
                         .HasColumnType("int");
 
-                    b.Property<int>("TableId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Text")
                         .HasColumnType("nvarchar(max)");
 
@@ -138,32 +133,19 @@ namespace DAB_Assignment_2.Migrations
 
                     b.HasIndex("RestaurantId");
 
-                    b.HasIndex("TableId");
-
                     b.ToTable("Reviews");
                 });
 
             modelBuilder.Entity("DAB_Assignment_2.Models.Table", b =>
                 {
                     b.Property<int>("TableId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("RestaurantAddress")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("int");
 
                     b.Property<int>("RestaurantId")
                         .HasColumnType("int");
 
-                    b.Property<string>("RestaurantName")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("WaiterId")
                         .HasColumnType("int");
-
-                    b.Property<string>("WaiterName")
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("TableId");
 
@@ -270,13 +252,7 @@ namespace DAB_Assignment_2.Migrations
                     b.HasOne("DAB_Assignment_2.Models.Restaurant", "Restaurant")
                         .WithMany("Reviews")
                         .HasForeignKey("RestaurantId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("DAB_Assignment_2.Models.Table", "Table")
-                        .WithMany("Reviews")
-                        .HasForeignKey("TableId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });
 
@@ -285,13 +261,13 @@ namespace DAB_Assignment_2.Migrations
                     b.HasOne("DAB_Assignment_2.Models.Restaurant", "Restaurant")
                         .WithMany("Tables")
                         .HasForeignKey("RestaurantId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("DAB_Assignment_2.Models.Waiter", "Waiter")
                         .WithMany("Tables")
                         .HasForeignKey("WaiterId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });
 
@@ -315,13 +291,13 @@ namespace DAB_Assignment_2.Migrations
                     b.HasOne("DAB_Assignment_2.Models.Dish", "Dish")
                         .WithMany("RestaurantDishes")
                         .HasForeignKey("DishId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("DAB_Assignment_2.Models.Restaurant", "Restaurant")
                         .WithMany("RestaurantDishes")
                         .HasForeignKey("RestaurantId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });
 
@@ -330,13 +306,13 @@ namespace DAB_Assignment_2.Migrations
                     b.HasOne("DAB_Assignment_2.Models.Dish", "Dish")
                         .WithMany("ReviewDishes")
                         .HasForeignKey("DishId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("DAB_Assignment_2.Models.Review", "Review")
                         .WithMany("ReviewDishes")
                         .HasForeignKey("ReviewId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });
 
@@ -345,13 +321,13 @@ namespace DAB_Assignment_2.Migrations
                     b.HasOne("DAB_Assignment_2.Models.Guest", "Guest")
                         .WithMany("ReviewGuests")
                         .HasForeignKey("GuestId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("DAB_Assignment_2.Models.Review", "Review")
                         .WithMany("ReviewGuests")
                         .HasForeignKey("ReviewId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });
 
@@ -360,7 +336,7 @@ namespace DAB_Assignment_2.Migrations
                     b.HasOne("DAB_Assignment_2.Models.Table", "Table")
                         .WithMany("Guests")
                         .HasForeignKey("TableId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });
 #pragma warning restore 612, 618

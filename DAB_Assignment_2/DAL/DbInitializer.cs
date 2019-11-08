@@ -8,7 +8,7 @@ namespace DAB_Assignment_2.DAL
 {
     public class DbInitializer
     {
-        public static void Initialize(AppDbContext context)
+        public void Initialize(AppDbContext context)
         {
             context.Database.EnsureCreated();
 
@@ -31,7 +31,9 @@ namespace DAB_Assignment_2.DAL
             {
                 context.Restaurants.Add(c);
             }
+            Console.WriteLine("før restaurant");
             context.SaveChanges();
+            Console.WriteLine("efter restaurant");
 
             var dishes = new Dish[]
             {
@@ -57,7 +59,9 @@ namespace DAB_Assignment_2.DAL
             {
                 context.Dishes.Add(d);
             }
+            Console.WriteLine("før dish");
             context.SaveChanges();
+            Console.WriteLine("efter dish");
 
             var restaurantDishes = new RestaurantDish[]
             {
@@ -228,6 +232,74 @@ namespace DAB_Assignment_2.DAL
             {
                 context.RestaurantDishes.Add(rd);
             }
+            Console.WriteLine("før restaurantdish");
+            context.SaveChanges();
+
+            var waiters = new Waiter[]
+            {
+                new Waiter
+                {
+                    Name = "Jens Jensen",
+                    Salary = 110,
+                    WaiterId = 1
+
+                },
+                new Waiter
+                {
+                    Name = "Trine Triger",
+                    Salary = 110,
+                    WaiterId = 2
+
+
+                },
+                new Waiter
+                {
+                    Name = "Frederik Frederico",
+                    Salary = 110,
+                    WaiterId = 3
+
+                },
+                new Waiter
+                {
+                    Name = "A. Nelprober",
+                    Salary = 110,
+                    WaiterId = 4
+
+                },
+                new Waiter
+                {
+                    Name = "Dick Long",
+                    Salary = 110,
+                    WaiterId = 5
+
+                },
+                new Waiter
+                {
+                    Name = "Hugh Janus",
+                    Salary = 110,
+                    WaiterId = 6
+
+                },
+                new Waiter
+                {
+                    Name = "Moe Lester",
+                    Salary = 110,
+                    WaiterId = 7
+
+                },
+                new Waiter
+                {
+                    Name = "Ho Lee Fuk",
+                    Salary = 110,
+                    WaiterId = 8
+
+                },
+            };
+            foreach (Waiter w in waiters)
+            {
+                context.Waiters.Add(w);
+            }
+            Console.WriteLine("før waiter");
             context.SaveChanges();
 
             var tabels = new Table[]
@@ -236,207 +308,248 @@ namespace DAB_Assignment_2.DAL
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Bob's Place").RestaurantId,
                     TableId = 1,
+                    WaiterId = waiters.Single(w => w.Name == "Jens Jensen").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Bob's Place").RestaurantId,
                     TableId = 2,
+                    WaiterId = waiters.Single(w => w.Name == "Jens Jensen").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Bob's Place").RestaurantId,
                     TableId = 3,
+                    WaiterId = waiters.Single(w => w.Name == "Jens Jensen").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Bob's Place").RestaurantId,
                     TableId = 4,
+                    WaiterId = waiters.Single(w => w.Name == "Jens Jensen").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Bob's Place").RestaurantId,
                     TableId = 5,
+                    WaiterId = waiters.Single(w => w.Name == "Jens Jensen").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="The Golden Seagull").RestaurantId,
                     TableId = 6,
+                    WaiterId = waiters.Single(w => w.Name == "Trine Triger").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="The Golden Seagull").RestaurantId,
                     TableId = 7,
+                    WaiterId = waiters.Single(w => w.Name == "Trine Triger").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="The Golden Seagull").RestaurantId,
                     TableId = 8,
+                    WaiterId = waiters.Single(w => w.Name == "Trine Triger").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="The Golden Seagull").RestaurantId,
                     TableId = 9,
+                    WaiterId = waiters.Single(w => w.Name == "Trine Triger").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="The Golden Seagull").RestaurantId,
                     TableId = 10,
+                    WaiterId = waiters.Single(w => w.Name == "Trine Triger").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Jelle's Icecream Bar").RestaurantId,
                     TableId = 11,
+                    WaiterId = waiters.Single(w => w.Name == "Frederik Frederico").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Jelle's Icecream Bar").RestaurantId,
                     TableId = 12,
+                    WaiterId = waiters.Single(w => w.Name == "Frederik Frederico").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Jelle's Icecream Bar").RestaurantId,
                     TableId = 13,
+                    WaiterId = waiters.Single(w => w.Name == "Frederik Frederico").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Jelle's Icecream Bar").RestaurantId,
                     TableId = 14,
+                    WaiterId = waiters.Single(w => w.Name == "Frederik Frederico").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Jelle's Icecream Bar").RestaurantId,
                     TableId = 15,
+                    WaiterId = waiters.Single(w => w.Name == "Frederik Frederico").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Nicolo's Pizza").RestaurantId,
                     TableId = 16,
+                    WaiterId = waiters.Single(w => w.Name == "A. Nelprober").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Nicolo's Pizza").RestaurantId,
                     TableId = 17,
+                    WaiterId = waiters.Single(w => w.Name == "A. Nelprober").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Nicolo's Pizza").RestaurantId,
                     TableId = 18,
+                    WaiterId = waiters.Single(w => w.Name == "A. Nelprober").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Nicolo's Pizza").RestaurantId,
                     TableId = 19,
+                    WaiterId = waiters.Single(w => w.Name == "A. Nelprober").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Nicolo's Pizza").RestaurantId,
                     TableId = 20,
+                    WaiterId = waiters.Single(w => w.Name == "A. Nelprober").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Jogan's Fine Dining").RestaurantId,
                     TableId = 21,
+                    WaiterId = waiters.Single(w => w.Name == "Dick Long").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Jogan's Fine Dining").RestaurantId,
                     TableId = 22,
+                    WaiterId = waiters.Single(w => w.Name == "Dick Long").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Jogan's Fine Dining").RestaurantId,
                     TableId = 23,
+                    WaiterId = waiters.Single(w => w.Name == "Dick Long").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Jogan's Fine Dining").RestaurantId,
                     TableId = 24,
+                    WaiterId = waiters.Single(w => w.Name == "Dick Long").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Jogan's Fine Dining").RestaurantId,
                     TableId = 25,
+                    WaiterId = waiters.Single(w => w.Name == "Dick Long").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Frederico's Breakfast").RestaurantId,
                     TableId = 26,
+                    WaiterId = waiters.Single(w => w.Name == "Hugh Janus").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Frederico's Breakfast").RestaurantId,
                     TableId = 27,
+                    WaiterId = waiters.Single(w => w.Name == "Hugh Janus").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Frederico's Breakfast").RestaurantId,
                     TableId = 28,
+                    WaiterId = waiters.Single(w => w.Name == "Hugh Janus").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Frederico's Breakfast").RestaurantId,
                     TableId = 29,
+                    WaiterId = waiters.Single(w => w.Name == "Hugh Janus").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Frederico's Breakfast").RestaurantId,
                     TableId = 30,
+                    WaiterId = waiters.Single(w => w.Name == "Hugh Janus").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Pregante's Sanwitch").RestaurantId,
                     TableId = 31,
+                    WaiterId = waiters.Single(w => w.Name == "Moe Lester").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Pregante's Sanwitch").RestaurantId,
                     TableId = 32,
+                    WaiterId = waiters.Single(w => w.Name == "Moe Lester").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Pregante's Sanwitch").RestaurantId,
                     TableId = 33,
+                    WaiterId = waiters.Single(w => w.Name == "Moe Lester").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Pregante's Sanwitch").RestaurantId,
                     TableId = 34,
+                    WaiterId = waiters.Single(w => w.Name == "Moe Lester").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Pregante's Sanwitch").RestaurantId,
                     TableId = 35,
+                    WaiterId = waiters.Single(w => w.Name == "Moe Lester").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Only Coffee").RestaurantId,
                     TableId = 36,
+                    WaiterId = waiters.Single(w => w.Name == "Ho Lee Fuk").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Only Coffee").RestaurantId,
                     TableId = 37,
+                    WaiterId = waiters.Single(w => w.Name == "Ho Lee Fuk").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Only Coffee").RestaurantId,
                     TableId = 38,
+                    WaiterId = waiters.Single(w => w.Name == "Ho Lee Fuk").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Only Coffee").RestaurantId,
                     TableId = 39,
+                    WaiterId = waiters.Single(w => w.Name == "Ho Lee Fuk").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Only Coffee").RestaurantId,
                     TableId = 40,
+                    WaiterId = waiters.Single(w => w.Name == "Ho Lee Fuk").WaiterId
                 },
             };
             foreach (Table t in tabels)
             {
                 context.Tables.Add(t);
             }
+            Console.WriteLine("før table");
             context.SaveChanges();
 
             var reviews = new Review[]
@@ -445,7 +558,7 @@ namespace DAB_Assignment_2.DAL
                     Text = "Genial Mad oplevelse", 
                     Stars = 5 , DishId = dishes.Single(d => d.DishName == "Cheese Burger").DishId, 
                     RestaurantId = restaurants.Single(r => r.Name=="The Golden Seagull").RestaurantId,
-                    TableId = tabels.Single(t => t.TableId == 6).TableId,
+                    //TableId = tabels.Single(t => t.TableId == 6).TableId,
                     ReviewId = 1,
                 }, 
                 new Review
@@ -453,7 +566,7 @@ namespace DAB_Assignment_2.DAL
                     Text = "Jeg fortrød lidt at jeg gik herhen", 
                     Stars = 2, DishId = dishes.Single(d => d.DishName == "Bananasplit").DishId, 
                     RestaurantId = restaurants.Single(r => r.Name=="Jelle's Icecream Bar").RestaurantId,
-                    TableId = tabels.Single(t => t.TableId == 11).TableId,
+                    //TableId = tabels.Single(t => t.TableId == 11).TableId,
                     ReviewId = 2,
                 }, 
                 new Review
@@ -461,7 +574,7 @@ namespace DAB_Assignment_2.DAL
                     Text = "AD!!!!", 
                     Stars = 1, DishId = dishes.Single(d => d.DishName == "Breadsticks").DishId, 
                     RestaurantId = restaurants.Single(r => r.Name=="Frederico's Breakfast").RestaurantId,
-                    TableId = tabels.Single(t => t.TableId == 26).TableId,
+                    //TableId = tabels.Single(t => t.TableId == 26).TableId,
                     ReviewId = 3
                 }, 
                 new Review
@@ -469,7 +582,7 @@ namespace DAB_Assignment_2.DAL
                     Text = "God betjening og en behagelig oplevelse", 
                     Stars = 4, DishId = dishes.Single(d => d.DishName == "T-Bone").DishId,
                     RestaurantId = restaurants.Single(r => r.Name=="Jogan's Fine Dining").RestaurantId,
-                    TableId = tabels.Single(t => t.TableId == 21).TableId,
+                    //TableId = tabels.Single(t => t.TableId == 21).TableId,
                     ReviewId = 4,
                 }, 
                 new Review
@@ -477,7 +590,7 @@ namespace DAB_Assignment_2.DAL
                     Text = "Okay til pengene",
                     Stars = 3, DishId = dishes.Single(d => d.DishName == "Sirloin Steak").DishId, 
                     RestaurantId = restaurants.Single(r => r.Name=="Jogan's Fine Dining").RestaurantId,
-                    TableId = tabels.Single(t => t.TableId == 21).TableId,
+                    //TableId = tabels.Single(t => t.TableId == 21).TableId,
                     ReviewId = 5,
                 }, 
                 new Review
@@ -485,7 +598,7 @@ namespace DAB_Assignment_2.DAL
                     Text = "Uhmmm det kan godt anbefales. Lækkert mad",
                     Stars = 4, DishId = dishes.Single(d => d.DishName == "Muffin").DishId,
                     RestaurantId = restaurants.Single(r => r.Name=="Jelle's Icecream Bar").RestaurantId,
-                    TableId = tabels.Single(t => t.TableId == 12).TableId,
+                    //TableId = tabels.Single(t => t.TableId == 12).TableId,
                     ReviewId = 6
                 }, 
                 new Review
@@ -493,7 +606,7 @@ namespace DAB_Assignment_2.DAL
                     Text = "Hundeæde!!!",
                     Stars = 1, DishId = dishes.Single(d => d.DishName == "King Crabs").DishId,
                     RestaurantId = restaurants.Single(r => r.Name=="Jogan's Fine Dining").RestaurantId,
-                    TableId = tabels.Single(t => t.TableId == 22).TableId,
+                    //TableId = tabels.Single(t => t.TableId == 22).TableId,
                     ReviewId = 7
                 }, 
                 new Review
@@ -501,7 +614,7 @@ namespace DAB_Assignment_2.DAL
                     Text = "The sprinkling of gold flakes lent a top note of bullshit. And that was the good part. The skin had an off-putting tang and a rancid flavor, which seeped into the dried-out meat and left a greasy feeling on the roof of my mouth that, like the demonic clown from It, could not be destroyed",
                     Stars = 2, DishId = dishes.Single(d => d.DishName == "Hamburger").DishId,
                     RestaurantId = restaurants.Single(r => r.Name=="Pregante's Sanwitch").RestaurantId,
-                    TableId = tabels.Single(t => t.TableId == 31).TableId,
+                    //TableId = tabels.Single(t => t.TableId == 31).TableId,
                     ReviewId = 8
                 }, 
                 new Review
@@ -509,7 +622,7 @@ namespace DAB_Assignment_2.DAL
                     Text = "Slowly, gradually, with great mental resistance but still inexorably, it dawned on me that I had paid $98 for a duck with almost no flavor. It was dry, too", 
                     Stars = 1, DishId = dishes.Single(d => d.DishName == "Bacon Orionrings").DishId,
                     RestaurantId = restaurants.Single(r => r.Name=="The Golden Seagull").RestaurantId,
-                    TableId = tabels.Single(t => t.TableId == 7).TableId,
+                    //TableId = tabels.Single(t => t.TableId == 7).TableId,
                     ReviewId = 9
                 }, 
                 new Review
@@ -517,7 +630,7 @@ namespace DAB_Assignment_2.DAL
                     Text = "When executed poorly (a gummy mass of vermicelli and shellfish that is presumably a riff on the Korean noodle dish japchae), his dishes just sing out of key",
                     Stars = 2, DishId = dishes.Single(d => d.DishName == "Hashbrowns").DishId,
                     RestaurantId = restaurants.Single(r => r.Name=="Frederico's Breakfast").RestaurantId,
-                    TableId = tabels.Single(t => t.TableId == 27).TableId,
+                    //TableId = tabels.Single(t => t.TableId == 27).TableId,
                     ReviewId = 10
                 }, 
                 new Review
@@ -525,7 +638,7 @@ namespace DAB_Assignment_2.DAL
                     Text = "You’d better have something in the fridge at home, because the likelihood of your joining the Clean Plate Club here is as good as Omarosa Manigault Newman getting invited to a Christmas party at the White House",
                     Stars = 5, DishId = dishes.Single(d => d.DishName == "Milkshake").DishId, 
                     RestaurantId = restaurants.Single(r => r.Name=="Nicolo's Pizza").RestaurantId,
-                    TableId = tabels.Single(t => t.TableId == 18).TableId,
+                    //TableId = tabels.Single(t => t.TableId == 18).TableId,
                     ReviewId = 11,
                 }, 
                 new Review
@@ -533,7 +646,7 @@ namespace DAB_Assignment_2.DAL
                     Text = "While there are many words I could use to describe Nicolo's Pizza, I’m going to say only this: Nicolo's Pizza is a bad restaurant", 
                     Stars = 1, DishId = dishes.Single(d => d.DishName == "Pizza Slice").DishId, 
                     RestaurantId = restaurants.Single(r => r.Name=="Nicolo's Pizza").RestaurantId,
-                    TableId = tabels.Single(t => t.TableId == 19).TableId,
+                    //TableId = tabels.Single(t => t.TableId == 19).TableId,
                     ReviewId = 12,
                 }, 
                 new Review
@@ -541,7 +654,7 @@ namespace DAB_Assignment_2.DAL
                     Text = "The initial flavor was bland, quickly followed by a fetid, ammonia-like tang. It was an aroma that recalled room-temperature hamburger meat from a grocer that lost power. I felt my eyes water up as I chewed. I tried to swallow. I felt my entire GI tract prepare to purge", 
                     Stars = 2, DishId = dishes.Single(d => d.DishName == "Dates with Bacon").DishId, 
                     RestaurantId = restaurants.Single(r => r.Name=="Jogan's Fine Dining").RestaurantId,
-                    TableId = tabels.Single(t => t.TableId == 23).TableId,
+                    //TableId = tabels.Single(t => t.TableId == 23).TableId,
                     ReviewId = 13,
                 }, 
                 new Review
@@ -549,7 +662,7 @@ namespace DAB_Assignment_2.DAL
                     Text = "Did it have ‘a simple flavor with a touch of sweetness’? It was hard to say after half of it had been simmered in soy sauce to a bony mush, the other half grilled in salt until chewy and served with its head still on, propped up with a wooden stake like a Big Mouth Billy Bass about to sing",
                     Stars = 5, DishId = dishes.Single(d => d.DishName == "Chilli Chesse Tops").DishId,
                     RestaurantId = restaurants.Single(r => r.Name=="The Golden Seagull").RestaurantId,
-                    TableId = tabels.Single(t => t.TableId == 8).TableId,
+                    //TableId = tabels.Single(t => t.TableId == 8).TableId,
                     ReviewId = 14,
                 }, 
                 new Review
@@ -557,7 +670,7 @@ namespace DAB_Assignment_2.DAL
                     Text = "When compared to similar restaurants, “Empire is their hollow echo, parroting back a faded, carbon-copied version that takes no risks and contributes little to Detroit’s dining scene dialogue", 
                     Stars = 3, DishId = dishes.Single(d => d.DishName == "Pain au Chocolat").DishId, 
                     RestaurantId = restaurants.Single(r => r.Name=="Bob's Place").RestaurantId,
-                    TableId = tabels.Single(t => t.TableId == 5).TableId,
+                    //TableId = tabels.Single(t => t.TableId == 5).TableId,
                     ReviewId = 15,
                 }, 
                 new Review
@@ -565,7 +678,7 @@ namespace DAB_Assignment_2.DAL
                     Text = "There’s V for Vegan. There’s GF for Gluten Free. There’s DF for Dairy Free. I think they’re missing a few. There should be TF for Taste Free and JF for Joy Free and AAHYWEH for Abandon All Hope, Ye Who Enter Here", 
                     Stars = 1, DishId = dishes.Single(d => d.DishName == "Ice Cream").DishId, 
                     RestaurantId = restaurants.Single(r => r.Name=="Jelle's Icecream Bar").RestaurantId,
-                    TableId = tabels.Single(t => t.TableId == 13).TableId,
+                    //TableId = tabels.Single(t => t.TableId == 13).TableId,
                     ReviewId = 16,
                 },
                 new Review
@@ -573,7 +686,7 @@ namespace DAB_Assignment_2.DAL
                     Text = "Nobody told the recipe developer that Americans don’t much like small, stale peas in their pasta", 
                     Stars = 1, DishId = dishes.Single(d => d.DishName == "Coffee").DishId, 
                     RestaurantId = restaurants.Single(r => r.Name=="Only Coffee").RestaurantId,
-                    TableId = tabels.Single(t => t.TableId == 38).TableId,
+                    //TableId = tabels.Single(t => t.TableId == 38).TableId,
                     ReviewId = 17,
                 },
                 new Review
@@ -581,7 +694,7 @@ namespace DAB_Assignment_2.DAL
                     Text = "Nobody should pay this much money to be sad", 
                     Stars = 2, DishId = dishes.Single(d => d.DishName == "Sirloin Steak").DishId, 
                     RestaurantId = restaurants.Single(r => r.Name=="Jogan's Fine Dining").RestaurantId,
-                    TableId = tabels.Single(t => t.TableId == 24).TableId,
+                    //TableId = tabels.Single(t => t.TableId == 24).TableId,
                     ReviewId = 18,
                 },
                 new Review
@@ -589,7 +702,7 @@ namespace DAB_Assignment_2.DAL
                     Text = "McDonald’s does a better job for one-third of the price", 
                     Stars = 1, DishId = dishes.Single(d => d.DishName == "Bananasplit").DishId, 
                     RestaurantId = restaurants.Single(r => r.Name=="Jelle's Icecream Bar").RestaurantId,
-                    TableId = tabels.Single(t => t.TableId == 14).TableId,
+                    //TableId = tabels.Single(t => t.TableId == 14).TableId,
                     ReviewId = 19,
                 },
                 new Review
@@ -597,7 +710,7 @@ namespace DAB_Assignment_2.DAL
                     Text = "I’m not so batty from Trump Derangement Syndrome that I can’t objectively identify what a poor value the food is at Nicolo's Pizza. The only thing Chicagoans on the ground are missing is the spectacular view from occupied territory", 
                     Stars = 3, DishId = dishes.Single(d => d.DishName == "Breadsticks").DishId, 
                     RestaurantId = restaurants.Single(r => r.Name=="Nicolo's Pizza").RestaurantId,
-                    TableId = tabels.Single(t => t.TableId == 18).TableId,
+                    //TableId = tabels.Single(t => t.TableId == 18).TableId,
                     ReviewId = 20,
                 },
                 new Review
@@ -605,7 +718,7 @@ namespace DAB_Assignment_2.DAL
                     Text = "To put it mildly, licking Plexiglas is more rewarding than some of the duds on the set menu", 
                     Stars = 2, DishId = dishes.Single(d => d.DishName == "Breadsticks").DishId, 
                     RestaurantId = restaurants.Single(r => r.Name=="Bob's Place").RestaurantId,
-                    TableId = tabels.Single(t => t.TableId == 4).TableId,
+                    //TableId = tabels.Single(t => t.TableId == 4).TableId,
                     ReviewId = 21,
                 },
             };
@@ -613,6 +726,7 @@ namespace DAB_Assignment_2.DAL
             {
                 context.Reviews.Add(rw);
             }
+            Console.WriteLine("før review");
             context.SaveChanges();
 
             var guests = new Guest[]
@@ -622,6 +736,7 @@ namespace DAB_Assignment_2.DAL
                     Name = "Anders Andersen",
                     DateOfVisit = new DateTime(2019, 10, 12),
                     TableId = tabels.Single(t => t.TableId == 6).TableId,
+                    GuestId = 1
 
                 },
                 new Guest
@@ -629,120 +744,140 @@ namespace DAB_Assignment_2.DAL
                     Name = "Hanne Hansen",
                     DateOfVisit = new DateTime(2019, 10, 13),
                     TableId = tabels.Single(t => t.TableId == 11).TableId,
+                    GuestId = 2
                 },
                 new Guest
                 {
                     Name = "Christiane Christiansen",
                     DateOfVisit = new DateTime(2019, 10, 15),
                     TableId = tabels.Single(t => t.TableId == 26).TableId,
+                    GuestId = 3
                 },
                 new Guest
                 {
                     Name = "Charlotte Charlottenborg",
                     DateOfVisit = new DateTime(2019, 10, 8),
                     TableId = tabels.Single(t => t.TableId == 21).TableId,
+                    GuestId = 4
                 },
                 new Guest
                 {
                     Name = "Rasmus Rasmussen",
                     DateOfVisit = new DateTime(2019, 10, 26),
                     TableId = tabels.Single(t => t.TableId == 21).TableId,
+                    GuestId = 5
                 },
                 new Guest
                 {
                     Name = "Nicolai Nicolajsen",
                     DateOfVisit = new DateTime(2019, 10, 5),
                     TableId = tabels.Single(t => t.TableId == 12).TableId,
+                    GuestId = 6
                 },
                 new Guest
                 {
                     Name = "Jesper Jespersen",
                     DateOfVisit = new DateTime(2019, 9, 4),
                     TableId = tabels.Single(t => t.TableId == 22).TableId,
+                    GuestId = 7
                 },
                 new Guest
                 {
                     Name = "Mette Metz",
                     DateOfVisit = new DateTime(2019, 11, 7),
                     TableId = tabels.Single(t => t.TableId == 31).TableId,
+                    GuestId = 8
                 },
                 new Guest
                 {
                     Name = "Anna Antonsen",
                     DateOfVisit = new DateTime(2019, 11, 5),
                     TableId = tabels.Single(t => t.TableId == 7).TableId,
+                    GuestId = 9
                 },
                 new Guest
                 {
                     Name = "A.S. Muncher",
                     DateOfVisit = new DateTime(2019, 11, 3),
                     TableId = tabels.Single(t => t.TableId == 27).TableId,
+                    GuestId = 10
                 },
                 new Guest
                 {
                     Name = "Anita Dick",
                     DateOfVisit = new DateTime(2019, 11, 1),
                     TableId = tabels.Single(t => t.TableId == 18).TableId,
+                    GuestId = 11
                 },
                 new Guest
                 {
                     Name = "Ben Derhover",
                     DateOfVisit = new DateTime(2019, 9, 12),
                     TableId = tabels.Single(t => t.TableId == 19).TableId,
+                    GuestId = 12
                 },
                 new Guest
                 {
                     Name = "Dixon B. Tweenerlegs",
                     DateOfVisit = new DateTime(2019, 10, 22),
                     TableId = tabels.Single(t => t.TableId == 23).TableId,
+                    GuestId = 13
                 },
                 new Guest
                 {
                     Name = "Dixon Butts",
                     DateOfVisit = new DateTime(2019, 10, 29),
                     TableId = tabels.Single(t => t.TableId == 8).TableId,
+                    GuestId = 14
                 },
                 new Guest
                 {
                     Name = "Harry Nutt",
                     DateOfVisit = new DateTime(2019, 10, 17),
                     TableId = tabels.Single(t => t.TableId == 5).TableId,
+                    GuestId = 15
                 },
                 new Guest
                 {
                     Name = "Ivana Fuccu",
                     DateOfVisit = new DateTime(2019, 10, 19),
                     TableId = tabels.Single(t => t.TableId == 13).TableId,
+                    GuestId = 16
                 },
                 new Guest
                 {
                     Name = "Ivanna B. Spanked",
                     DateOfVisit = new DateTime(2019, 10, 19),
                     TableId = tabels.Single(t => t.TableId == 38).TableId,
+                    GuestId = 17
                 },
                 new Guest
                 {
                     Name = "Mike Hunt",
                     DateOfVisit = new DateTime(2019, 10, 19),
                     TableId = tabels.Single(t => t.TableId == 24).TableId,
+                    GuestId = 18
                 },
                 new Guest
                 {
                     Name = "Phil McAvity",
                     DateOfVisit = new DateTime(2019, 10, 19),
                     TableId = tabels.Single(t => t.TableId == 14).TableId,
+                    GuestId = 19
                 },
                 new Guest
                 {
                     Name = "Wilma Dickfit",
                     DateOfVisit = new DateTime(2019, 10, 9),
                     TableId = tabels.Single(t => t.TableId == 18).TableId,
+                    GuestId =20
                 },
                 new Guest
                 {
                     Name = "Don Al Trum",
                     DateOfVisit = new DateTime(2019, 10, 27),
                     TableId = tabels.Single(t => t.TableId == 4).TableId,
+                    GuestId = 21
                 },
 
             };
@@ -750,6 +885,7 @@ namespace DAB_Assignment_2.DAL
             {
                 context.Guests.Add(w);
             }
+            Console.WriteLine("før guest");
             context.SaveChanges();
 
             var reviewGuests = new ReviewGuest[]
@@ -864,65 +1000,10 @@ namespace DAB_Assignment_2.DAL
             {
                 context.ReviewGuests.Add(rg);
             }
+            Console.WriteLine("før reviewguest");
             context.SaveChanges();
 
-            var waiters = new Waiter[]
-            {
-                new Waiter
-                {
-                    Name = "Jens Jensen",
-                    Salary = 110,
-
-                },
-                new Waiter
-                {
-                    Name = "Trine Triger",
-                    Salary = 110,
-
-
-                },
-                new Waiter
-                {
-                    Name = "Frederik Frederico",
-                    Salary = 110,
-
-                },
-                new Waiter
-                {
-                    Name = "A. Nelprober",
-                    Salary = 110,
-
-                },
-                new Waiter
-                {
-                    Name = "Dick Long",
-                    Salary = 110,
-
-                },
-                new Waiter
-                {
-                    Name = "Hugh Janus",
-                    Salary = 110,
-
-                },
-                new Waiter
-                {
-                    Name = "Moe Lester",
-                    Salary = 110,
-
-                },
-                new Waiter
-                {
-                    Name = "Ho Lee Fuk",
-                    Salary = 110,
-
-                },
-            };
-            foreach (Waiter w in waiters)
-            {
-                context.Waiters.Add(w);
-            }
-            context.SaveChanges();
+            
 
 
             //Tilføj ting her
