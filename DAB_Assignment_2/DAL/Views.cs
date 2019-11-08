@@ -48,7 +48,7 @@ namespace DAB_Assignment_2.DAL
                 Console.WriteLine($"Latest five reviews: ");
                 for (int i = 0; i < streng.Count; i++)
                 {
-                    Console.WriteLine($"Review {i + 1}: {streng[i]}\n");
+                    Console.WriteLine($"\t Review {i + 1}: {streng[i]}\n");
                 }
             }
         }
@@ -57,9 +57,33 @@ namespace DAB_Assignment_2.DAL
         {
             foreach (var ting in context.Restaurants.Where(r => r.Address.Contains(address)))
             {
+                Console.Write("Restaurant Name: {0}\n", ting.Name);
 
+                Console.Write("The Menu consists of:");
+                
+                for (int i = 0; i < ting.RestaurantDishes.Count; i++)
+                {
+                    var streng = context.Reviews.Where(r => r.DishId == ting.RestaurantDishes[i].DishId).Select(r => r.Text).Take(5).AsNoTracking().ToList();
 
-
+                    Console.Write("{$}", ting.RestaurantDishes[i].Dish.DishName);
+                    
+                    var rating =
+                        from relevantRestaurant in context.Reviews 
+                        group relevantRestaurant by relevantRestaurant.DishId into g
+                        select new
+                        {
+                            g.Key,
+                            arvgStar = g.Average(p => p.Stars)
+                        };
+                    foreach (var rat in rating)
+                    {
+                        if (ting.RestaurantDishes[i].DishId == rat.Key)
+                        {
+                            Console.Write("Average rating: {0}\n", rat.arvgStar);
+                        }
+                    }
+                }
+               
             }
         }
 

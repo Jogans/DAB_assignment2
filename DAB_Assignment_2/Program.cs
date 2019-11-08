@@ -14,13 +14,13 @@ namespace DAB_Assignment_2
                 init.Initialize(db);
                 System.Console.WriteLine("Det gik godt");
                 Views view = new Views();
-                view.MethodA("Dessert", db);
-                view.MethodA("Lunch", db);
-                view.MethodA("Dinner", db);
-                view.MethodC("Candy Way 15", db);
-                view.MethodC("Growl Hill 32", db);
-                view.MethodC("Fancy Boulevard 1", db);
-                view.MethodC("Mordor Lane 35", db);
+                //view.MethodA("Dessert", db);
+                //view.MethodA("Lunch", db);
+                //view.MethodA("Dinner", db);
+                view.MethodB("Candy Way 15", db);
+                //view.MethodC("Growl Hill 32", db);
+                //view.MethodC("Fancy Boulevard 1", db);
+                //view.MethodC("Mordor Lane 35", db);
                 //Console.WriteLine("1");
                 //foreach (var rest in db.Restaurants)
                 //{
