@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DAB_Assignment_2.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20191108131127_Tes2")]
-    partial class Tes2
+    [Migration("20191108152135_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -102,14 +102,8 @@ namespace DAB_Assignment_2.Migrations
                     b.Property<int>("GuestId")
                         .HasColumnType("int");
 
-                    b.Property<string>("RestaurantAddress")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("RestaurantId")
                         .HasColumnType("int");
-
-                    b.Property<string>("RestaurantName")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ReviewerName")
                         .HasColumnType("nvarchar(max)");

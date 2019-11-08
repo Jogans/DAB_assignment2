@@ -109,7 +109,13 @@ namespace DAB_Assignment_2.DAL
                         {
                             if (review.RestaurantId == rest.RestaurantId)
                             {
-                                Console.WriteLine($"Review by {review.ReviewerName} \nFor dish: {review.DishName} - Stars: {review.Stars} \n{review.Text} \n");
+                                foreach (var guest in context.Guests)
+                                {
+                                    if (guest.Name == review.ReviewerName && review.RestaurantId == rest.RestaurantId && guest.TableId == table.TableId)
+                                    {
+                                        Console.WriteLine($"Review by {review.ReviewerName} \nFor dish: {review.DishName} - Stars: {review.Stars} \n{review.Text} \n");
+                                    }
+                                }
                             }
                         }
                     }

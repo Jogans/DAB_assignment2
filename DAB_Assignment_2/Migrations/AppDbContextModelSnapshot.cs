@@ -100,14 +100,8 @@ namespace DAB_Assignment_2.Migrations
                     b.Property<int>("GuestId")
                         .HasColumnType("int");
 
-                    b.Property<string>("RestaurantAddress")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("RestaurantId")
                         .HasColumnType("int");
-
-                    b.Property<string>("RestaurantName")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ReviewerName")
                         .HasColumnType("nvarchar(max)");

@@ -15,8 +15,8 @@ namespace DAB_Assignment_2
                 {
                     Console.Clear();
 
-                    //DbInitializer init = new DbInitializer();
-                    //init.Initialize(db);
+                    DbInitializer init = new DbInitializer();
+                    init.Initialize(db);
                     Views view = new Views();
                     //System.Console.WriteLine("Det gik godt");
 
@@ -163,8 +163,9 @@ namespace DAB_Assignment_2
                         }
 
                     }
-                    Console.WriteLine("Press enter to start over");
-                    Console.ReadLine();
+                    Console.WriteLine("Press enter to start over or X to exit the program");
+                    string input = Console.ReadLine();
+                    if (input == "X" || input == "x") break;
                 }
             }
         }
