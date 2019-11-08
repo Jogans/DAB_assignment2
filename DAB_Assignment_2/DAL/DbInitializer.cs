@@ -12,9 +12,66 @@ namespace DAB_Assignment_2.DAL
         {
             context.Database.EnsureCreated();
 
+
+
+            var all = from c in context.ReviewGuests select c;
+            context.ReviewGuests.RemoveRange(all);
+            context.SaveChanges();
+
+            var all2 = from c in context.Guests select c;
+            context.Guests.RemoveRange(all2);
+            context.SaveChanges();
+
+            var all3 = from c in context.Reviews select c;
+            context.Reviews.RemoveRange(all3);
+            context.SaveChanges();
+
+            var all4 = from c in context.Tables select c;
+            context.Tables.RemoveRange(all4);
+            context.SaveChanges();
+
+            var all5 = from c in context.Waiters select c;
+            context.Waiters.RemoveRange(all5);
+            context.SaveChanges();
+
+            var all6 = from c in context.RestaurantDishes select c;
+            context.RestaurantDishes.RemoveRange(all6);
+            context.SaveChanges();
+
+            var all7 = from c in context.Dishes select c;
+            context.Dishes.RemoveRange(all7);
+            context.SaveChanges();
+
+            var all8 = from c in context.Restaurants select c;
+            context.Restaurants.RemoveRange(all8);
+            context.SaveChanges();
+
+            //context.ReviewGuests.RemoveRange(context.ReviewGuests);
+            //context.SaveChanges();
+
+            //context.Guests.RemoveRange(context.Guests);
+            //context.SaveChanges();
+
+            //context.Reviews.RemoveRange(context.Reviews);
+            //context.SaveChanges();
+
+            //context.Tables.RemoveRange(context.Tables);
+            //context.SaveChanges();
+
+            //context.Waiters.RemoveRange(context.Waiters);
+            //context.SaveChanges();
+
+            //context.RestaurantDishes.RemoveRange(context.RestaurantDishes);
+            //context.SaveChanges();
+
+            //context.Dishes.RemoveRange(context.Dishes);
+            //context.SaveChanges();
+
+            //context.Restaurants.RemoveRange(context.Restaurants);
+            //context.SaveChanges();
+
             //Tilføj ting her
 
-            context.SaveChanges();
 
             var restaurants = new Restaurant[]
             {
@@ -241,14 +298,16 @@ namespace DAB_Assignment_2.DAL
                 {
                     Name = "Jens Jensen",
                     Salary = 110,
-                    WaiterId = 1
+                    WaiterId = 1,
+                    PersonId = 1
 
                 },
                 new Waiter
                 {
                     Name = "Trine Triger",
                     Salary = 110,
-                    WaiterId = 2
+                    WaiterId = 2,
+                    PersonId = 2
 
 
                 },
@@ -256,42 +315,48 @@ namespace DAB_Assignment_2.DAL
                 {
                     Name = "Frederik Frederico",
                     Salary = 110,
-                    WaiterId = 3
+                    WaiterId = 3,
+                    PersonId = 3
 
                 },
                 new Waiter
                 {
                     Name = "A. Nelprober",
                     Salary = 110,
-                    WaiterId = 4
+                    WaiterId = 4,
+                    PersonId = 4
 
                 },
                 new Waiter
                 {
                     Name = "Dick Long",
                     Salary = 110,
-                    WaiterId = 5
+                    WaiterId = 5,
+                    PersonId = 5
 
                 },
                 new Waiter
                 {
                     Name = "Hugh Janus",
                     Salary = 110,
-                    WaiterId = 6
+                    WaiterId = 6,
+                    PersonId = 6
 
                 },
                 new Waiter
                 {
                     Name = "Moe Lester",
                     Salary = 110,
-                    WaiterId = 7
+                    WaiterId = 7,
+                    PersonId = 7
 
                 },
                 new Waiter
                 {
                     Name = "Ho Lee Fuk",
                     Salary = 110,
-                    WaiterId = 8
+                    WaiterId = 8,
+                    PersonId = 8
 
                 },
             };
@@ -308,241 +373,281 @@ namespace DAB_Assignment_2.DAL
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Bob's Place").RestaurantId,
                     TableId = 1,
-                    WaiterId = waiters.Single(w => w.Name == "Jens Jensen").WaiterId
+                    WaiterId = 1
+                    //WaiterId = waiters.Single(w => w.Name == "Jens Jensen").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Bob's Place").RestaurantId,
                     TableId = 2,
-                    WaiterId = waiters.Single(w => w.Name == "Jens Jensen").WaiterId
+                    WaiterId = 1
+                    //WaiterId = waiters.Single(w => w.Name == "Jens Jensen").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Bob's Place").RestaurantId,
                     TableId = 3,
-                    WaiterId = waiters.Single(w => w.Name == "Jens Jensen").WaiterId
+                    WaiterId = 1
+                    //WaiterId = waiters.Single(w => w.Name == "Jens Jensen").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Bob's Place").RestaurantId,
                     TableId = 4,
-                    WaiterId = waiters.Single(w => w.Name == "Jens Jensen").WaiterId
+                    WaiterId = 1
+                    //WaiterId = waiters.Single(w => w.Name == "Jens Jensen").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Bob's Place").RestaurantId,
                     TableId = 5,
-                    WaiterId = waiters.Single(w => w.Name == "Jens Jensen").WaiterId
+                    WaiterId = 1
+                    //WaiterId = waiters.Single(w => w.Name == "Jens Jensen").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="The Golden Seagull").RestaurantId,
                     TableId = 6,
-                    WaiterId = waiters.Single(w => w.Name == "Trine Triger").WaiterId
+                    WaiterId = 2
+                    //WaiterId = waiters.Single(w => w.Name == "Trine Triger").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="The Golden Seagull").RestaurantId,
                     TableId = 7,
-                    WaiterId = waiters.Single(w => w.Name == "Trine Triger").WaiterId
+                    WaiterId = 2
+                    //WaiterId = waiters.Single(w => w.Name == "Trine Triger").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="The Golden Seagull").RestaurantId,
                     TableId = 8,
-                    WaiterId = waiters.Single(w => w.Name == "Trine Triger").WaiterId
+                    WaiterId = 2
+                    //WaiterId = waiters.Single(w => w.Name == "Trine Triger").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="The Golden Seagull").RestaurantId,
                     TableId = 9,
-                    WaiterId = waiters.Single(w => w.Name == "Trine Triger").WaiterId
+                    WaiterId = 2
+                    //WaiterId = waiters.Single(w => w.Name == "Trine Triger").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="The Golden Seagull").RestaurantId,
                     TableId = 10,
-                    WaiterId = waiters.Single(w => w.Name == "Trine Triger").WaiterId
+                    WaiterId = 2
+                    //WaiterId = waiters.Single(w => w.Name == "Trine Triger").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Jelle's Icecream Bar").RestaurantId,
                     TableId = 11,
-                    WaiterId = waiters.Single(w => w.Name == "Frederik Frederico").WaiterId
+                    WaiterId = 3
+                    //WaiterId = waiters.Single(w => w.Name == "Frederik Frederico").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Jelle's Icecream Bar").RestaurantId,
                     TableId = 12,
-                    WaiterId = waiters.Single(w => w.Name == "Frederik Frederico").WaiterId
+                    WaiterId = 3
+                    //WaiterId = waiters.Single(w => w.Name == "Frederik Frederico").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Jelle's Icecream Bar").RestaurantId,
                     TableId = 13,
-                    WaiterId = waiters.Single(w => w.Name == "Frederik Frederico").WaiterId
+                    WaiterId = 3
+                    //WaiterId = waiters.Single(w => w.Name == "Frederik Frederico").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Jelle's Icecream Bar").RestaurantId,
                     TableId = 14,
-                    WaiterId = waiters.Single(w => w.Name == "Frederik Frederico").WaiterId
+                    WaiterId = 3
+                    //WaiterId = waiters.Single(w => w.Name == "Frederik Frederico").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Jelle's Icecream Bar").RestaurantId,
                     TableId = 15,
-                    WaiterId = waiters.Single(w => w.Name == "Frederik Frederico").WaiterId
+                    WaiterId = 3
+                    //WaiterId = waiters.Single(w => w.Name == "Frederik Frederico").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Nicolo's Pizza").RestaurantId,
                     TableId = 16,
-                    WaiterId = waiters.Single(w => w.Name == "A. Nelprober").WaiterId
+                    WaiterId = 4
+                    //WaiterId = waiters.Single(w => w.Name == "A. Nelprober").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Nicolo's Pizza").RestaurantId,
                     TableId = 17,
-                    WaiterId = waiters.Single(w => w.Name == "A. Nelprober").WaiterId
+                    WaiterId = 4
+                    //WaiterId = waiters.Single(w => w.Name == "A. Nelprober").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Nicolo's Pizza").RestaurantId,
                     TableId = 18,
-                    WaiterId = waiters.Single(w => w.Name == "A. Nelprober").WaiterId
+                    WaiterId = 4
+                    //WaiterId = waiters.Single(w => w.Name == "A. Nelprober").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Nicolo's Pizza").RestaurantId,
                     TableId = 19,
-                    WaiterId = waiters.Single(w => w.Name == "A. Nelprober").WaiterId
+                    WaiterId = 4
+                    //WaiterId = waiters.Single(w => w.Name == "A. Nelprober").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Nicolo's Pizza").RestaurantId,
                     TableId = 20,
-                    WaiterId = waiters.Single(w => w.Name == "A. Nelprober").WaiterId
+                    WaiterId = 4
+                    //WaiterId = waiters.Single(w => w.Name == "A. Nelprober").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Jogan's Fine Dining").RestaurantId,
                     TableId = 21,
-                    WaiterId = waiters.Single(w => w.Name == "Dick Long").WaiterId
+                    WaiterId = 5
+                    //WaiterId = waiters.Single(w => w.Name == "Dick Long").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Jogan's Fine Dining").RestaurantId,
                     TableId = 22,
-                    WaiterId = waiters.Single(w => w.Name == "Dick Long").WaiterId
+                    WaiterId = 5
+                    //WaiterId = waiters.Single(w => w.Name == "Dick Long").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Jogan's Fine Dining").RestaurantId,
                     TableId = 23,
-                    WaiterId = waiters.Single(w => w.Name == "Dick Long").WaiterId
+                    WaiterId = 5
+                    //WaiterId = waiters.Single(w => w.Name == "Dick Long").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Jogan's Fine Dining").RestaurantId,
                     TableId = 24,
-                    WaiterId = waiters.Single(w => w.Name == "Dick Long").WaiterId
+                    WaiterId = 5
+                    //WaiterId = waiters.Single(w => w.Name == "Dick Long").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Jogan's Fine Dining").RestaurantId,
                     TableId = 25,
-                    WaiterId = waiters.Single(w => w.Name == "Dick Long").WaiterId
+                    WaiterId = 5
+                    //WaiterId = waiters.Single(w => w.Name == "Dick Long").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Frederico's Breakfast").RestaurantId,
                     TableId = 26,
-                    WaiterId = waiters.Single(w => w.Name == "Hugh Janus").WaiterId
+                    WaiterId = 6
+                    //WaiterId = waiters.Single(w => w.Name == "Hugh Janus").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Frederico's Breakfast").RestaurantId,
                     TableId = 27,
-                    WaiterId = waiters.Single(w => w.Name == "Hugh Janus").WaiterId
+                    WaiterId = 6
+                    //WaiterId = waiters.Single(w => w.Name == "Hugh Janus").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Frederico's Breakfast").RestaurantId,
                     TableId = 28,
-                    WaiterId = waiters.Single(w => w.Name == "Hugh Janus").WaiterId
+                    WaiterId = 6
+                    //WaiterId = waiters.Single(w => w.Name == "Hugh Janus").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Frederico's Breakfast").RestaurantId,
                     TableId = 29,
-                    WaiterId = waiters.Single(w => w.Name == "Hugh Janus").WaiterId
+                    WaiterId = 6
+                    //WaiterId = waiters.Single(w => w.Name == "Hugh Janus").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Frederico's Breakfast").RestaurantId,
                     TableId = 30,
-                    WaiterId = waiters.Single(w => w.Name == "Hugh Janus").WaiterId
+                    WaiterId = 6
+                    //WaiterId = waiters.Single(w => w.Name == "Hugh Janus").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Pregante's Sanwitch").RestaurantId,
                     TableId = 31,
-                    WaiterId = waiters.Single(w => w.Name == "Moe Lester").WaiterId
+                    WaiterId = 7
+                    //WaiterId = waiters.Single(w => w.Name == "Moe Lester").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Pregante's Sanwitch").RestaurantId,
                     TableId = 32,
-                    WaiterId = waiters.Single(w => w.Name == "Moe Lester").WaiterId
+                    WaiterId = 7
+                    //WaiterId = waiters.Single(w => w.Name == "Moe Lester").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Pregante's Sanwitch").RestaurantId,
                     TableId = 33,
-                    WaiterId = waiters.Single(w => w.Name == "Moe Lester").WaiterId
+                    WaiterId = 7
+                    //WaiterId = waiters.Single(w => w.Name == "Moe Lester").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Pregante's Sanwitch").RestaurantId,
                     TableId = 34,
-                    WaiterId = waiters.Single(w => w.Name == "Moe Lester").WaiterId
+                    WaiterId = 7
+                    //WaiterId = waiters.Single(w => w.Name == "Moe Lester").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Pregante's Sanwitch").RestaurantId,
                     TableId = 35,
-                    WaiterId = waiters.Single(w => w.Name == "Moe Lester").WaiterId
+                    WaiterId = 7
+                    //WaiterId = waiters.Single(w => w.Name == "Moe Lester").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Only Coffee").RestaurantId,
                     TableId = 36,
-                    WaiterId = waiters.Single(w => w.Name == "Ho Lee Fuk").WaiterId
+                    WaiterId = 8
+                    //WaiterId = waiters.Single(w => w.Name == "Ho Lee Fuk").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Only Coffee").RestaurantId,
                     TableId = 37,
-                    WaiterId = waiters.Single(w => w.Name == "Ho Lee Fuk").WaiterId
+                    WaiterId = 8
+                    //WaiterId = waiters.Single(w => w.Name == "Ho Lee Fuk").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Only Coffee").RestaurantId,
                     TableId = 38,
-                    WaiterId = waiters.Single(w => w.Name == "Ho Lee Fuk").WaiterId
+                    WaiterId = 8
+                    //WaiterId = waiters.Single(w => w.Name == "Ho Lee Fuk").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Only Coffee").RestaurantId,
                     TableId = 39,
-                    WaiterId = waiters.Single(w => w.Name == "Ho Lee Fuk").WaiterId
+                    WaiterId = 8
+                    //WaiterId = waiters.Single(w => w.Name == "Ho Lee Fuk").WaiterId
                 },
                 new Table
                 {
                     RestaurantId = restaurants.Single(r => r.Name=="Only Coffee").RestaurantId,
                     TableId = 40,
-                    WaiterId = waiters.Single(w => w.Name == "Ho Lee Fuk").WaiterId
+                    WaiterId = 8
+                    //WaiterId = waiters.Single(w => w.Name == "Ho Lee Fuk").WaiterId
                 },
             };
             foreach (Table t in tabels)
@@ -768,7 +873,8 @@ namespace DAB_Assignment_2.DAL
                     Name = "Anders Andersen",
                     DateOfVisit = new DateTime(2019, 10, 12),
                     TableId = tabels.Single(t => t.TableId == 6).TableId,
-                    GuestId = 1
+                    GuestId = 1,
+                    PersonId = 9
 
                 },
                 new Guest
@@ -776,140 +882,160 @@ namespace DAB_Assignment_2.DAL
                     Name = "Hanne Hansen",
                     DateOfVisit = new DateTime(2019, 10, 13),
                     TableId = tabels.Single(t => t.TableId == 11).TableId,
-                    GuestId = 2
+                    GuestId = 2,
+                    PersonId = 10
                 },
                 new Guest
                 {
                     Name = "Christiane Christiansen",
                     DateOfVisit = new DateTime(2019, 10, 15),
                     TableId = tabels.Single(t => t.TableId == 26).TableId,
-                    GuestId = 3
+                    GuestId = 3,
+                    PersonId = 11
                 },
                 new Guest
                 {
                     Name = "Charlotte Charlottenborg",
                     DateOfVisit = new DateTime(2019, 10, 8),
                     TableId = tabels.Single(t => t.TableId == 21).TableId,
-                    GuestId = 4
+                    GuestId = 4,
+                    PersonId = 12
                 },
                 new Guest
                 {
                     Name = "Rasmus Rasmussen",
                     DateOfVisit = new DateTime(2019, 10, 26),
                     TableId = tabels.Single(t => t.TableId == 21).TableId,
-                    GuestId = 5
+                    GuestId = 5,
+                    PersonId = 13
                 },
                 new Guest
                 {
                     Name = "Nicolai Nicolajsen",
                     DateOfVisit = new DateTime(2019, 10, 5),
                     TableId = tabels.Single(t => t.TableId == 12).TableId,
-                    GuestId = 6
+                    GuestId = 6,
+                    PersonId = 14
                 },
                 new Guest
                 {
                     Name = "Jesper Jespersen",
                     DateOfVisit = new DateTime(2019, 9, 4),
                     TableId = tabels.Single(t => t.TableId == 22).TableId,
-                    GuestId = 7
+                    GuestId = 7,
+                    PersonId = 15
                 },
                 new Guest
                 {
                     Name = "Mette Metz",
                     DateOfVisit = new DateTime(2019, 11, 7),
                     TableId = tabels.Single(t => t.TableId == 31).TableId,
-                    GuestId = 8
+                    GuestId = 8,
+                    PersonId = 16
                 },
                 new Guest
                 {
                     Name = "Anna Antonsen",
                     DateOfVisit = new DateTime(2019, 11, 5),
                     TableId = tabels.Single(t => t.TableId == 7).TableId,
-                    GuestId = 9
+                    GuestId = 9,
+                    PersonId = 17
                 },
                 new Guest
                 {
                     Name = "A.S. Muncher",
                     DateOfVisit = new DateTime(2019, 11, 3),
                     TableId = tabels.Single(t => t.TableId == 27).TableId,
-                    GuestId = 10
+                    GuestId = 10,
+                    PersonId = 18
                 },
                 new Guest
                 {
                     Name = "Anita Dick",
                     DateOfVisit = new DateTime(2019, 11, 1),
                     TableId = tabels.Single(t => t.TableId == 18).TableId,
-                    GuestId = 11
+                    GuestId = 11,
+                    PersonId = 19
                 },
                 new Guest
                 {
                     Name = "Ben Derhover",
                     DateOfVisit = new DateTime(2019, 9, 12),
                     TableId = tabels.Single(t => t.TableId == 19).TableId,
-                    GuestId = 12
+                    GuestId = 12,
+                    PersonId = 20
                 },
                 new Guest
                 {
                     Name = "Dixon B. Tweenerlegs",
                     DateOfVisit = new DateTime(2019, 10, 22),
                     TableId = tabels.Single(t => t.TableId == 23).TableId,
-                    GuestId = 13
+                    GuestId = 13,
+                    PersonId = 21
                 },
                 new Guest
                 {
                     Name = "Dixon Butts",
                     DateOfVisit = new DateTime(2019, 10, 29),
                     TableId = tabels.Single(t => t.TableId == 8).TableId,
-                    GuestId = 14
+                    GuestId = 14,
+                    PersonId = 22
                 },
                 new Guest
                 {
                     Name = "Harry Nutt",
                     DateOfVisit = new DateTime(2019, 10, 17),
                     TableId = tabels.Single(t => t.TableId == 5).TableId,
-                    GuestId = 15
+                    GuestId = 15,
+                    PersonId = 23
                 },
                 new Guest
                 {
                     Name = "Ivana Fuccu",
                     DateOfVisit = new DateTime(2019, 10, 19),
                     TableId = tabels.Single(t => t.TableId == 13).TableId,
-                    GuestId = 16
+                    GuestId = 16,
+                    PersonId = 24
                 },
                 new Guest
                 {
                     Name = "Ivanna B. Spanked",
                     DateOfVisit = new DateTime(2019, 10, 19),
                     TableId = tabels.Single(t => t.TableId == 38).TableId,
-                    GuestId = 17
+                    GuestId = 17,
+                    PersonId = 25
                 },
                 new Guest
                 {
                     Name = "Mike Hunt",
                     DateOfVisit = new DateTime(2019, 10, 19),
                     TableId = tabels.Single(t => t.TableId == 24).TableId,
-                    GuestId = 18
+                    GuestId = 18,
+                    PersonId = 26
                 },
                 new Guest
                 {
                     Name = "Phil McAvity",
                     DateOfVisit = new DateTime(2019, 10, 19),
                     TableId = tabels.Single(t => t.TableId == 14).TableId,
-                    GuestId = 19
+                    GuestId = 19,
+                    PersonId = 27
                 },
                 new Guest
                 {
                     Name = "Wilma Dickfit",
                     DateOfVisit = new DateTime(2019, 10, 9),
                     TableId = tabels.Single(t => t.TableId == 18).TableId,
-                    GuestId =20
+                    GuestId =20,
+                    PersonId = 28
                 },
                 new Guest
                 {
                     Name = "Don Al Trum",
                     DateOfVisit = new DateTime(2019, 10, 27),
                     TableId = tabels.Single(t => t.TableId == 4).TableId,
-                    GuestId = 21
+                    GuestId = 21,
+                    PersonId = 29
                 },
 
             };

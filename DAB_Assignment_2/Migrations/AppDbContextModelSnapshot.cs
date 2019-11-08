@@ -52,9 +52,7 @@ namespace DAB_Assignment_2.Migrations
             modelBuilder.Entity("DAB_Assignment_2.Models.Person", b =>
                 {
                     b.Property<int>("PersonId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("int");
 
                     b.Property<string>("Discriminator")
                         .IsRequired()
