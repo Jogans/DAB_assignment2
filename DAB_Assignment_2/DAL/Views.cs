@@ -92,12 +92,7 @@ namespace DAB_Assignment_2.DAL
                         }
                     }
                 }
-
                 Console.WriteLine();
-
-
-
-
             }
         }
 
@@ -122,12 +117,5 @@ namespace DAB_Assignment_2.DAL
                 }
             }
         }
-
-        //public IEnumerable<Restaurant> MethodD(string address)
-        //{
-        //    AppDbContext context = new AppDbContext();
-        //    var restaurants = context.Restaurants
-        //        .Join(context.Guests, cu => cu.RestaurantId, p => p.)
-        //}
     }
 }

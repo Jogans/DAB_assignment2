@@ -8,10 +8,13 @@ namespace DAB_Assignment_2
     {
         static void Main(string[] args)
         {
-            while (true)
+            using (var db = new AppDbContext())
             {
-                using (var db = new AppDbContext())
+
+                while (true)
                 {
+                    Console.Clear();
+
                     //DbInitializer init = new DbInitializer();
                     //init.Initialize(db);
                     Views view = new Views();
@@ -36,16 +39,24 @@ namespace DAB_Assignment_2
                         string valg1 = Console.ReadLine();
 
                         if (valg1 == "1")
-                        { view.MethodA("Dessert", db); }
+                        {
+                            view.MethodA("Dessert", db);
+                        }
 
                         if (valg1 == "2")
-                        { view.MethodA("Dinner", db); }
+                        {
+                            view.MethodA("Dinner", db);
+                        }
 
                         if (valg1 == "3")
-                        { view.MethodA("Breakfast", db); }
+                        {
+                            view.MethodA("Breakfast", db);
+                        }
 
                         if (valg1 == "4")
-                        { view.MethodA("Lunch", db); }
+                        {
+                            view.MethodA("Lunch", db);
+                        }
                     }
 
                     if (valg == "2")
@@ -152,19 +163,8 @@ namespace DAB_Assignment_2
                         }
 
                     }
-
-                    //    view.MethodA("Dessert", db);
-                    //view.MethodA("Lunch", db);
-                    //view.MethodA("Dinner", db);
-                    //view.MethodB("Candy Way 15", db);
-                    //view.MethodC("Growl Hill 32", db);
-                    //view.MethodC("Fancy Boulevard 1", db);
-                    //view.MethodC("Mordor Lane 35", db);
-                    //Console.WriteLine("1");
-                    //foreach (var rest in db.Restaurants)
-                    //{
-                    //    Console.WriteLine($"{rest.Address}");
-                    //}
+                    Console.WriteLine("Press enter to start over");
+                    Console.ReadLine();
                 }
             }
         }
