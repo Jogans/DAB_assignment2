@@ -12,11 +12,10 @@ namespace DAB_Assignment_2.Models
     {
         public int DishId { get; set; }
         public string DishName { get; set; }
-        public string RestaurantName { get; set; }
-        public string RestaurantAddress { get; set; }
+        
         public int Price { get; set; }
         public string Type { get; set; }
-        public int RestaurantId { get; set; }
+        
         public virtual List<RestaurantDish> RestaurantDishes { get; set; }
         public virtual List<ReviewDish> ReviewDishes { get; set; }
         public virtual List<GuestDish> GuestDishes { get; set; }

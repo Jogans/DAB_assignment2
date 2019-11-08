@@ -5,6 +5,7 @@ using System.Text;
 using DAB_Assignment_2.Models;
 using DAB_Assignment_2.RelationshipClasses;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 
 namespace DAB_Assignment_2.DAL
 {
@@ -41,18 +42,14 @@ namespace DAB_Assignment_2.DAL
 
         public void MethodB(string address, AppDbContext context)
         {
-            var restaurant = context.Restaurants
-                .Where(r => r.Address.StartsWith(address))
-                .Include(r => r.RestaurantDishes
-                    .Select(d => d.Dish)
-                    .Select(d => new {d.DishName, d.Price}))
-                .Include(r => r.AverageRating)
-                .ToList();
-            Console.WriteLine($"Menu:\t");
-            foreach (var dish in context.Dishes)
-            {
-                Console.WriteLine($"{restaurant}");
-            }
+            var Relevantrestaurant =
+                from Restaurant in context.Restaurants
+                where Restaurant.Address == address
+                select Restaurant;
+
+            
+
+
         }
 
         public void MethodC(string address, AppDbContext context)

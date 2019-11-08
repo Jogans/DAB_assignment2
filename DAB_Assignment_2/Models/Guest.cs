@@ -12,7 +12,6 @@ namespace DAB_Assignment_2.Models
         public int GuestId { get; set; }
         public DateTime DateOfVisit { get; set; }
         public int TableId { get; set; }
-
         public virtual Table Table { get; set; }
         public virtual List<ReviewGuest> ReviewGuests { get; set; }
         public virtual List<GuestDish> GuestDishes { get; set; }
