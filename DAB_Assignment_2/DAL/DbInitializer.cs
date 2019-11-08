@@ -743,6 +743,15 @@ namespace DAB_Assignment_2.DAL
                     //TableId = tabels.Single(t => t.TableId == 4).TableId,
                     ReviewId = 21,
                     DishName = "Breadsticks",
+                },        
+                new Review
+                {
+                    Text = "I'll rather have my own banana split then eat this",
+                    Stars = 2,
+                    DishId = dishes.Single(d => d.DishName == "Bananasplit").DishId,
+                    RestaurantId = restaurants.Single(r => r.Name=="Jelle's Icecream Bar").RestaurantId,
+                    ReviewId = 22,
+                    DishName = "Bananasplit",
                 },
             };
             foreach (Review rw in reviews)

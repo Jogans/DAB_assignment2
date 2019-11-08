@@ -33,7 +33,8 @@ namespace DAB_Assignment_2.DAL
                 Console.WriteLine($"Latest five reviews: ");
                 for (int i = 0; i < streng.Count; i++)
                 {
-                    Console.WriteLine($"Review {i+1}: {streng[i]}");
+                    Console.WriteLine($"Review {i+1}: {streng[i]}\n");
+                    
                 }
             }
         }
@@ -67,7 +68,7 @@ namespace DAB_Assignment_2.DAL
                         {
                             //if (review.TableId == table.TableId)
                             {
-                                Console.WriteLine($"{review.DishName}, {review.Stars} \n {review.Text}");
+                                Console.WriteLine($"{review.DishName}, {review.Stars} \n {review.Text} \n");
                             }
                         }
                     }

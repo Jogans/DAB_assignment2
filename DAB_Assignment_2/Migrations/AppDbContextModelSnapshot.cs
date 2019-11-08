@@ -213,7 +213,7 @@ namespace DAB_Assignment_2.Migrations
 
                     b.HasIndex("ReviewId");
 
-                    b.ToTable("ReviewGuest");
+                    b.ToTable("ReviewGuests");
                 });
 
             modelBuilder.Entity("DAB_Assignment_2.Models.Guest", b =>
