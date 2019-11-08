@@ -660,194 +660,203 @@ namespace DAB_Assignment_2.DAL
             var reviews = new Review[]
             {
                 new Review{
-                    Text = "Genial Mad oplevelse", 
-                    Stars = 5 , 
-                    DishId = dishes.Single(d => d.DishName == "Cheese Burger").DishId, 
+                    Text = "Genial Mad oplevelse",
+                    Stars = 5 ,
+                    DishId = dishes.Single(d => d.DishName == "Cheese Burger").DishId,
                     RestaurantId = restaurants.Single(r => r.Name=="The Golden Seagull").RestaurantId,
                     ReviewId = 1,
                     DishName = "Cheese Burger",
-                }, 
+                },
                 new Review
                 {
-                    Text = "Jeg fortrød lidt at jeg gik herhen", 
-                    Stars = 2, 
-                    DishId = dishes.Single(d => d.DishName == "Bananasplit").DishId, 
+                    Text = "Jeg fortrød lidt at jeg gik herhen",
+                    Stars = 2,
+                    DishId = dishes.Single(d => d.DishName == "Bananasplit").DishId,
                     RestaurantId = restaurants.Single(r => r.Name=="Jelle's Icecream Bar").RestaurantId,
                     ReviewId = 2,
                     DishName = "Bananasplit",
-                }, 
+                },
                 new Review
                 {
-                    Text = "AD!!!!", 
-                    Stars = 1, 
-                    DishId = dishes.Single(d => d.DishName == "Breadsticks").DishId, 
+                    Text = "AD!!!!",
+                    Stars = 1,
+                    DishId = dishes.Single(d => d.DishName == "Breadsticks").DishId,
                     RestaurantId = restaurants.Single(r => r.Name=="Frederico's Breakfast").RestaurantId,
                     ReviewId = 3,
                     DishName = "Breadsticks",
-                }, 
+                },
                 new Review
                 {
-                    Text = "God betjening og en behagelig oplevelse", 
-                    Stars = 4, 
+                    Text = "God betjening og en behagelig oplevelse",
+                    Stars = 4,
                     DishId = dishes.Single(d => d.DishName == "T-Bone").DishId,
                     RestaurantId = restaurants.Single(r => r.Name=="Jogan's Fine Dining").RestaurantId,
                     ReviewId = 4,
                     DishName = "T-Bone",
 
-                }, 
+                },
                 new Review
                 {
                     Text = "Okay til pengene",
-                    Stars = 3, 
-                    DishId = dishes.Single(d => d.DishName == "Sirloin Steak").DishId, 
+                    Stars = 3,
+                    DishId = dishes.Single(d => d.DishName == "Sirloin Steak").DishId,
                     RestaurantId = restaurants.Single(r => r.Name=="Jogan's Fine Dining").RestaurantId,
                     ReviewId = 5,
                     DishName = "Sirloin Steak",
-                }, 
+                },
                 new Review
                 {
                     Text = "Uhmmm det kan godt anbefales. Lækkert mad",
-                    Stars = 4, 
+                    Stars = 4,
                     DishId = dishes.Single(d => d.DishName == "Muffin").DishId,
                     RestaurantId = restaurants.Single(r => r.Name=="Jelle's Icecream Bar").RestaurantId,
                     ReviewId = 6,
                     DishName = "Muffin",
-                }, 
+                },
                 new Review
                 {
                     Text = "Hundeæde!!!",
-                    Stars = 1, 
+                    Stars = 1,
                     DishId = dishes.Single(d => d.DishName == "King Crabs").DishId,
                     RestaurantId = restaurants.Single(r => r.Name=="Jogan's Fine Dining").RestaurantId,
                     ReviewId = 7,
                     DishName = "King Crabs",
-                }, 
+                },
                 new Review
                 {
                     Text = "The sprinkling of gold flakes lent a top note of bullshit. And that was the good part. The skin had an off-putting tang and a rancid flavor, which seeped into the dried-out meat and left a greasy feeling on the roof of my mouth that, like the demonic clown from It, could not be destroyed",
-                    Stars = 2, 
+                    Stars = 2,
                     DishId = dishes.Single(d => d.DishName == "Hamburger").DishId,
                     RestaurantId = restaurants.Single(r => r.Name=="Pregante's Sanwitch").RestaurantId,
                     ReviewId = 8,
                     DishName = "Hamburger",
-                }, 
+                },
                 new Review
                 {
-                    Text = "Slowly, gradually, with great mental resistance but still inexorably, it dawned on me that I had paid $98 for a duck with almost no flavor. It was dry, too", 
-                    Stars = 1, 
+                    Text = "Slowly, gradually, with great mental resistance but still inexorably, it dawned on me that I had paid $98 for a duck with almost no flavor. It was dry, too",
+                    Stars = 1,
                     DishId = dishes.Single(d => d.DishName == "Bacon Orionrings").DishId,
                     RestaurantId = restaurants.Single(r => r.Name=="The Golden Seagull").RestaurantId,
                     ReviewId = 9,
                     DishName = "Bacon Orionrings",
-                }, 
+                },
                 new Review
                 {
                     Text = "When executed poorly (a gummy mass of vermicelli and shellfish that is presumably a riff on the Korean noodle dish japchae), his dishes just sing out of key",
-                    Stars = 2, 
+                    Stars = 2,
                     DishId = dishes.Single(d => d.DishName == "Hashbrowns").DishId,
                     RestaurantId = restaurants.Single(r => r.Name=="Frederico's Breakfast").RestaurantId,
                     ReviewId = 10,
                     DishName = "Hashbrowns",
-                }, 
+                },
                 new Review
                 {
                     Text = "You’d better have something in the fridge at home, because the likelihood of your joining the Clean Plate Club here is as good as Omarosa Manigault Newman getting invited to a Christmas party at the White House",
-                    Stars = 5, 
-                    DishId = dishes.Single(d => d.DishName == "Milkshake").DishId, 
+                    Stars = 5,
+                    DishId = dishes.Single(d => d.DishName == "Milkshake").DishId,
                     RestaurantId = restaurants.Single(r => r.Name=="Nicolo's Pizza").RestaurantId,
                     ReviewId = 11,
                     DishName = "Milkshake",
-                }, 
+                },
                 new Review
                 {
-                    Text = "While there are many words I could use to describe Nicolo's Pizza, I’m going to say only this: Nicolo's Pizza is a bad restaurant", 
-                    Stars = 1, 
-                    DishId = dishes.Single(d => d.DishName == "Pizza Slice").DishId, 
+                    Text = "While there are many words I could use to describe Nicolo's Pizza, I’m going to say only this: Nicolo's Pizza is a bad restaurant",
+                    Stars = 1,
+                    DishId = dishes.Single(d => d.DishName == "Pizza Slice").DishId,
                     RestaurantId = restaurants.Single(r => r.Name=="Nicolo's Pizza").RestaurantId,
                     ReviewId = 12,
                     DishName = "Pizza Slice",
-                }, 
+                },
                 new Review
                 {
-                    Text = "The initial flavor was bland, quickly followed by a fetid, ammonia-like tang. It was an aroma that recalled room-temperature hamburger meat from a grocer that lost power. I felt my eyes water up as I chewed. I tried to swallow. I felt my entire GI tract prepare to purge", 
-                    Stars = 2, 
-                    DishId = dishes.Single(d => d.DishName == "Dates with Bacon").DishId, 
+                    Text = "The initial flavor was bland, quickly followed by a fetid, ammonia-like tang. It was an aroma that recalled room-temperature hamburger meat from a grocer that lost power. I felt my eyes water up as I chewed. I tried to swallow. I felt my entire GI tract prepare to purge",
+                    Stars = 2,
+                    DishId = dishes.Single(d => d.DishName == "Dates with Bacon").DishId,
                     RestaurantId = restaurants.Single(r => r.Name=="Jogan's Fine Dining").RestaurantId,
                     ReviewId = 13,
                     DishName = "Dates with Bacon",
-                }, 
+                },
                 new Review
                 {
                     Text = "Did it have ‘a simple flavor with a touch of sweetness’? It was hard to say after half of it had been simmered in soy sauce to a bony mush, the other half grilled in salt until chewy and served with its head still on, propped up with a wooden stake like a Big Mouth Billy Bass about to sing",
-                    Stars = 5, 
+                    Stars = 5,
                     DishId = dishes.Single(d => d.DishName == "Chilli Chesse Tops").DishId,
                     RestaurantId = restaurants.Single(r => r.Name=="The Golden Seagull").RestaurantId,
                     ReviewId = 14,
                     DishName = "Chilli Chesse Tops",
-                }, 
+                },
                 new Review
                 {
-                    Text = "When compared to similar restaurants, “Empire is their hollow echo, parroting back a faded, carbon-copied version that takes no risks and contributes little to Detroit’s dining scene dialogue", 
-                    Stars = 3, 
-                    DishId = dishes.Single(d => d.DishName == "Pain au Chocolat").DishId, 
+                    Text = "When compared to similar restaurants, “Empire is their hollow echo, parroting back a faded, carbon-copied version that takes no risks and contributes little to Detroit’s dining scene dialogue",
+                    Stars = 3,
+                    DishId = dishes.Single(d => d.DishName == "Pain au Chocolat").DishId,
                     RestaurantId = restaurants.Single(r => r.Name=="Bob's Place").RestaurantId,
                     ReviewId = 15,
                     DishName = "Pain au Chocolat",
-                }, 
+                },
                 new Review
                 {
-                    Text = "There’s V for Vegan. There’s GF for Gluten Free. There’s DF for Dairy Free. I think they’re missing a few. There should be TF for Taste Free and JF for Joy Free and AAHYWEH for Abandon All Hope, Ye Who Enter Here", 
-                    Stars = 1, 
-                    DishId = dishes.Single(d => d.DishName == "Ice Cream").DishId, 
+                    Text = "There’s V for Vegan. There’s GF for Gluten Free. There’s DF for Dairy Free. I think they’re missing a few. There should be TF for Taste Free and JF for Joy Free and AAHYWEH for Abandon All Hope, Ye Who Enter Here",
+                    Stars = 1,
+                    DishId = dishes.Single(d => d.DishName == "Ice Cream").DishId,
                     RestaurantId = restaurants.Single(r => r.Name=="Jelle's Icecream Bar").RestaurantId,
                     ReviewId = 16,
                     DishName = "Ice Cream",
                 },
                 new Review
                 {
-                    Text = "Nobody told the recipe developer that Americans don’t much like small, stale peas in their pasta", 
-                    Stars = 1, 
-                    DishId = dishes.Single(d => d.DishName == "Coffee").DishId, 
+                    Text = "Nobody told the recipe developer that Americans don’t much like small, stale peas in their pasta",
+                    Stars = 1,
+                    DishId = dishes.Single(d => d.DishName == "Coffee").DishId,
                     RestaurantId = restaurants.Single(r => r.Name=="Only Coffee").RestaurantId,
                     ReviewId = 17,
                     DishName = "Coffee",
                 },
                 new Review
                 {
-                    Text = "Nobody should pay this much money to be sad", 
-                    Stars = 2, 
-                    DishId = dishes.Single(d => d.DishName == "Sirloin Steak").DishId, 
+                    Text = "Nobody should pay this much money to be sad",
+                    Stars = 2,
+                    DishId = dishes.Single(d => d.DishName == "Sirloin Steak").DishId,
                     RestaurantId = restaurants.Single(r => r.Name=="Jogan's Fine Dining").RestaurantId,
                     ReviewId = 18,
                     DishName = "Sirloin Steak",
                 },
                 new Review
                 {
-                    Text = "McDonald’s does a better job for one-third of the price", 
-                    Stars = 1, 
-                    DishId = dishes.Single(d => d.DishName == "Bananasplit").DishId, 
+                    Text = "McDonald’s does a better job for one-third of the price",
+                    Stars = 1,
+                    DishId = dishes.Single(d => d.DishName == "Bananasplit").DishId,
                     RestaurantId = restaurants.Single(r => r.Name=="Jelle's Icecream Bar").RestaurantId,
                     ReviewId = 19,
                     DishName = "Bananasplit",
                 },
                 new Review
                 {
-                    Text = "I’m not so batty from Trump Derangement Syndrome that I can’t objectively identify what a poor value the food is at Nicolo's Pizza. The only thing Chicagoans on the ground are missing is the spectacular view from occupied territory", 
-                    Stars = 3, 
-                    DishId = dishes.Single(d => d.DishName == "Breadsticks").DishId, 
+                    Text = "I’m not so batty from Trump Derangement Syndrome that I can’t objectively identify what a poor value the food is at Nicolo's Pizza. The only thing Chicagoans on the ground are missing is the spectacular view from occupied territory",
+                    Stars = 3,
+                    DishId = dishes.Single(d => d.DishName == "Breadsticks").DishId,
                     RestaurantId = restaurants.Single(r => r.Name=="Nicolo's Pizza").RestaurantId,
                     ReviewId = 20,
                     DishName = "Breadsticks",
                 },
                 new Review
                 {
-                    Text = "To put it mildly, licking Plexiglas is more rewarding than some of the duds on the set menu", 
-                    Stars = 2, 
-                    DishId = dishes.Single(d => d.DishName == "Breadsticks").DishId, 
+                    Text = "To put it mildly, licking Plexiglas is more rewarding than some of the duds on the set menu",
+                    Stars = 2,
+                    DishId = dishes.Single(d => d.DishName == "Breadsticks").DishId,
                     RestaurantId = restaurants.Single(r => r.Name=="Bob's Place").RestaurantId,
                     //TableId = tabels.Single(t => t.TableId == 4).TableId,
                     ReviewId = 21,
                     DishName = "Breadsticks",
+                },
+                new Review
+                {
+                    Text = "I'll rather have my own banana split then eat this",
+                    Stars = 2,
+                    DishId = dishes.Single(d => d.DishName == "Bananasplit").DishId,
+                    RestaurantId = restaurants.Single(r => r.Name=="Jelle's Icecream Bar").RestaurantId,
+                    ReviewId = 22,
+                    DishName = "Bananasplit",
                 },
             };
             foreach (Review rw in reviews)
@@ -1150,18 +1159,6 @@ namespace DAB_Assignment_2.DAL
                 context.ReviewGuests.Add(rg);
             }
             Console.WriteLine("før reviewguest");
-            context.SaveChanges();
-
-            
-
-
-            //Tilføj ting her
-
-
-
-
-            //Tilføj ting her
-
             context.SaveChanges();
         }
     }

@@ -29,11 +29,12 @@ namespace DAB_Assignment_2.DAL
             foreach (var ting in context.Restaurants.Where(r => r.Type.Contains(type)))
             {
                 var streng = context.Reviews.Where(r => r.RestaurantId == ting.RestaurantId).Select(r => r.Text).Take(5).AsNoTracking().ToList();
-                Console.WriteLine($"{ting.Name} - Average rating: {ting.AverageRating}");
+                Console.WriteLine($"{ting.Name} - Type: {ting.Type} - Average rating: {ting.AverageRating}");
                 Console.WriteLine($"Latest five reviews: ");
                 for (int i = 0; i < streng.Count; i++)
                 {
-                    Console.WriteLine($"Review {i+1}: {streng[i]}");
+                    Console.WriteLine($"Review {i+1}: {streng[i]}\n");
+                    
                 }
             }
         }
@@ -67,7 +68,7 @@ namespace DAB_Assignment_2.DAL
                         {
                             //if (review.TableId == table.TableId)
                             {
-                                Console.WriteLine($"{review.DishName}, {review.Stars} \n {review.Text}");
+                                Console.WriteLine($"{review.DishName}, {review.Stars} \n {review.Text} \n");
                             }
                         }
                     }
