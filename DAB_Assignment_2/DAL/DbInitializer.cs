@@ -46,32 +46,6 @@ namespace DAB_Assignment_2.DAL
             context.Restaurants.RemoveRange(all8);
             context.SaveChanges();
 
-            //context.ReviewGuests.RemoveRange(context.ReviewGuests);
-            //context.SaveChanges();
-
-            //context.Guests.RemoveRange(context.Guests);
-            //context.SaveChanges();
-
-            //context.Reviews.RemoveRange(context.Reviews);
-            //context.SaveChanges();
-
-            //context.Tables.RemoveRange(context.Tables);
-            //context.SaveChanges();
-
-            //context.Waiters.RemoveRange(context.Waiters);
-            //context.SaveChanges();
-
-            //context.RestaurantDishes.RemoveRange(context.RestaurantDishes);
-            //context.SaveChanges();
-
-            //context.Dishes.RemoveRange(context.Dishes);
-            //context.SaveChanges();
-
-            //context.Restaurants.RemoveRange(context.Restaurants);
-            //context.SaveChanges();
-
-            //Tilføj ting her
-
 
             var restaurants = new Restaurant[]
             {
@@ -88,9 +62,7 @@ namespace DAB_Assignment_2.DAL
             {
                 context.Restaurants.Add(c);
             }
-            Console.WriteLine("før restaurant");
             context.SaveChanges();
-            Console.WriteLine("efter restaurant");
 
             var dishes = new Dish[]
             {
@@ -116,9 +88,7 @@ namespace DAB_Assignment_2.DAL
             {
                 context.Dishes.Add(d);
             }
-            Console.WriteLine("før dish");
             context.SaveChanges();
-            Console.WriteLine("efter dish");
 
             var restaurantDishes = new RestaurantDish[]
             {
@@ -289,7 +259,6 @@ namespace DAB_Assignment_2.DAL
             {
                 context.RestaurantDishes.Add(rd);
             }
-            Console.WriteLine("før restaurantdish");
             context.SaveChanges();
 
             var waiters = new Waiter[]
@@ -364,7 +333,6 @@ namespace DAB_Assignment_2.DAL
             {
                 context.Waiters.Add(w);
             }
-            Console.WriteLine("før waiter");
             context.SaveChanges();
 
             var tabels = new Table[]
@@ -654,7 +622,6 @@ namespace DAB_Assignment_2.DAL
             {
                 context.Tables.Add(t);
             }
-            Console.WriteLine("før table");
             context.SaveChanges();
 
 
@@ -836,7 +803,6 @@ namespace DAB_Assignment_2.DAL
             {
                 context.Guests.Add(w);
             }
-            Console.WriteLine("før guest");
             context.SaveChanges();
 
 
@@ -1123,7 +1089,6 @@ namespace DAB_Assignment_2.DAL
             {
                 context.Reviews.Add(rw);
             }
-            Console.WriteLine("før review");
             context.SaveChanges();
 
             var reviewGuests = new ReviewGuest[]
@@ -1243,7 +1208,6 @@ namespace DAB_Assignment_2.DAL
             {
                 context.ReviewGuests.Add(rg);
             }
-            Console.WriteLine("før reviewguest");
             context.SaveChanges();
         }
     }
