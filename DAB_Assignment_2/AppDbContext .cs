@@ -23,7 +23,7 @@ namespace DAB_Assignment_2
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //optionsBuilder.UseSqlite("Data Source=restaurant.db");
-            optionsBuilder.UseSqlServer("Data Source=DESKTOP-R69JAJF;Initial Catalog=restaurant5;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;MultipleActiveResultSets=true");
+            optionsBuilder.UseSqlServer("Data Source=LAPTOP-SDDA3GGQ;Initial Catalog=restaurant4;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;MultipleActiveResultSets=true");
             //optionsBuilder.UseSqlServer("Data Source=127.0.0.1,1433;Database=Restaurant;User ID=SA;Password=12345678Aa#;");
         }
 
