@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DAB_Assignment_2.Migrations
 {
-    public partial class Test : Migration
+    public partial class JesperTest : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,11 +14,8 @@ namespace DAB_Assignment_2.Migrations
                     DishId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     DishName = table.Column<string>(nullable: true),
-                    RestaurantName = table.Column<string>(nullable: true),
-                    RestaurantAddress = table.Column<string>(nullable: true),
                     Price = table.Column<int>(nullable: false),
-                    Type = table.Column<string>(nullable: true),
-                    RestaurantId = table.Column<int>(nullable: false)
+                    Type = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -175,8 +172,7 @@ namespace DAB_Assignment_2.Migrations
                 name: "Persons",
                 columns: table => new
                 {
-                    PersonId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    PersonId = table.Column<int>(nullable: false),
                     Name = table.Column<string>(nullable: true),
                     Discriminator = table.Column<string>(nullable: false),
                     GuestId = table.Column<int>(nullable: true),
