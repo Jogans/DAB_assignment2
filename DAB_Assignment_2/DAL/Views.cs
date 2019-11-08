@@ -55,17 +55,11 @@ namespace DAB_Assignment_2.DAL
 
         public void MethodB(string address, AppDbContext context)
         {
-            var restaurant = context.Restaurants
-                .Where(r => r.Address.StartsWith(address))
-                .Include(r => r.RestaurantDishes
-                    .Select(d => d.Dish)
-                    .Select(d => new { d.DishName, d.Price }))
-                .Include(r => r.AverageRating)
-                .ToList();
-            Console.WriteLine($"Menu:\t");
-            foreach (var dish in context.Dishes)
+            foreach (var ting in context.Restaurants.Where(r => r.Address.Contains(address)))
             {
-                Console.WriteLine($"{restaurant}");
+
+
+
             }
         }
 
