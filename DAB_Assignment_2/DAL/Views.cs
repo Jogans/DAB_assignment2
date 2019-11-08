@@ -44,7 +44,7 @@ namespace DAB_Assignment_2.DAL
         {
             foreach (var ting in context.Restaurants.Where(r => r.Address.Contains(address)))
             {
-                Console.Write($"Restaurant Name: {ting.Name}");
+                Console.WriteLine($"Restaurant Name: {ting.Name}");
 
                 var rating1 =
                 from relevantRestaurant in context.Reviews
@@ -114,7 +114,7 @@ namespace DAB_Assignment_2.DAL
                         {
                             if (review.RestaurantId == rest.RestaurantId)
                             {
-                                Console.WriteLine($"Review by {review.ReviewerName} for dish {review.DishName} - Stars: {review.Stars} \n {review.Text} \n");
+                                Console.WriteLine($"Review by {review.ReviewerName} \nFor dish: {review.DishName} - Stars: {review.Stars} \n{review.Text} \n");
                             }
                         }
                     }

@@ -10,52 +10,47 @@ namespace DAB_Assignment_2
         {
             using (var db = new AppDbContext())
             {
-                DbInitializer init = new DbInitializer();
-                init.Initialize(db);
+                //DbInitializer init = new DbInitializer();
+                //init.Initialize(db);
                 Views view = new Views();
-                System.Console.WriteLine("Det gik godt");
+                //System.Console.WriteLine("Det gik godt");
 
                 Console.Write("\t\t Velkommen til WhereToEat\n");
 
                 Console.Write("Indtast et tal mellem 1 og 3 for at vælge den valgte metode\n");
 
-                int valg = Console.Read();
+                string valg = Console.ReadLine();
 
-                if (valg == 1)
+                if (valg == "1")
                 {
                     Console.Write("Du har valgt Metode A");
                     Console.Write("Vælg ud fra typen af Restaurant");
-                    Console.Write("De mulige Typer er:");
+                    Console.WriteLine("De mulige Typer er:");
                     Console.Write("\t 1: Dessert \n");
                     Console.Write("\t 2: Dinner \n");
                     Console.Write("\t 3: Breakfast \n");
                     Console.Write("\t 4: Lunch \n");
 
-                    int valg1 = Console.Read();
+                    string valg1 = Console.ReadLine();
 
-                    if (valg1 == 1)
+                    if (valg1 == "1")
                     { view.MethodA("Dessert", db); }
 
-                    if (valg1 == 2)
+                    if (valg1 == "2")
                     { view.MethodA("Dinner", db); }
 
-                    if (valg1 == 3)
+                    if (valg1 == "3")
                     { view.MethodA("Breakfast", db); }
 
-                    if (valg1 == 4)
+                    if (valg1 == "4")
                     { view.MethodA("Lunch", db); }
-
-                    else
-                    {
-                        Console.Write("Prøv igen");
-                    }
                 }
 
-                if (valg == 2)
+                if (valg == "2")
                 {
-                    Console.Write("Du har valgt Metode B");
-                    Console.Write("Vælg ud fra adressen af Restaurant");
-                    Console.Write("De mulige adresser er:");
+                    Console.WriteLine("Du har valgt Metode B");
+                    Console.WriteLine("Vælg ud fra adressen af Restaurant");
+                    Console.WriteLine("De mulige adresser er:");
                     int counter = 1;
 
 
@@ -66,34 +61,34 @@ namespace DAB_Assignment_2
                         counter++;
                     }
 
-                    Console.Write("Indtast et tal mellem 1 og 8");
+                    Console.WriteLine("Indtast et tal mellem 1 og 8");
 
-                    int valg2 = Console.Read();
+                    string valg2 = Console.ReadLine();
 
                     switch (valg2)
                     {
-                        case 1:
+                        case "1":
                             view.MethodB("Mordor Lane 35", db);
                             break;
-                        case 2:
+                        case "2":
                             view.MethodB("Fast Food Road 88", db);
                             break;
-                        case 3:
+                        case "3":
                             view.MethodB("Candy Way 15", db);
                             break;
-                        case 4:
+                        case "4":
                             view.MethodB("Growl Hill 32", db);
                             break;
-                        case 5:
+                        case "5":
                             view.MethodB("Fancy Boulevard", db);
                             break;
-                        case 6:
+                        case "6":
                             view.MethodB("Early Bird 75", db);
                             break;
-                        case 7:
+                        case "7":
                             view.MethodB("Strange Green 2", db);
                             break;
-                        case 8:
+                        case "8":
                             view.MethodB("Sleepy Road 14", db);
                             break;
                         default:
@@ -104,11 +99,11 @@ namespace DAB_Assignment_2
 
                 }
 
-                if (valg == 3)
+                if (valg == "3")
                 {
-                    Console.Write("Du har valgt Metode C");
-                    Console.Write("Vælg ud fra adressen af Restaurant");
-                    Console.Write("De mulige adresser er:");
+                    Console.WriteLine("Du har valgt Metode C");
+                    Console.WriteLine("Vælg ud fra adressen af Restaurant");
+                    Console.WriteLine("De mulige adresser er:");
                     int counter = 1;
 
 
@@ -119,34 +114,34 @@ namespace DAB_Assignment_2
                         counter++;
                     }
 
-                    Console.Write("Indtast et tal mellem 1 og 8");
+                    Console.WriteLine("Indtast et tal mellem 1 og 8\n");
 
-                    int valg2 = Console.Read();
+                    string valg2 = Console.ReadLine();
 
                     switch (valg2)
                     {
-                        case 1:
+                        case "1":
                             view.MethodC("Mordor Lane 35", db);
                             break;
-                        case 2:
+                        case "2":
                             view.MethodC("Fast Food Road 88", db);
                             break;
-                        case 3:
+                        case "3":
                             view.MethodC("Candy Way 15", db);
                             break;
-                        case 4:
+                        case "4":
                             view.MethodC("Growl Hill 32", db);
                             break;
-                        case 5:
+                        case "5":
                             view.MethodC("Fancy Boulevard", db);
                             break;
-                        case 6:
+                        case "6":
                             view.MethodC("Early Bird 75", db);
                             break;
-                        case 7:
+                        case "7":
                             view.MethodC("Strange Green 2", db);
                             break;
-                        case 8:
+                        case "8":
                             view.MethodC("Sleepy Road 14", db);
                             break;
                         default:

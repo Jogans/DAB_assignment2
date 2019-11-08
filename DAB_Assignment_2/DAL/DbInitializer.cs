@@ -851,6 +851,7 @@ namespace DAB_Assignment_2.DAL
                     DishName = "Cheese Burger",
                     GuestId = guests.Single(g => g.GuestId == 1).GuestId,
                     DateOfVisit = guests.Single(g => g.GuestId == 1).DateOfVisit,
+                    ReviewerName = guests.Single(n => n.GuestId == 1).Name
                 },
                 new Review
                 {
@@ -862,6 +863,7 @@ namespace DAB_Assignment_2.DAL
                     DishName = "Bananasplit",
                     GuestId = guests.Single(g => g.GuestId == 2).GuestId,
                     DateOfVisit = guests.Single(g => g.GuestId == 2).DateOfVisit,
+                    ReviewerName = guests.Single(n => n.GuestId == 2).Name
                 },
                 new Review
                 {
@@ -873,6 +875,8 @@ namespace DAB_Assignment_2.DAL
                     DishName = "Breadsticks",
                     GuestId = guests.Single(g => g.GuestId == 3).GuestId,
                     DateOfVisit = guests.Single(g => g.GuestId == 3).DateOfVisit,
+                    ReviewerName = guests.Single(n => n.GuestId == 3).Name
+
                 },
                 new Review
                 {
@@ -884,6 +888,8 @@ namespace DAB_Assignment_2.DAL
                     DishName = "T-Bone",
                     GuestId = guests.Single(g => g.GuestId == 4).GuestId,
                     DateOfVisit = guests.Single(g => g.GuestId == 4).DateOfVisit,
+                    ReviewerName = guests.Single(n => n.GuestId == 4).Name
+
                 },
                 new Review
                 {
@@ -895,6 +901,8 @@ namespace DAB_Assignment_2.DAL
                     DishName = "Sirloin Steak",
                     GuestId = guests.Single(g => g.GuestId == 5).GuestId,
                     DateOfVisit = guests.Single(g => g.GuestId == 5).DateOfVisit,
+                    ReviewerName = guests.Single(n => n.GuestId == 5).Name
+
                 },
                 new Review
                 {
@@ -906,6 +914,8 @@ namespace DAB_Assignment_2.DAL
                     DishName = "Muffin",
                     GuestId = guests.Single(g => g.GuestId == 6).GuestId,
                     DateOfVisit = guests.Single(g => g.GuestId == 6).DateOfVisit,
+                    ReviewerName = guests.Single(n => n.GuestId == 6).Name
+
                 },
                 new Review
                 {
@@ -917,6 +927,8 @@ namespace DAB_Assignment_2.DAL
                     DishName = "King Crabs",
                     GuestId = guests.Single(g => g.GuestId == 7).GuestId,
                     DateOfVisit = guests.Single(g => g.GuestId == 7).DateOfVisit,
+                    ReviewerName = guests.Single(n => n.GuestId == 7).Name
+
                 },
                 new Review
                 {
@@ -928,6 +940,8 @@ namespace DAB_Assignment_2.DAL
                     DishName = "Hamburger",
                     GuestId = guests.Single(g => g.GuestId == 8).GuestId,
                     DateOfVisit = guests.Single(g => g.GuestId == 8).DateOfVisit,
+                    ReviewerName = guests.Single(n => n.GuestId == 8).Name
+
                 },
                 new Review
                 {
@@ -939,6 +953,8 @@ namespace DAB_Assignment_2.DAL
                     DishName = "Bacon Orionrings",
                     GuestId = guests.Single(g => g.GuestId == 9).GuestId,
                     DateOfVisit = guests.Single(g => g.GuestId == 9).DateOfVisit,
+                    ReviewerName = guests.Single(n => n.GuestId == 9).Name
+
                 },
                 new Review
                 {
@@ -950,6 +966,8 @@ namespace DAB_Assignment_2.DAL
                     DishName = "Hashbrowns",
                     GuestId = guests.Single(g => g.GuestId == 10).GuestId,
                     DateOfVisit = guests.Single(g => g.GuestId == 10).DateOfVisit,
+                    ReviewerName = guests.Single(n => n.GuestId == 10).Name
+
                 },
                 new Review
                 {
@@ -961,6 +979,8 @@ namespace DAB_Assignment_2.DAL
                     DishName = "Milkshake",
                     GuestId = guests.Single(g => g.GuestId == 11).GuestId,
                     DateOfVisit = guests.Single(g => g.GuestId == 11).DateOfVisit,
+                    ReviewerName = guests.Single(n => n.GuestId == 11).Name
+
                 },
                 new Review
                 {
@@ -972,6 +992,8 @@ namespace DAB_Assignment_2.DAL
                     DishName = "Pizza Slice",
                     GuestId = guests.Single(g => g.GuestId == 12).GuestId,
                     DateOfVisit = guests.Single(g => g.GuestId == 12).DateOfVisit,
+                    ReviewerName = guests.Single(n => n.GuestId == 12).Name
+
                 },
                 new Review
                 {
@@ -983,6 +1005,8 @@ namespace DAB_Assignment_2.DAL
                     DishName = "Dates with Bacon",
                     GuestId = guests.Single(g => g.GuestId == 13).GuestId,
                     DateOfVisit = guests.Single(g => g.GuestId == 13).DateOfVisit,
+                    ReviewerName = guests.Single(n => n.GuestId == 13).Name
+
                 },
                 new Review
                 {
@@ -994,6 +1018,8 @@ namespace DAB_Assignment_2.DAL
                     DishName = "Chilli Chesse Tops",
                     GuestId = guests.Single(g => g.GuestId == 14).GuestId,
                     DateOfVisit = guests.Single(g => g.GuestId == 14).DateOfVisit,
+                    ReviewerName = guests.Single(n => n.GuestId == 14).Name
+
                 },
                 new Review
                 {
@@ -1005,6 +1031,7 @@ namespace DAB_Assignment_2.DAL
                     DishName = "Pain au Chocolat",
                     GuestId = guests.Single(g => g.GuestId == 15).GuestId,
                     DateOfVisit = guests.Single(g => g.GuestId == 15).DateOfVisit,
+                    ReviewerName = guests.Single(n => n.GuestId == 15).Name
                 },
                 new Review
                 {
@@ -1016,6 +1043,7 @@ namespace DAB_Assignment_2.DAL
                     DishName = "Ice Cream",
                     GuestId = guests.Single(g => g.GuestId == 16).GuestId,
                     DateOfVisit = guests.Single(g => g.GuestId == 16).DateOfVisit,
+                    ReviewerName = guests.Single(n => n.GuestId == 16).Name
                 },
                 new Review
                 {
@@ -1027,6 +1055,7 @@ namespace DAB_Assignment_2.DAL
                     DishName = "Coffee",
                     GuestId = guests.Single(g => g.GuestId == 17).GuestId,
                     DateOfVisit = guests.Single(g => g.GuestId == 17).DateOfVisit,
+                    ReviewerName = guests.Single(n => n.GuestId == 17).Name
                 },
                 new Review
                 {
@@ -1038,6 +1067,7 @@ namespace DAB_Assignment_2.DAL
                     DishName = "Sirloin Steak",
                     GuestId = guests.Single(g => g.GuestId == 18).GuestId,
                     DateOfVisit = guests.Single(g => g.GuestId == 18).DateOfVisit,
+                    ReviewerName = guests.Single(n => n.GuestId == 18).Name
                 },
                 new Review
                 {
@@ -1049,6 +1079,7 @@ namespace DAB_Assignment_2.DAL
                     DishName = "Bananasplit",
                     GuestId = guests.Single(g => g.GuestId == 19).GuestId,
                     DateOfVisit = guests.Single(g => g.GuestId == 19).DateOfVisit,
+                    ReviewerName = guests.Single(n => n.GuestId == 19).Name
                 },
                 new Review
                 {
@@ -1060,6 +1091,7 @@ namespace DAB_Assignment_2.DAL
                     DishName = "Breadsticks",
                     GuestId = guests.Single(g => g.GuestId == 20).GuestId,
                     DateOfVisit = guests.Single(g => g.GuestId == 20).DateOfVisit,
+                    ReviewerName = guests.Single(n => n.GuestId == 20).Name
                 },
                 new Review
                 {
@@ -1072,6 +1104,7 @@ namespace DAB_Assignment_2.DAL
                     DishName = "Breadsticks",
                     GuestId = guests.Single(g => g.GuestId == 21).GuestId,
                     DateOfVisit = guests.Single(g => g.GuestId == 21).DateOfVisit,
+                    ReviewerName = guests.Single(n => n.GuestId == 21).Name
                 },
                 new Review
                 {
@@ -1083,6 +1116,7 @@ namespace DAB_Assignment_2.DAL
                     DishName = "Bananasplit",
                     GuestId = guests.Single(g => g.GuestId == 14).GuestId,
                     DateOfVisit = guests.Single(g => g.GuestId == 14).DateOfVisit,
+                    ReviewerName = guests.Single(n => n.GuestId == 14).Name
                 },
 };
             foreach (Review rw in reviews)

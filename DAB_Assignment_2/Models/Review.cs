@@ -12,8 +12,6 @@ namespace DAB_Assignment_2.Models
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ReviewId { get; set; }
-        public string RestaurantName { get; set; }
-        public string RestaurantAddress { get; set; }
         public string ReviewerName { get; set; }
         public DateTime DateOfVisit { get; set; }
         public string DishName { get; set; }
