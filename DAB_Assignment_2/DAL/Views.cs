@@ -5,7 +5,6 @@ using System.Text;
 using DAB_Assignment_2.Models;
 using DAB_Assignment_2.RelationshipClasses;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 
 namespace DAB_Assignment_2.DAL
 {
@@ -30,26 +29,44 @@ namespace DAB_Assignment_2.DAL
             foreach (var ting in context.Restaurants.Where(r => r.Type.Contains(type)))
             {
                 var streng = context.Reviews.Where(r => r.RestaurantId == ting.RestaurantId).Select(r => r.Text).Take(5).AsNoTracking().ToList();
-                Console.WriteLine($"{ting.Name} - Type: {ting.Type} - Average rating: {ting.AverageRating}");
+                Console.WriteLine($"{ting.Name} - Type: {ting.Type}");
+                var rating =
+                    from relevantRestaurant in context.Reviews
+                    group relevantRestaurant by relevantRestaurant.RestaurantId into g
+                    select new
+                    {
+                        g.Key,
+                        arvgStar = g.Average(p => p.Stars)
+                    };
+                foreach (var rat in rating)
+                {
+                    if (ting.RestaurantId == rat.Key)
+                    {
+                        Console.Write("Average rating: {0}\n", rat.arvgStar);
+                    }
+                }
                 Console.WriteLine($"Latest five reviews: ");
                 for (int i = 0; i < streng.Count; i++)
                 {
-                    Console.WriteLine($"Review {i+1}: {streng[i]}\n");
-                    
+                    Console.WriteLine($"Review {i + 1}: {streng[i]}\n");
                 }
             }
         }
 
         public void MethodB(string address, AppDbContext context)
         {
-            var Relevantrestaurant =
-                from Restaurant in context.Restaurants
-                where Restaurant.Address == address
-                select Restaurant;
-
-            
-
-
+            var restaurant = context.Restaurants
+                .Where(r => r.Address.StartsWith(address))
+                .Include(r => r.RestaurantDishes
+                    .Select(d => d.Dish)
+                    .Select(d => new { d.DishName, d.Price }))
+                .Include(r => r.AverageRating)
+                .ToList();
+            Console.WriteLine($"Menu:\t");
+            foreach (var dish in context.Dishes)
+            {
+                Console.WriteLine($"{restaurant}");
+            }
         }
 
         public void MethodC(string address, AppDbContext context)
