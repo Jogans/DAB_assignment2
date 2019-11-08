@@ -10,13 +10,15 @@ namespace DAB_Assignment_2
         {
             using (var db = new AppDbContext())
             {
-                DbInitializer init = new DbInitializer();
-                init.Initialize(db);
-                System.Console.WriteLine("Det gik godt");
+                //DbInitializer init = new DbInitializer();
+                //init.Initialize(db);
+                //System.Console.WriteLine("Det gik godt");
                 Views view = new Views();
                 //view.MethodA("Dessert", db);
                 //view.MethodA("Lunch", db);
                 //view.MethodA("Dinner", db);
+                view.MethodB("Fast Food Road 88", db);
+
                 view.MethodB("Candy Way 15", db);
                 //view.MethodC("Growl Hill 32", db);
                 //view.MethodC("Fancy Boulevard 1", db);

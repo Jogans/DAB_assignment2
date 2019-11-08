@@ -12,20 +12,6 @@ namespace DAB_Assignment_2.DAL
     {
         public void MethodA(string type, AppDbContext context)
         {
-            //context.Restaurants.Find
-            //context.Restaurants.Where(p => p.Type.StartsWith(type)).ToList();
-            //var restaurants = context.Restaurants
-            //    .Where(p => p.Type.StartsWith(type))
-            //    .Include(p => p.Name)
-            //    .Include(p => p.AverageRating)
-            //    .Include(p => p.Reviews.
-            //        Select(r => r.Text).Take(5))
-            //    .ToList();
-
-            //foreach (var r in restaurants)
-            //{
-            //    Console.WriteLine($"Restaurants:\t {r}");
-            //}
             foreach (var ting in context.Restaurants.Where(r => r.Type.Contains(type)))
             {
                 var streng = context.Reviews.Where(r => r.RestaurantId == ting.RestaurantId).Select(r => r.Text).Take(5).AsNoTracking().ToList();
@@ -42,7 +28,7 @@ namespace DAB_Assignment_2.DAL
                 {
                     if (ting.RestaurantId == rat.Key)
                     {
-                        Console.Write("Average rating: {0}\n", rat.arvgStar);
+                        Console.Write("Average rating: {0:F1}\n", rat.arvgStar);
                     }
                 }
                 Console.WriteLine($"Latest five reviews: ");
@@ -53,37 +39,65 @@ namespace DAB_Assignment_2.DAL
             }
         }
 
+
         public void MethodB(string address, AppDbContext context)
         {
             foreach (var ting in context.Restaurants.Where(r => r.Address.Contains(address)))
             {
-                Console.Write("Restaurant Name: {0}\n", ting.Name);
+                Console.Write($"Restaurant Name: {ting.Name}");
 
-                Console.Write("The Menu consists of:");
-                
-                for (int i = 0; i < ting.RestaurantDishes.Count; i++)
+                var rating1 =
+                from relevantRestaurant in context.Reviews
+                group relevantRestaurant by relevantRestaurant.RestaurantId into g
+                select new
                 {
-                    var streng = context.Reviews.Where(r => r.DishId == ting.RestaurantDishes[i].DishId).Select(r => r.Text).Take(5).AsNoTracking().ToList();
-
-                    Console.Write("{$}", ting.RestaurantDishes[i].Dish.DishName);
-                    
-                    var rating =
-                        from relevantRestaurant in context.Reviews 
-                        group relevantRestaurant by relevantRestaurant.DishId into g
-                        select new
-                        {
-                            g.Key,
-                            arvgStar = g.Average(p => p.Stars)
-                        };
-                    foreach (var rat in rating)
+                    g.Key,
+                    arvgStar = g.Average(p => p.Stars)
+                };
+                foreach (var rat in rating1)
+                {
+                    if (ting.RestaurantId == rat.Key)
                     {
-                        if (ting.RestaurantDishes[i].DishId == rat.Key)
+                        Console.Write("Average rating: {0:F1}\n", rat.arvgStar);
+                    }
+                }
+
+                Console.WriteLine("The Menu consists of:");
+
+                foreach (var dish in context.Dishes)
+                {
+                    foreach (var retDish in context.RestaurantDishes)
+                    {
+                        if (ting.RestaurantId == retDish.RestaurantId && dish.DishId == retDish.DishId)
                         {
-                            Console.Write("Average rating: {0}\n", rat.arvgStar);
+
+                            Console.Write($"\t {dish.DishName} Price: {dish.Price}Kr");
+                            var rating =
+                                from relevantDish in context.Reviews
+                                group relevantDish by relevantDish.DishId into g
+                                select new
+                                {
+                                    g.Key,
+                                    arvgStar = g.Average(p => p.Stars)
+                                };
+
+                            foreach (var rat in rating)
+                            {
+                                if (dish.DishId == rat.Key)
+                                {
+                                    Console.WriteLine("\n \t Rating: {0:F1}\n", rat.arvgStar);
+                                }
+                            }
+
                         }
                     }
                 }
-               
+
+                Console.WriteLine();
+
+
+
+
             }
         }
 
