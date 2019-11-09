@@ -70,7 +70,7 @@ namespace DAB_Assignment_2
                         foreach (var adresse in db.Restaurants)
                         {
 
-                            Console.Write("\t {0}: {1} \n", counter, adresse.Address);
+                            Console.Write("\t {0}: {1} - {2} \n", counter, adresse.Address, adresse.Name);
                             counter++;
                         }
 
@@ -123,7 +123,7 @@ namespace DAB_Assignment_2
                         foreach (var adresse in db.Restaurants)
                         {
 
-                            Console.Write("\t {0}: {1} \n", counter, adresse.Address);
+                            Console.Write("\t {0}: {1} - {2} \n", counter, adresse.Address, adresse.Name);
                             counter++;
                         }
 

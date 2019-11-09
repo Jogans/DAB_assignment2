@@ -34,7 +34,7 @@ namespace DAB_Assignment_2.DAL
                 Console.WriteLine($"Latest five reviews: ");
                 for (int i = 0; i < streng.Count; i++)
                 {
-                    Console.WriteLine($"\t Review {i + 1}: {streng[i]}\n");
+                    Console.WriteLine($" \t Review {i + 1} {streng[i]}\n");
                 }
             }
         }
@@ -44,7 +44,8 @@ namespace DAB_Assignment_2.DAL
         {
             foreach (var ting in context.Restaurants.Where(r => r.Address.Contains(address)))
             {
-                Console.WriteLine($"Restaurant Name: {ting.Name}");
+                Console.WriteLine("You have chosen the restaurant: ");
+                Console.Write($"{ting.Name}\n");
 
                 var rating1 =
                 from relevantRestaurant in context.Reviews
@@ -100,6 +101,9 @@ namespace DAB_Assignment_2.DAL
         {
             foreach (var rest in context.Restaurants.Where(r => r.Address.StartsWith(address)))
             {
+                Console.WriteLine("You have chosen the restaurant: ");
+                Console.WriteLine($"\n{rest.Name}");
+
                 foreach (var table in context.Tables)
                 {
                     if (table.RestaurantId == rest.RestaurantId)

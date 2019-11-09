@@ -6,6 +6,8 @@ using DAB_Assignment_2.Models;
 using DAB_Assignment_2.RelationshipClasses;
 namespace DAB_Assignment_2.DAL
 {
+    //DENNE FIL BENYTTES TIL AT INDSÆTTE DUMMY DATA I DE FORSKELLIGE ENTITIES
+
     public class DbInitializer
     {
         public void Initialize(AppDbContext context)
