@@ -111,16 +111,15 @@ namespace DAB_Assignment_2.DAL
                         Console.WriteLine($"Bord nr. {table.TableId}: ");
                         foreach (var review in context.Reviews)
                         {
-                            if (review.RestaurantId == rest.RestaurantId)
+
+                            foreach (var guest in context.Guests)
                             {
-                                foreach (var guest in context.Guests)
+                                if (guest.Name == review.ReviewerName && review.RestaurantId == rest.RestaurantId && guest.TableId == table.TableId)
                                 {
-                                    if (guest.Name == review.ReviewerName && review.RestaurantId == rest.RestaurantId && guest.TableId == table.TableId)
-                                    {
-                                        Console.WriteLine($"Review by {review.ReviewerName} \nFor dish: {review.DishName} - Stars: {review.Stars} \n{review.Text} \n");
-                                    }
+                                    Console.WriteLine($"Review by {review.ReviewerName} \nFor dish: {review.DishName} - Stars: {review.Stars} \n{review.Text} \n");
                                 }
                             }
+
                         }
                     }
 
