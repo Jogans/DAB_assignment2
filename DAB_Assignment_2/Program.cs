@@ -117,15 +117,17 @@ namespace DAB_Assignment_2
                         Console.WriteLine("Du har valgt Metode C");
                         Console.WriteLine("Vælg ud fra adressen af Restaurant");
                         Console.WriteLine("De mulige adresser er:");
-                        int counter = 1;
+                        
 
+                        Console.WriteLine("\t 1: Mordor Lane 35 - Bob's Place ");
+                        Console.WriteLine("\t 2: Fast Food Road 88 - The Golden Seagull ");
+                        Console.WriteLine("\t 3: Candy Way 15 - Jelle's Icecream Bar' ");
+                        Console.WriteLine("\t 4: Growl Hill 32 - Nicolo's Pizza' ");
+                        Console.WriteLine("\t 5: Fancy Boulevard 1 - Jogan's Fancy Dinning' ");
+                        Console.WriteLine("\t 6: Early Bird 75 - Frederico's Breakfast' ");
+                        Console.WriteLine("\t 7: Strange Green 2 - Pregante's Sanwitch ");
+                        Console.WriteLine("\t 8: Sleepy Road 14 - Only Coffee \n");
 
-                        foreach (var adresse in db.Restaurants)
-                        {
-
-                            Console.Write("\t {0}: {1} - {2} \n", counter, adresse.Address, adresse.Name);
-                            counter++;
-                        }
 
                         Console.WriteLine("Indtast et tal mellem 1 og 8\n");
 
