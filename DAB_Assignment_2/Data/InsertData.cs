@@ -21,21 +21,44 @@ namespace DAB_Assignment_2.Data
             Console.WriteLine("Enter Type");
             string type = Console.ReadLine();
 
-            var restaurants = new Restaurant[]
+            Restaurant restaurant = new Restaurant()
             {
-                new Restaurant
-                {
                     Name = name,
                     Address = address,
                     AverageRating = 0,
                     Type = type,
-                },
             };
-            foreach (Restaurant c in restaurants)
-            {
-                context.Restaurants.Add(c);
-            }
+
+            context.Add(restaurant);
             context.SaveChanges();
         }
+
+        public void InsertReview(AppDbContext context)
+        {
+            Console.WriteLine("Enter your name");
+            string nameOfReviewer = Console.ReadLine();
+
+            Console.WriteLine("Enter name of dish");
+            string dishName = Console.ReadLine();
+
+            Console.WriteLine("Enter text for review");
+            string text = Console.ReadLine();
+
+            Console.WriteLine("Enter Stars");
+            int stars = Convert.ToInt32(Console.ReadLine());
+
+            Review review = new Review()
+            {
+                Text = text,
+                Stars = stars,
+                DishName = dishName,
+                DateOfVisit = DateTime.Now,
+                ReviewerName = nameOfReviewer,
+            };
+
+            context.Add(review);
+            context.SaveChanges();
+        }
+
     }
 }
