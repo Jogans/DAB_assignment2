@@ -1,6 +1,7 @@
 ﻿using DAB_Assignment_2.Models;
 using DAB_Assignment_2.DAL;
 using System;
+using DAB_Assignment_2.Data;
 
 namespace DAB_Assignment_2
 {
@@ -10,7 +11,6 @@ namespace DAB_Assignment_2
         {
             using (var db = new AppDbContext())
             {
-
                 while (true)
                 {
                     Console.Clear();
@@ -18,11 +18,13 @@ namespace DAB_Assignment_2
                     DbInitializer init = new DbInitializer();
                     init.Initialize(db);
                     Views view = new Views();
+                    InsertData data = new InsertData();
+                    
                     //System.Console.WriteLine("Det gik godt");
 
                     Console.Write("\t\t Velkommen til WhereToEat\n");
 
-                    Console.Write("Indtast et tal mellem 1 og 3 for at vælge den valgte metode\n");
+                    Console.Write("Indtast et tal mellem 1 og 4 for at vælge den valgte metode\n");
 
                     string valg = Console.ReadLine();
 
@@ -162,6 +164,12 @@ namespace DAB_Assignment_2
                                 break;
                         }
 
+
+
+                    }
+                    if (valg == "4")
+                    {
+                        data.InsertReview(db);
                     }
                     Console.WriteLine("Press enter to start over or X to exit the program");
                     string input = Console.ReadLine();
