@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DAB_Assignment_2.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20191109135046_Gruppe27DAB")]
-    partial class Gruppe27DAB
+    [Migration("20191116145319_bob")]
+    partial class bob
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

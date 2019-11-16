@@ -169,7 +169,7 @@ namespace DAB_Assignment_2
                     }
                     if (valg == "4")
                     {
-                        data.InsertReview(db);
+                        data.InsertRestaurant(db);
                     }
                     Console.WriteLine("Press enter to start over or X to exit the program");
                     string input = Console.ReadLine();
