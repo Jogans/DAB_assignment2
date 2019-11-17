@@ -25,6 +25,11 @@ namespace DAB_Assignment_2
                     Console.Write("\t\t Velkommen til WhereToEat\n");
 
                     Console.Write("Indtast et tal mellem 1 og 4 for at vælge den valgte metode\n");
+                    Console.WriteLine("1: Liste af restauranter ud fra type");
+                    Console.WriteLine("2: Menu for en given restaurante");
+                    Console.WriteLine("3: Reviews for en given restaurante");
+                    Console.WriteLine("4: Indsæt data");
+
 
                     string valg = Console.ReadLine();
 
@@ -163,13 +168,29 @@ namespace DAB_Assignment_2
                                 Console.Write("Prøv igen, Indtast et tal mellem 1 og 8");
                                 break;
                         }
-
-
-
                     }
                     if (valg == "4")
                     {
-                        data.InsertRestaurant(db);
+                        Console.WriteLine("Du har valgt Indsæt data");
+                        Console.WriteLine("De mulige valg er:");
+                        Console.WriteLine("1: Indsæt ny restaurante");
+                        Console.WriteLine("2: Indsæt nyt review");
+                        Console.WriteLine("Indtast et tal mellem 1 og 2\n");
+
+                        string valg2 = Console.ReadLine();
+
+                        switch (valg2)
+                        {
+                            case "1":
+                                data.InsertRestaurant(db);
+                                break;
+                            case "2":
+                                data.InsertReview(db);
+                                break;
+                            default:
+                                Console.Write("Prøv igen, Indtast et tal mellem 1 og 2");
+                                break;
+                        }
                     }
                     Console.WriteLine("Press enter to start over or X to exit the program");
                     string input = Console.ReadLine();
