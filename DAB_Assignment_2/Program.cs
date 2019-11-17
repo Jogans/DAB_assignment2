@@ -20,7 +20,7 @@ namespace DAB_Assignment_2
                     Views view = new Views();
                     InsertData data = new InsertData();
                     
-                    //System.Console.WriteLine("Det gik godt");
+                    //System.Console.WriteLine("Det gik godt"); 
 
                     Console.Write("\t\t Velkommen til WhereToEat\n");
 
